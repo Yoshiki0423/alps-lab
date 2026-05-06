@@ -704,53 +704,130 @@
     padding-right: var(--container-padding-mobile);
   }
 
-  /* Hero: 縦積み */
+  /* ============================
+     Hero モバイル版:単一画像 + 縦積みコンテンツ(Sprint 2 後の調整)
+     Split Composition は PC/タブレット時のみ。スマホでは BODY 画像を背景に固定し、
+     全要素を中央に縦積みで配置する。
+     ============================ */
   .hero {
     grid-template-columns: 1fr;
-    grid-template-rows: 40vh 60vh;
-    min-height: 100vh;
+    grid-template-rows: 1fr;
+    height: auto;
+    min-height: 100svh;
+    padding: calc(var(--header-height) + var(--space-lg)) var(--container-padding-mobile) var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
+  /* 左ペイン(NATURE)を背景に、右ペイン(BODY)はぼかしオーバーレイ的に重ねる */
+  .hero__pane {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+  }
+  .hero__pane--nature {
+    z-index: 0;
+  }
+  .hero__pane--body {
+    display: none; /* モバイルでは1画像のみ */
+  }
+  .hero__pane--nature::after {
+    /* 背景全体に濃いめのオーバーレイ(可読性確保) */
+    background: linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0.55) 0%,
+      rgba(10, 10, 10, 0.65) 50%,
+      rgba(10, 10, 10, 0.85) 100%
+    );
+  }
+  /* 章番号は表示せず(スマホでは情報過多) */
+  .hero__chapter--left,
   .hero__chapter--right {
-    right: var(--container-padding-mobile);
-    top: calc(40vh + var(--space-md));
+    display: none;
   }
-  .hero__chapter--left {
-    left: var(--container-padding-mobile);
+  /* 座標も非表示 */
+  .hero__coord {
+    display: none;
   }
+  /* 中央コンテンツ:絶対配置をやめて通常フロー */
   .hero__center {
-    width: min(92%, 600px);
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    padding: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
   }
-  .hero__coord,
-  .hero__scroll {
-    bottom: var(--space-md);
-  }
-  .hero__index {
-    font-size: 9px;
-    gap: var(--space-sm);
+  .hero__separator {
+    margin-bottom: 0;
   }
   .hero__separator::before,
   .hero__separator::after {
-    width: 32px;
+    width: 28px;
   }
-
-  /* P3 モバイル: ヒーローサマリー・CTA */
+  .hero__title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    line-height: var(--lh-tight);
+  }
+  .hero__subtitle {
+    font-size: var(--fs-md);
+  }
   .hero__summary {
-    font-size: 0.9375rem;       /* 15px */
-    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+    padding: 0.625rem 0.5rem;
+    margin: 0;
   }
   .hero__cta-group {
     flex-direction: column;
     width: 100%;
     gap: 0.75rem;
+    margin-top: var(--space-sm);
   }
   .hero__cta-group .cta-btn {
     width: 100%;
     justify-content: center;
   }
+  /* 下部インデックス:位置を通常フロー、コンパクト表示 */
+  .hero__index {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-top: var(--space-lg);
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm) var(--space-md);
+    font-size: 10px;
+    z-index: 2;
+  }
+  .hero__scroll {
+    display: none; /* モバイルでは省略(スクロールするのが当然) */
+  }
 
   .services__grid,
   .stories__grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Getting Started: モバイル時に画像を section 幅いっぱいに */
+  .getting-started__inner {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-xl);
+  }
+  .getting-started__media {
+    margin: 0 calc(-1 * var(--container-padding-mobile));
+  }
+  .getting-started__media img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
   }
 }
 
