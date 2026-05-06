@@ -1,0 +1,154 @@
+/* =========================================================================
+   LEGAL ページ専用スタイル(Privacy Policy / Terms 共通)
+   ========================================================================= */
+
+/* ===== Hero ===== */
+.legal-hero {
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-3xl) var(--container-padding-desktop) var(--space-xl);
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid rgba(200, 169, 97, 0.15);
+}
+.legal-hero__inner {
+  max-width: var(--max-width-narrow);
+}
+.legal-hero__chapter {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-md);
+}
+.legal-hero__title {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+.legal-hero__sub {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+.legal-hero__lead {
+  font-family: var(--font-jp);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+/* ===== Body ===== */
+.legal-body {
+  background: var(--color-bg-primary);
+  padding: var(--space-3xl) var(--container-padding-desktop);
+}
+.legal-body__inner {
+  max-width: var(--max-width-text);
+  margin: 0 auto;
+}
+.legal-body__intro {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid rgba(200, 169, 97, 0.2);
+  margin-bottom: var(--space-xl);
+}
+.legal-body__date {
+  margin-top: var(--space-2xl);
+  text-align: right;
+  font-family: var(--font-jp);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+/* ===== Sections ===== */
+.legal-section {
+  margin-bottom: var(--space-xl);
+}
+.legal-section__title {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid rgba(200, 169, 97, 0.2);
+}
+.legal-section__num {
+  font-family: var(--font-display);
+  font-size: var(--fs-md);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-accent-gold);
+  flex-shrink: 0;
+}
+.legal-section p {
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+/* ===== Lists ===== */
+.legal-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-sm) 0;
+}
+.legal-list li {
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: var(--space-xs);
+}
+.legal-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent-gold);
+}
+
+/* ===== Contact block ===== */
+.legal-contact {
+  padding: var(--space-md);
+  background: var(--color-bg-secondary);
+  border-left: 3px solid var(--color-accent-gold);
+  margin-top: var(--space-md);
+}
+.legal-contact p {
+  margin-bottom: var(--space-xs);
+}
+.legal-link {
+  color: var(--color-accent-gold);
+  text-decoration: underline;
+}
+.legal-link:hover {
+  text-decoration: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .legal-hero__title {
+    font-size: 3rem;
+  }
+  .legal-section__title {
+    font-size: var(--fs-md);
+  }
+}

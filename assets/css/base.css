@@ -147,3 +147,65 @@ body {
     font-size: 10px;
   }
 }
+
+/* =========================================================================
+   Focus Visibility(Sprint 2/Phase 4 P17・キーボード操作向けの focus 可視化)
+   ブランド整合: ゴールド2px 破線
+   ========================================================================= */
+*:focus {
+  outline: none;
+}
+*:focus-visible {
+  outline: 2px dashed var(--color-accent-gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* リンク・ボタン特有のフォーカス強調 */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.cta-btn:focus-visible,
+.megamenu__item:focus-visible {
+  outline: 2px dashed var(--color-accent-gold);
+  outline-offset: 3px;
+}
+
+/* CTA ボタン専用:背景があるので少しオフセットを大きく */
+.cta-btn:focus-visible {
+  outline-offset: 4px;
+  box-shadow: 0 0 0 1px rgba(200, 169, 97, 0.3);
+}
+
+/* アコーディオンの開閉ボタン */
+.faq-item__q:focus-visible {
+  outline: 2px dashed var(--color-accent-gold);
+  outline-offset: -2px;
+  background: rgba(200, 169, 97, 0.05);
+}
+
+/* スキップリンク表示時(Tabキーで現れる) */
+.skip-link:focus,
+.skip-link:focus-visible {
+  position: fixed;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  z-index: 9999;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg-primary);
+  color: var(--color-accent-gold);
+  border: 2px dashed var(--color-accent-gold);
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  outline: none;
+}
+
+/* prefers-reduced-motion: 装飾を控える */
+@media (prefers-reduced-motion: reduce) {
+  *:focus-visible {
+    outline-style: solid;
+  }
+}
