@@ -417,18 +417,19 @@
   color: var(--color-text-soft);
   position: relative;
 }
+/* STORIES の上の黒→クリームグラデは削除
+   理由: 直前の Getting Started も同じクリーム背景なので、グラデが矛盾を生んでいた。
+   セクション間の視覚区切りは章ラベル(STORIES — ストーリーを読む)の上の余白で表現。 */
 .stories::before {
   content: "";
   position: absolute;
-  top: -80px;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: linear-gradient(
-    180deg,
-    var(--color-bg-primary),
-    var(--color-bg-soft)
-  );
+  top: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 1px;
+  background: var(--color-accent-gold-dim);
+  opacity: 0.5;
 }
 .stories .section__chapter {
   color: var(--color-accent-gold-dim);
@@ -977,6 +978,23 @@
 .getting-started--soft {
   background: var(--color-bg-soft);
   color: var(--color-text-soft);
+  position: relative;
+}
+/* 上の暗いセクション(FEATURED IN)からクリームへのスムーズなグラデ */
+.getting-started--soft::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(
+    180deg,
+    var(--color-bg-secondary),
+    var(--color-bg-soft)
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 .section__chapter--soft {
   color: var(--color-text-soft) !important;
