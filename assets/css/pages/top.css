@@ -1011,7 +1011,11 @@
 .getting-started__step {
   display: grid;
   grid-template-columns: 64px 1fr;
-  gap: var(--space-md);
+  grid-template-areas:
+    "num title"
+    "num text";
+  column-gap: var(--space-md);
+  row-gap: 0.25rem;
   align-items: start;
   padding: var(--space-md) 0;
   border-bottom: 1px dashed rgba(26, 26, 26, 0.15);
@@ -1020,11 +1024,19 @@
   border-bottom: none;
 }
 .getting-started__step-num {
+  grid-area: num;
   font-family: var(--font-display);
   font-size: 2.5rem;
   line-height: 1;
   letter-spacing: var(--ls-wide);
   color: var(--color-accent-gold-dim);
+  align-self: center;
+}
+.getting-started__step-title {
+  grid-area: title;
+}
+.getting-started__step-text {
+  grid-area: text;
 }
 .getting-started__step-title {
   font-family: var(--font-jp);
