@@ -501,7 +501,7 @@
 }
 .stories__more {
   display: block;
-  margin: var(--space-lg) auto 0;
+  margin: var(--space-lg) auto 100px;  /* グラデーション帯(80px)+余白で重なり回避 */
   text-align: center;
   font-family: var(--font-jp);
   font-size: var(--fs-md);
@@ -509,6 +509,7 @@
   position: relative;
   width: max-content;
   padding-bottom: 4px;
+  z-index: 2;  /* .stores::before の上に */
 }
 .stories__more::after {
   content: "";
@@ -1039,11 +1040,42 @@
   color: rgba(26, 26, 26, 0.7);
   margin: 0;
 }
+.getting-started__media {
+  position: relative;
+  margin: 0;
+}
 .getting-started__media img {
   width: 100%;
   height: auto;
   border: 1px solid rgba(26, 26, 26, 0.1);
   filter: contrast(1.05);
+  display: block;
+}
+.getting-started__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: var(--space-md);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.95) 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.getting-started__caption-name {
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold);
+  text-transform: uppercase;
+}
+.getting-started__caption-jp {
+  font-family: var(--font-jp);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  font-style: italic;
 }
 
 /* =========================================================================
