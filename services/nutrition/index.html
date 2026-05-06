@@ -43,7 +43,35 @@
       <nav class="nav" role="navigation" aria-label="メインナビゲーション">
         <ul class="nav__list">
           <li><a class="nav__link" href="/about/">About</a></li>
-          <li><a class="nav__link is-current" href="/services/" aria-current="page">Services</a></li>
+          <li class="nav__item nav__item--has-dropdown">
+          <a class="nav__link is-current" href="/services/" aria-current="page">Services <span class="nav__caret" aria-hidden="true">▾</span></a>
+          <div class="megamenu" role="menu" aria-label="サービス一覧">
+            <a class="megamenu__item" href="/services/gym/" role="menuitem">
+              <span class="megamenu__num">01</span>
+              <span class="megamenu__title">GYM</span>
+              <span class="megamenu__desc">24時間ジム × パーソナル</span>
+            </a>
+            <a class="megamenu__item" href="/services/nutrition/" role="menuitem">
+              <span class="megamenu__num">02</span>
+              <span class="megamenu__title">NUTRITION</span>
+              <span class="megamenu__desc">管理栄養士カウンセリング</span>
+            </a>
+            <a class="megamenu__item" href="/services/foods/" role="menuitem">
+              <span class="megamenu__num">03</span>
+              <span class="megamenu__title">FOODS</span>
+              <span class="megamenu__desc">冷凍宅配ミール</span>
+            </a>
+            <a class="megamenu__item" href="/services/supplements/" role="menuitem">
+              <span class="megamenu__num">04</span>
+              <span class="megamenu__title">SUPPLEMENTS</span>
+              <span class="megamenu__desc">プロテイン・サプリ</span>
+            </a>
+            <a class="megamenu__item megamenu__item--all" href="/services/" role="menuitem">
+              <span class="megamenu__title">SERVICES 一覧</span>
+              <span class="megamenu__desc">全事業を見る →</span>
+            </a>
+          </div>
+        </li>
           <li><a class="nav__link" href="/stores/">Stores</a></li>
           <li><a class="nav__link" href="/stories/">Stories</a></li>
           <li><a class="nav__link" href="/recruit/">Recruit</a></li>
@@ -68,6 +96,17 @@
   </nav>
 
   <main id="main">
+
+    <nav class="breadcrumb" aria-label="パンくず">
+      <div class="breadcrumb__inner">
+          <a class="breadcrumb__link" href="/">TOP</a>
+          <span class="breadcrumb__sep" aria-hidden="true">/</span>
+          <a class="breadcrumb__link" href="/services/">SERVICES</a>
+          <span class="breadcrumb__sep" aria-hidden="true">/</span>
+          <span class="breadcrumb__current" aria-current="page">NUTRITION</span>
+      </div>
+    </nav>
+
 
     <!-- Hero (80vh) -->
     <section class="sub-hero" aria-labelledby="hero-title">

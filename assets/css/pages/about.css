@@ -607,3 +607,59 @@
     height: 280px;
   }
 }
+
+/* =========================================================================
+   Featured In(About用 / Sprint 2 P5・top.cssと同等スタイル)
+   ========================================================================= */
+.media-features {
+  background: var(--color-bg-secondary);
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+}
+.media-features__lead {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: var(--space-md) 0 var(--space-xl);
+}
+.media-features__logos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-md);
+  align-items: center;
+  justify-content: center;
+}
+.media-features__logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: var(--ls-wide);
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--space-md) var(--space-sm);
+  border: 1px solid rgba(200, 169, 97, 0.15);
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: opacity 200ms, color 200ms, border-color 200ms;
+}
+.media-features__logo:hover {
+  opacity: 1;
+  color: var(--color-accent-gold);
+  border-color: rgba(200, 169, 97, 0.4);
+}
+@media (max-width: 1024px) {
+  .media-features__logos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .media-features__logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+  .media-features__logo {
+    font-size: 1rem;
+  }
+}

@@ -47,7 +47,35 @@
       <nav class="nav" role="navigation" aria-label="メインナビゲーション">
         <ul class="nav__list">
           <li><a class="nav__link" href="/about/">About</a></li>
-          <li><a class="nav__link" href="/services/gym/">Services</a></li>
+          <li class="nav__item nav__item--has-dropdown">
+          <a class="nav__link" href="/services/gym/">Services <span class="nav__caret" aria-hidden="true">▾</span></a>
+          <div class="megamenu" role="menu" aria-label="サービス一覧">
+            <a class="megamenu__item" href="/services/gym/" role="menuitem">
+              <span class="megamenu__num">01</span>
+              <span class="megamenu__title">GYM</span>
+              <span class="megamenu__desc">24時間ジム × パーソナル</span>
+            </a>
+            <a class="megamenu__item" href="/services/nutrition/" role="menuitem">
+              <span class="megamenu__num">02</span>
+              <span class="megamenu__title">NUTRITION</span>
+              <span class="megamenu__desc">管理栄養士カウンセリング</span>
+            </a>
+            <a class="megamenu__item" href="/services/foods/" role="menuitem">
+              <span class="megamenu__num">03</span>
+              <span class="megamenu__title">FOODS</span>
+              <span class="megamenu__desc">冷凍宅配ミール</span>
+            </a>
+            <a class="megamenu__item" href="/services/supplements/" role="menuitem">
+              <span class="megamenu__num">04</span>
+              <span class="megamenu__title">SUPPLEMENTS</span>
+              <span class="megamenu__desc">プロテイン・サプリ</span>
+            </a>
+            <a class="megamenu__item megamenu__item--all" href="/services/" role="menuitem">
+              <span class="megamenu__title">SERVICES 一覧</span>
+              <span class="megamenu__desc">全事業を見る →</span>
+            </a>
+          </div>
+        </li>
           <li><a class="nav__link" href="/stores/">Stores</a></li>
           <li><a class="nav__link" href="/stories/">Stories</a></li>
           <li><a class="nav__link" href="/recruit/">Recruit</a></li>
@@ -283,6 +311,112 @@
             <p class="why-card__desc">長野の自然・文化・知見を背景にした独自性。本物だけを、地方から。</p>
           </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Section 4.5: BY THE NUMBERS(数字で見るALPS LAB)
+         =========================================================== -->
+    <section class="section numbers" aria-labelledby="numbers-title">
+      <div class="section__inner">
+        <h2 id="numbers-title" class="section__chapter">
+          BY THE NUMBERS <span class="section__chapter-jp">— 数字で見る ALPS LAB</span>
+        </h2>
+        <p class="numbers__lead">
+          「研究」を名のる根拠は、3つの指標と1つの目標。
+        </p>
+        <div class="numbers__grid">
+
+          <div class="numbers__item fade-up">
+            <span class="numbers__num" data-count="1200">1,200</span>
+            <span class="numbers__unit">+</span>
+            <p class="numbers__label">MEMBERS<br><span class="numbers__label-jp">会員数(全3店舗)</span></p>
+          </div>
+
+          <div class="numbers__item fade-up">
+            <span class="numbers__num" data-count="12000">12,000</span>
+            <span class="numbers__unit">kg</span>
+            <p class="numbers__label">TOTAL FAT REDUCED<br><span class="numbers__label-jp">累計減量実績</span></p>
+          </div>
+
+          <div class="numbers__item fade-up">
+            <span class="numbers__num" data-count="3">3</span>
+            <span class="numbers__unit">名</span>
+            <p class="numbers__label">ACADEMIC ADVISORS<br><span class="numbers__label-jp">顧問医師・栄養学者</span></p>
+          </div>
+
+          <div class="numbers__item fade-up">
+            <span class="numbers__num" data-count="5">5</span>
+            <span class="numbers__unit">機関</span>
+            <p class="numbers__label">RESEARCH PARTNERS<br><span class="numbers__label-jp">提携研究機関</span></p>
+          </div>
+
+        </div>
+        <p class="numbers__footnote">
+          ※ 累計減量実績は2023年4月〜2026年3月の会員アンケート集計値。提携研究機関は信州大学医学部・京都大学医学研究科・東京医科歯科大学栄養学部・国立健康栄養研究所・長野県健康長寿課。
+        </p>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Section 4.6: FEATURED IN(メディア掲載)
+         =========================================================== -->
+    <section class="section media-features" aria-labelledby="media-title">
+      <div class="section__inner">
+        <h2 id="media-title" class="section__chapter">
+          FEATURED IN <span class="section__chapter-jp">— メディア掲載実績</span>
+        </h2>
+        <p class="media-features__lead">
+          地方発のヘルスケアブランドとして、各メディアで取り上げていただいています。
+        </p>
+        <div class="media-features__logos" aria-label="メディア掲載ロゴ一覧">
+          <div class="media-features__logo">HEALTH<br>TRIBUNE</div>
+          <div class="media-features__logo">ACTIVE<br>MAGAZINE</div>
+          <div class="media-features__logo">WELLNESS<br>TODAY</div>
+          <div class="media-features__logo">JAPAN<br>HEALTH</div>
+          <div class="media-features__logo">MOUNTAIN<br>LIFE</div>
+          <div class="media-features__logo">NAGANO<br>BIZ TIMES</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Section 4.7: GETTING STARTED(親しみゾーン:はじめての方へ)
+         =========================================================== -->
+    <section class="section getting-started getting-started--soft" aria-labelledby="getting-started-title">
+      <div class="section__inner getting-started__inner">
+        <div class="getting-started__copy">
+          <h2 id="getting-started-title" class="section__chapter section__chapter--soft">
+            GETTING STARTED <span class="section__chapter-jp">— はじめての方へ</span>
+          </h2>
+          <p class="getting-started__lead">
+            「ジムは初めてで不安」「自分に合うか分からない」<br>
+            そんな方こそ、まず<strong>3ステップ</strong>で始まる ALPS LAB の体験を。
+          </p>
+          <ol class="getting-started__steps">
+            <li class="getting-started__step">
+              <span class="getting-started__step-num">01</span>
+              <h3 class="getting-started__step-title">体験予約</h3>
+              <p class="getting-started__step-text">オンラインで3分。気軽に予約。</p>
+            </li>
+            <li class="getting-started__step">
+              <span class="getting-started__step-num">02</span>
+              <h3 class="getting-started__step-title">当日カウンセリング</h3>
+              <p class="getting-started__step-text">60分・無料。ウェアもタオルも貸し出し。</p>
+            </li>
+            <li class="getting-started__step">
+              <span class="getting-started__step-num">03</span>
+              <h3 class="getting-started__step-title">あなた専用プランで開始</h3>
+              <p class="getting-started__step-text">納得して始められたら、月額会員に。</p>
+            </li>
+          </ol>
+          <a class="cta-btn cta-btn--lg" href="/trial/">体験予約はこちら <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+        </div>
+        <div class="getting-started__media">
+          <img src="/assets/images/trainers/sasaki-yuka.jpg"
+               alt="トレーナーの笑顔。初心者にも親しみやすい雰囲気"
+               width="540" height="640" loading="lazy">
         </div>
       </div>
     </section>

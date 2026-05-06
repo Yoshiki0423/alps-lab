@@ -102,3 +102,48 @@ body {
     padding-right: var(--container-padding-mobile);
   }
 }
+
+/* =========================================================================
+   Breadcrumb (Sprint 2 P8)
+   全下層ページ共通のパンくずリスト
+   ========================================================================= */
+.breadcrumb {
+  background: var(--color-bg-primary);
+  border-bottom: 1px solid rgba(200, 169, 97, 0.1);
+  padding: var(--space-sm) 0;
+}
+.breadcrumb__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding-desktop);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+}
+.breadcrumb__link {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 180ms;
+}
+.breadcrumb__link:hover {
+  color: var(--color-accent-gold);
+}
+.breadcrumb__sep {
+  color: var(--color-accent-gold);
+  opacity: 0.5;
+}
+.breadcrumb__current {
+  color: var(--color-accent-gold);
+  font-weight: var(--fw-medium);
+}
+@media (max-width: 768px) {
+  .breadcrumb__inner {
+    padding: 0 1rem;
+    font-size: 10px;
+  }
+}

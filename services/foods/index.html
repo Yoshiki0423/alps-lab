@@ -39,7 +39,35 @@
       <nav class="nav" role="navigation" aria-label="メインナビゲーション">
         <ul class="nav__list">
           <li><a class="nav__link" href="/about/">About</a></li>
-          <li><a class="nav__link is-current" href="/services/" aria-current="page">Services</a></li>
+          <li class="nav__item nav__item--has-dropdown">
+          <a class="nav__link is-current" href="/services/" aria-current="page">Services <span class="nav__caret" aria-hidden="true">▾</span></a>
+          <div class="megamenu" role="menu" aria-label="サービス一覧">
+            <a class="megamenu__item" href="/services/gym/" role="menuitem">
+              <span class="megamenu__num">01</span>
+              <span class="megamenu__title">GYM</span>
+              <span class="megamenu__desc">24時間ジム × パーソナル</span>
+            </a>
+            <a class="megamenu__item" href="/services/nutrition/" role="menuitem">
+              <span class="megamenu__num">02</span>
+              <span class="megamenu__title">NUTRITION</span>
+              <span class="megamenu__desc">管理栄養士カウンセリング</span>
+            </a>
+            <a class="megamenu__item" href="/services/foods/" role="menuitem">
+              <span class="megamenu__num">03</span>
+              <span class="megamenu__title">FOODS</span>
+              <span class="megamenu__desc">冷凍宅配ミール</span>
+            </a>
+            <a class="megamenu__item" href="/services/supplements/" role="menuitem">
+              <span class="megamenu__num">04</span>
+              <span class="megamenu__title">SUPPLEMENTS</span>
+              <span class="megamenu__desc">プロテイン・サプリ</span>
+            </a>
+            <a class="megamenu__item megamenu__item--all" href="/services/" role="menuitem">
+              <span class="megamenu__title">SERVICES 一覧</span>
+              <span class="megamenu__desc">全事業を見る →</span>
+            </a>
+          </div>
+        </li>
           <li><a class="nav__link" href="/stores/">Stores</a></li>
           <li><a class="nav__link" href="/stories/">Stories</a></li>
           <li><a class="nav__link" href="/recruit/">Recruit</a></li>
@@ -64,6 +92,17 @@
   </nav>
 
   <main id="main">
+
+    <nav class="breadcrumb" aria-label="パンくず">
+      <div class="breadcrumb__inner">
+          <a class="breadcrumb__link" href="/">TOP</a>
+          <span class="breadcrumb__sep" aria-hidden="true">/</span>
+          <a class="breadcrumb__link" href="/services/">SERVICES</a>
+          <span class="breadcrumb__sep" aria-hidden="true">/</span>
+          <span class="breadcrumb__current" aria-current="page">FOODS</span>
+      </div>
+    </nav>
+
 
     <!-- Hero -->
     <section class="sub-hero" aria-labelledby="hero-title">
@@ -118,6 +157,18 @@
             <p class="lineup-card__price">¥980<span class="lineup-card__unit">〜/食</span></p>
             <div class="lineup-card__divider" aria-hidden="true"></div>
             <p class="lineup-card__desc">1食から試せる。お試し購入に最適。</p>
+
+            <table class="nutrition-table" aria-label="栄養成分(1食あたり)">
+              <caption class="nutrition-table__caption">NUTRITION FACTS / 1食あたり</caption>
+              <tbody>
+                <tr><th scope="row">エネルギー</th><td><span class="nutrition-table__num">420</span><span class="nutrition-table__unit">kcal</span></td></tr>
+                <tr><th scope="row">タンパク質</th><td><span class="nutrition-table__num">35</span><span class="nutrition-table__unit">g</span></td></tr>
+                <tr><th scope="row">糖質</th><td><span class="nutrition-table__num">28</span><span class="nutrition-table__unit">g</span></td></tr>
+                <tr><th scope="row">脂質</th><td><span class="nutrition-table__num">14</span><span class="nutrition-table__unit">g</span></td></tr>
+                <tr><th scope="row">食塩相当量</th><td><span class="nutrition-table__num">1.8</span><span class="nutrition-table__unit">g</span></td></tr>
+              </tbody>
+            </table>
+
             <a class="lineup-card__cta" href="#">購入する <span aria-hidden="true">→</span></a>
           </article>
 
@@ -132,6 +183,18 @@
             <p class="lineup-card__price">¥5,880<span class="lineup-card__unit">/セット</span></p>
             <div class="lineup-card__divider" aria-hidden="true"></div>
             <p class="lineup-card__desc">送料無料。1週間分の夕食に。</p>
+
+            <table class="nutrition-table" aria-label="栄養成分(6食平均/1食あたり)">
+              <caption class="nutrition-table__caption">NUTRITION FACTS / 1食平均</caption>
+              <tbody>
+                <tr><th scope="row">エネルギー</th><td><span class="nutrition-table__num">405</span><span class="nutrition-table__unit">kcal</span></td></tr>
+                <tr><th scope="row">タンパク質</th><td><span class="nutrition-table__num">32</span><span class="nutrition-table__unit">g</span></td></tr>
+                <tr><th scope="row">糖質</th><td><span class="nutrition-table__num">26</span><span class="nutrition-table__unit">g</span></td></tr>
+                <tr><th scope="row">脂質</th><td><span class="nutrition-table__num">12</span><span class="nutrition-table__unit">g</span></td></tr>
+                <tr><th scope="row">食塩相当量</th><td><span class="nutrition-table__num">1.6</span><span class="nutrition-table__unit">g</span></td></tr>
+              </tbody>
+            </table>
+
             <a class="lineup-card__cta" href="#">購入する <span aria-hidden="true">→</span></a>
           </article>
 
@@ -146,6 +209,18 @@
             <p class="lineup-card__price">¥11,200<span class="lineup-card__unit">/セット</span></p>
             <div class="lineup-card__divider" aria-hidden="true"></div>
             <p class="lineup-card__desc">送料無料・お得。2週間分の夕食を確保。</p>
+
+            <table class="nutrition-table" aria-label="栄養成分(12食平均/1食あたり)">
+              <caption class="nutrition-table__caption">NUTRITION FACTS / 1食平均</caption>
+              <tbody>
+                <tr><th scope="row">エネルギー</th><td><span class="nutrition-table__num">410</span><span class="nutrition-table__unit">kcal</span></td></tr>
+                <tr><th scope="row">タンパク質</th><td><span class="nutrition-table__num">33</span><span class="nutrition-table__unit">g</span></td></tr>
+                <tr><th scope="row">糖質</th><td><span class="nutrition-table__num">27</span><span class="nutrition-table__unit">g</span></td></tr>
+                <tr><th scope="row">脂質</th><td><span class="nutrition-table__num">13</span><span class="nutrition-table__unit">g</span></td></tr>
+                <tr><th scope="row">食塩相当量</th><td><span class="nutrition-table__num">1.7</span><span class="nutrition-table__unit">g</span></td></tr>
+              </tbody>
+            </table>
+
             <a class="lineup-card__cta" href="#">購入する <span aria-hidden="true">→</span></a>
           </article>
 
@@ -160,6 +235,18 @@
             <p class="lineup-card__price">5%OFF<span class="lineup-card__unit">/月額会員</span></p>
             <div class="lineup-card__divider" aria-hidden="true"></div>
             <p class="lineup-card__desc">月額会員限定特典。継続利用で最もお得。</p>
+
+            <table class="nutrition-table" aria-label="栄養成分(月額サブスク・1食あたり)">
+              <caption class="nutrition-table__caption">NUTRITION FACTS / 1食平均</caption>
+              <tbody>
+                <tr><th scope="row">エネルギー</th><td><span class="nutrition-table__num">400</span><span class="nutrition-table__unit">kcal</span></td></tr>
+                <tr><th scope="row">タンパク質</th><td><span class="nutrition-table__num">34</span><span class="nutrition-table__unit">g</span></td></tr>
+                <tr><th scope="row">糖質</th><td><span class="nutrition-table__num">25</span><span class="nutrition-table__unit">g</span></td></tr>
+                <tr><th scope="row">脂質</th><td><span class="nutrition-table__num">12</span><span class="nutrition-table__unit">g</span></td></tr>
+                <tr><th scope="row">食塩相当量</th><td><span class="nutrition-table__num">1.5</span><span class="nutrition-table__unit">g</span></td></tr>
+              </tbody>
+            </table>
+
             <a class="lineup-card__cta" href="#">申し込む <span aria-hidden="true">→</span></a>
           </article>
 

@@ -761,3 +761,250 @@
     gap: 0.5rem 1rem;
   }
 }
+
+/* =========================================================================
+   BY THE NUMBERS Section(数字で見る ALPS LAB / Sprint 2 P6)
+   ========================================================================= */
+.numbers {
+  background: var(--color-bg-primary);
+  border-top: 1px solid rgba(200, 169, 97, 0.15);
+}
+.numbers__lead {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: var(--space-md) 0 var(--space-2xl);
+}
+.numbers__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+.numbers__item {
+  text-align: center;
+  padding: var(--space-lg) var(--space-md);
+  border-left: 1px solid rgba(200, 169, 97, 0.2);
+  border-right: 1px solid rgba(200, 169, 97, 0.2);
+  position: relative;
+}
+.numbers__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 1px;
+  background: var(--color-accent-gold);
+}
+.numbers__num {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 5.5rem;
+  line-height: 1;
+  letter-spacing: var(--ls-wide);
+  color: var(--color-accent-gold);
+  font-feature-settings: "tnum";
+}
+.numbers__unit {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: var(--ls-wide);
+  color: var(--color-accent-gold);
+  margin-left: 0.25rem;
+  vertical-align: top;
+  margin-top: 0.5rem;
+}
+.numbers__label {
+  font-family: var(--font-en);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-text-primary);
+  margin: var(--space-md) 0 0 0;
+  line-height: 1.5;
+}
+.numbers__label-jp {
+  font-family: var(--font-jp);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  text-transform: none;
+}
+.numbers__footnote {
+  font-family: var(--font-jp);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-loose);
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(200, 169, 97, 0.1);
+}
+
+/* =========================================================================
+   FEATURED IN Section(メディア掲載 / Sprint 2 P5)
+   ========================================================================= */
+.media-features {
+  background: var(--color-bg-secondary);
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+}
+.media-features__lead {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: var(--space-md) 0 var(--space-xl);
+}
+.media-features__logos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-md);
+  align-items: center;
+  justify-content: center;
+}
+.media-features__logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: var(--ls-wide);
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--space-md) var(--space-sm);
+  border: 1px solid rgba(200, 169, 97, 0.15);
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: opacity 200ms, color 200ms, border-color 200ms;
+}
+.media-features__logo:hover {
+  opacity: 1;
+  color: var(--color-accent-gold);
+  border-color: rgba(200, 169, 97, 0.4);
+}
+
+/* =========================================================================
+   GETTING STARTED Section(親しみゾーン / Sprint 2 P11)
+   ========================================================================= */
+.getting-started--soft {
+  background: var(--color-bg-soft);
+  color: var(--color-text-soft);
+}
+.section__chapter--soft {
+  color: var(--color-text-soft) !important;
+}
+.section__chapter--soft .section__chapter-jp {
+  color: rgba(26, 26, 26, 0.65);
+}
+.getting-started__inner {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+.getting-started__copy {
+  color: var(--color-text-soft);
+}
+.getting-started__lead {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  margin: var(--space-md) 0 var(--space-xl);
+  color: var(--color-text-soft);
+}
+.getting-started__lead strong {
+  color: var(--color-accent-red);
+  font-weight: var(--fw-bold);
+}
+.getting-started__steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-xl) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.getting-started__step {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: var(--space-md);
+  align-items: start;
+  padding: var(--space-md) 0;
+  border-bottom: 1px dashed rgba(26, 26, 26, 0.15);
+}
+.getting-started__step:last-child {
+  border-bottom: none;
+}
+.getting-started__step-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  line-height: 1;
+  letter-spacing: var(--ls-wide);
+  color: var(--color-accent-gold-dim);
+}
+.getting-started__step-title {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  margin: 0 0 var(--space-xs) 0;
+  color: var(--color-text-soft);
+}
+.getting-started__step-text {
+  font-family: var(--font-jp);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-loose);
+  color: rgba(26, 26, 26, 0.7);
+  margin: 0;
+}
+.getting-started__media img {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(26, 26, 26, 0.1);
+  filter: contrast(1.05);
+}
+
+/* =========================================================================
+   Sprint 2 Responsive
+   ========================================================================= */
+@media (max-width: 1024px) {
+  .numbers__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .media-features__logos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .getting-started__inner {
+    grid-template-columns: 1fr;
+  }
+  .numbers__num {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .numbers__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  .numbers__item {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid rgba(200, 169, 97, 0.2);
+    padding: var(--space-lg) 0;
+  }
+  .numbers__item:first-child {
+    border-top: none;
+  }
+  .media-features__logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+  .media-features__logo {
+    font-size: 1rem;
+  }
+}

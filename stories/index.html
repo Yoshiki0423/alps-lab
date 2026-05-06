@@ -39,7 +39,35 @@
       <nav class="nav" role="navigation" aria-label="メインナビゲーション">
         <ul class="nav__list">
           <li><a class="nav__link" href="/about/">About</a></li>
-          <li><a class="nav__link" href="/services/">Services</a></li>
+          <li class="nav__item nav__item--has-dropdown">
+          <a class="nav__link" href="/services/">Services <span class="nav__caret" aria-hidden="true">▾</span></a>
+          <div class="megamenu" role="menu" aria-label="サービス一覧">
+            <a class="megamenu__item" href="/services/gym/" role="menuitem">
+              <span class="megamenu__num">01</span>
+              <span class="megamenu__title">GYM</span>
+              <span class="megamenu__desc">24時間ジム × パーソナル</span>
+            </a>
+            <a class="megamenu__item" href="/services/nutrition/" role="menuitem">
+              <span class="megamenu__num">02</span>
+              <span class="megamenu__title">NUTRITION</span>
+              <span class="megamenu__desc">管理栄養士カウンセリング</span>
+            </a>
+            <a class="megamenu__item" href="/services/foods/" role="menuitem">
+              <span class="megamenu__num">03</span>
+              <span class="megamenu__title">FOODS</span>
+              <span class="megamenu__desc">冷凍宅配ミール</span>
+            </a>
+            <a class="megamenu__item" href="/services/supplements/" role="menuitem">
+              <span class="megamenu__num">04</span>
+              <span class="megamenu__title">SUPPLEMENTS</span>
+              <span class="megamenu__desc">プロテイン・サプリ</span>
+            </a>
+            <a class="megamenu__item megamenu__item--all" href="/services/" role="menuitem">
+              <span class="megamenu__title">SERVICES 一覧</span>
+              <span class="megamenu__desc">全事業を見る →</span>
+            </a>
+          </div>
+        </li>
           <li><a class="nav__link" href="/stores/">Stores</a></li>
           <li><a class="nav__link is-current" href="/stories/" aria-current="page">Stories</a></li>
           <li><a class="nav__link" href="/recruit/">Recruit</a></li>
@@ -64,6 +92,15 @@
   </nav>
 
   <main id="main">
+
+    <nav class="breadcrumb" aria-label="パンくず">
+      <div class="breadcrumb__inner">
+          <a class="breadcrumb__link" href="/">TOP</a>
+          <span class="breadcrumb__sep" aria-hidden="true">/</span>
+          <span class="breadcrumb__current" aria-current="page">STORIES</span>
+      </div>
+    </nav>
+
 
     <!-- Hero (50vh, 親しみゾーン: soft 背景) -->
     <section class="stories-hero" aria-labelledby="hero-title">
@@ -136,6 +173,162 @@
                   夜勤明けでもいつでも行けるのが本当に助かります。月8,800円で施設のクオリティはここまで?と最初驚きました。
                 </p>
                 <span class="story-card__date">2026.04.05</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 4 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/trainers/team-04.jpg" alt="STANDARD会員 高橋亮太さん" width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">高橋 亮太さん(42歳)/ STANDARD会員</h2>
+                <p class="story-card__excerpt">健康診断で要再検査を3年連続。月2回パーソナルで内臓脂肪が-4.8%、血液検査も全項目正常域に戻りました。トレーナーが医師の指示書を理解してくれるので安心です。</p>
+                <span class="story-card__date">2026.03.28</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 5 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/trainers/team-05.jpg" alt="PREMIUM会員 山口響子さん" width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">山口 響子さん(48歳)/ PREMIUM会員</h2>
+                <p class="story-card__excerpt">更年期に差し掛かり、体重よりも疲労感が課題でした。栄養指導と組み合わせた半年で、毎朝の倦怠感がほぼゼロに。「数字より体感」を大切にしてくれる姿勢が良いです。</p>
+                <span class="story-card__date">2026.03.20</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 6 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/trainers/team-06.jpg" alt="LIGHT会員 武田悠人さん" width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">武田 悠人さん(26歳)/ LIGHT会員</h2>
+                <p class="story-card__excerpt">大学の運動部以来、5年ぶりの本格再開。LIGHTで月8,800円なら無理なく続けられます。プロテインの会員割引もあって、結果的にコンビニ通いより安いです。</p>
+                <span class="story-card__date">2026.03.12</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 7 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/trainers/sasaki-yuka.jpg" alt="STANDARD会員 加藤詩織さん" width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">加藤 詩織さん(34歳)/ STANDARD会員</h2>
+                <p class="story-card__excerpt">産後7ヶ月で入会。女性専用エリアと託児スペースがあるので、子供を預けて週2で通えています。トレーナーが産後ケアの知識をちゃんと持っていて驚きました。</p>
+                <span class="story-card__date">2026.03.05</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 8 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/trainers/yamada-takumi.jpg" alt="PREMIUM会員 吉村健介さん" width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">吉村 健介さん(51歳)/ PREMIUM会員</h2>
+                <p class="story-card__excerpt">経営者仲間に勧められて入会。FOODSの冷凍ミールも併用して食事の悩みがゼロに。1年で体脂肪率-9%、ベンチプレスは10kg増。「投資」として見ています。</p>
+                <span class="story-card__date">2026.02.26</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 9 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/trainers/nakamura-kensuke.jpg" alt="LIGHT会員 西原翔太さん" width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">西原 翔太さん(31歳)/ LIGHT会員</h2>
+                <p class="story-card__excerpt">深夜帯にしか通えないIT職ですが、24時間営業+SOSボタンの安心感がある。マシンも最新で、フォーム動画とAIフィードバックが標準で付いてくるのが他にないと思います。</p>
+                <span class="story-card__date">2026.02.18</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 10 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/services/nutrition-detail-02.jpg" alt="STANDARD会員 永井美由紀さん" width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">永井 美由紀さん(56歳)/ STANDARD会員</h2>
+                <p class="story-card__excerpt">膝の手術後のリハビリ目的で入会。整形外科医の運動処方箋をトレーナーに見せたら、すぐに対応プランを組んでくれました。半年で階段の上り下りが苦じゃなくなりました。</p>
+                <span class="story-card__date">2026.02.10</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 11 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/services/foods-lineup-02.jpg" alt="PREMIUM会員 中川優一さん" width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">中川 優一さん(39歳)/ PREMIUM会員</h2>
+                <p class="story-card__excerpt">糖尿病予備軍の指摘から3年で、HbA1c が 6.2 → 5.4 に改善。担当の高橋管理栄養士が、外食ばかりの生活でも実践できる戦略を一緒に作ってくれます。</p>
+                <span class="story-card__date">2026.02.02</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 12 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/services/foods-lineup-03.jpg" alt="LIGHT会員 大島彩花さん" width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">大島 彩花さん(28歳)/ LIGHT会員</h2>
+                <p class="story-card__excerpt">「ストイック系=怖い」と思っていましたが、実際は無理に勧誘されない。Stories で先輩会員のリアルな話を読めるのも嬉しいです。長く続けられそう。</p>
+                <span class="story-card__date">2026.01.25</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 13 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/services/nutrition-detail-03.jpg" alt="STANDARD会員 川島真也さん" width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">川島 真也さん(45歳)/ STANDARD会員</h2>
+                <p class="story-card__excerpt">転勤で松本→長野→軽井沢と3店舗を巡りましたが、どこも品質が同じで安心。会員データ・トレーニング履歴がそのまま引き継がれます。</p>
+                <span class="story-card__date">2026.01.18</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 14 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/services/foods-lineup-04.jpg" alt="PREMIUM会員 森田理沙さん" width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">森田 理沙さん(43歳)/ PREMIUM会員</h2>
+                <p class="story-card__excerpt">外資系勤務で出張続きでしたが、冷凍ミールで食事の波が消え、トレーニング+栄養の両軸でホルモンバランスも整ってきました。SUPPLEMENTSの第三者検査が公開されているのも信頼できます。</p>
+                <span class="story-card__date">2026.01.10</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 15 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/services/foods-process-01.jpg" alt="LIGHT会員 藤井亮さん" width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">藤井 亮さん(33歳)/ LIGHT会員</h2>
+                <p class="story-card__excerpt">運動経験ゼロから3ヶ月。最初のオリエンテーションで丁寧に教えてもらえたので、自己流で挫折することなく続けられています。FAQ が充実してて、初心者の不安が事前に潰されているのが地味に良かったです。</p>
+                <span class="story-card__date">2026.01.02</span>
               </div>
             </a>
           </article>

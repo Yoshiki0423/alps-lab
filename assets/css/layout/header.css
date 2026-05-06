@@ -191,3 +191,121 @@
     display: flex;
   }
 }
+
+/* =========================================================================
+   Megamenu (Sprint 2 P7)
+   Services のドロップダウンメニュー
+   ========================================================================= */
+.nav__item--has-dropdown {
+  position: relative;
+}
+.nav__caret {
+  display: inline-block;
+  font-size: 0.7em;
+  margin-left: 0.25em;
+  color: var(--color-accent-gold);
+  transition: transform 200ms ease-out;
+}
+.nav__item--has-dropdown:hover .nav__caret,
+.nav__item--has-dropdown:focus-within .nav__caret {
+  transform: rotate(180deg);
+}
+
+.megamenu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: var(--color-bg-primary);
+  border: 1px solid rgba(200, 169, 97, 0.25);
+  padding: var(--space-md);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  width: 640px;
+  background-color: rgba(200, 169, 97, 0.15); /* gap line color */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 200ms ease-out, transform 200ms ease-out, visibility 0s linear 200ms;
+  z-index: 1000;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+.nav__item--has-dropdown:hover .megamenu,
+.nav__item--has-dropdown:focus-within .megamenu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+  transition: opacity 200ms ease-out, transform 200ms ease-out, visibility 0s linear 0s;
+}
+.megamenu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  /* invisible bridge for hover */
+}
+.megamenu__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: var(--space-md);
+  background: var(--color-bg-primary);
+  text-decoration: none;
+  color: var(--color-text-primary);
+  transition: background 180ms;
+  position: relative;
+}
+.megamenu__item:hover,
+.megamenu__item:focus-visible {
+  background: var(--color-bg-secondary);
+}
+.megamenu__num {
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold);
+}
+.megamenu__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-primary);
+  line-height: 1.1;
+}
+.megamenu__desc {
+  font-family: var(--font-jp);
+  font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+.megamenu__item--all {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-bg-secondary);
+  border-top: 1px solid rgba(200, 169, 97, 0.2);
+}
+.megamenu__item--all:hover {
+  background: var(--color-bg-tertiary);
+}
+.megamenu__item--all .megamenu__title {
+  font-size: var(--fs-base);
+}
+.megamenu__item--all .megamenu__desc {
+  color: var(--color-accent-gold);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+}
+
+/* モバイルではドロップダウン無効化(モバイルメニューでカバー) */
+@media (max-width: 1024px) {
+  .megamenu,
+  .nav__caret {
+    display: none !important;
+  }
+}
