@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ALPS LAB の体験予約。60分の無料カウンセリング(15分)+ 体験トレーニング(45分)。松本本店・長野店・軽井沢店の3拠点で受付中。">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <!-- OGP -->
+  <meta property="og:title" content="体験予約 | ALPS LAB">
+  <meta property="og:description" content="60分の無料体験で、24時間ジム×パーソナルを体感。松本本店・長野店・軽井沢店で受付中。">
+  <meta property="og:image" content="/assets/images/hero/hero-nature.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+
+  <title>体験予約 | ALPS LAB</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components/button.css">
+  <link rel="stylesheet" href="/assets/css/layout/header.css">
+  <link rel="stylesheet" href="/assets/css/layout/footer.css">
+  <link rel="stylesheet" href="/assets/css/pages/contact.css">
+  <link rel="stylesheet" href="/assets/css/pages/trial.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body class="no-js" data-page="trial">
+
+  <a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a class="header__logo" href="/" aria-label="ALPS LAB トップページ">ALPS LAB</a>
+      <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="/about/">About</a></li>
+          <li><a class="nav__link" href="/services/">Services</a></li>
+          <li><a class="nav__link" href="/stores/">Stores</a></li>
+          <li><a class="nav__link" href="/stories/">Stories</a></li>
+          <li><a class="nav__link" href="/recruit/">Recruit</a></li>
+        </ul>
+        <a class="cta-btn" href="/trial/" aria-current="page">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+        <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="モバイルナビゲーション" aria-hidden="true">
+    <ul class="mobile-menu__list">
+      <li><a class="mobile-menu__link" href="/about/">About</a></li>
+      <li><a class="mobile-menu__link" href="/services/">Services</a></li>
+      <li><a class="mobile-menu__link" href="/stores/">Stores</a></li>
+      <li><a class="mobile-menu__link" href="/stories/">Stories</a></li>
+      <li><a class="mobile-menu__link" href="/recruit/">Recruit</a></li>
+    </ul>
+    <a class="cta-btn cta-btn--lg" href="/trial/" aria-current="page">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="trial-hero" aria-labelledby="hero-title">
+      <div class="trial-hero__inner">
+        <span class="trial-hero__chapter" aria-hidden="true">— TRIAL / N°00 —</span>
+        <h1 class="trial-hero__title" id="hero-title">FREE TRIAL</h1>
+        <p class="trial-hero__sub">体験予約 — 60分・無料</p>
+        <p class="trial-hero__lead">
+          <span class="nowrap">まずは「研究員」と一緒に</span><span class="nowrap">設計してみませんか。</span><br>
+          <span class="nowrap">カウンセリング15分+トレーニング体験45分。</span><span class="nowrap">入会の強制は一切ありません。</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Flow: 当日の流れ(3ステップ) -->
+    <section class="section trial-flow" aria-labelledby="flow-title">
+      <div class="section__inner">
+        <header class="section__chapter-block">
+          <span class="section__chapter">— FLOW / N°01 —</span>
+          <span class="section__chapter-jp">当日の流れ</span>
+        </header>
+        <h2 id="flow-title" class="section__title">60分で<span class="nowrap">「自分に合うか」</span>が分かる。</h2>
+
+        <ol class="trial-flow__steps">
+          <li class="trial-flow__step">
+            <span class="trial-flow__num">01</span>
+            <span class="trial-flow__time">15 min.</span>
+            <h3 class="trial-flow__step-title">CONSULTING<span class="trial-flow__step-jp">カウンセリング</span></h3>
+            <p class="trial-flow__step-text">
+              現在の運動・食習慣・健康診断結果・目標をヒアリング。トレーナーと管理栄養士が協働で「あなたに必要な30年分のロードマップ」を粗描きします。
+            </p>
+          </li>
+          <li class="trial-flow__step">
+            <span class="trial-flow__num">02</span>
+            <span class="trial-flow__time">45 min.</span>
+            <h3 class="trial-flow__step-title">TRAINING<span class="trial-flow__step-jp">体験トレーニング</span></h3>
+            <p class="trial-flow__step-text">
+              実際にジムで動きます。フリーウェイト・マシン・ストレッチエリアの使い方をデモ。最後にパーソナルセッションを5分ほど体験して「軌道修正の価値」を実感していただきます。
+            </p>
+          </li>
+          <li class="trial-flow__step">
+            <span class="trial-flow__num">03</span>
+            <span class="trial-flow__time">— min.</span>
+            <h3 class="trial-flow__step-title">PROPOSAL<span class="trial-flow__step-jp">プラン提案・自由解散</span></h3>
+            <p class="trial-flow__step-text">
+              あなたに合ったプラン(LIGHT / STANDARD / PREMIUM)を提案。即決の必要はありません。資料をお渡しして、自由解散です。
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Form -->
+    <section class="section trial-form-section" aria-labelledby="form-title">
+      <div class="section__inner trial-form-section__inner">
+        <header class="section__chapter-block">
+          <span class="section__chapter">— BOOKING / N°02 —</span>
+          <span class="section__chapter-jp">予約フォーム</span>
+        </header>
+        <h2 id="form-title" class="section__title">下記フォームより<span class="nowrap">お申し込みください。</span></h2>
+        <p class="trial-form-section__lead">所要時間 約2分・5項目のみ。<strong>24時間以内</strong>に担当者よりご連絡いたします。</p>
+
+        <form class="contact-form trial-form" id="trialForm" novalidate>
+
+          <!-- 氏名 -->
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="name">
+              お名前 <span class="contact-form__required" aria-hidden="true">*</span>
+              <span class="visually-hidden">必須</span>
+            </label>
+            <input class="contact-form__input" type="text" id="name" name="name" required autocomplete="name" placeholder="山田 太郎">
+          </div>
+
+          <!-- 連絡先 -->
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="email">
+              メールアドレス <span class="contact-form__required" aria-hidden="true">*</span>
+              <span class="visually-hidden">必須</span>
+            </label>
+            <input class="contact-form__input" type="email" id="email" name="email" required autocomplete="email" placeholder="example@email.com">
+          </div>
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="tel">
+              電話番号(任意)
+            </label>
+            <input class="contact-form__input" type="tel" id="tel" name="tel" autocomplete="tel" placeholder="090-0000-0000">
+          </div>
+
+          <!-- 希望店舗 -->
+          <fieldset class="contact-form__group">
+            <legend class="contact-form__legend">
+              希望店舗 <span class="contact-form__required" aria-hidden="true">*</span>
+              <span class="visually-hidden">必須</span>
+            </legend>
+            <div class="contact-form__radio-group">
+              <label class="contact-form__radio">
+                <input type="radio" name="store" value="matsumoto" required checked>
+                <span class="contact-form__radio-mark" aria-hidden="true"></span>
+                <span>松本本店</span>
+              </label>
+              <label class="contact-form__radio">
+                <input type="radio" name="store" value="nagano" required>
+                <span class="contact-form__radio-mark" aria-hidden="true"></span>
+                <span>長野店</span>
+              </label>
+              <label class="contact-form__radio">
+                <input type="radio" name="store" value="karuizawa" required>
+                <span class="contact-form__radio-mark" aria-hidden="true"></span>
+                <span>軽井沢店</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- 希望日時 2候補 -->
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="date1">
+              希望日時 第1希望 <span class="contact-form__required" aria-hidden="true">*</span>
+              <span class="visually-hidden">必須</span>
+            </label>
+            <input class="contact-form__input" type="datetime-local" id="date1" name="date1" required>
+          </div>
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="date2">
+              希望日時 第2希望 <span class="contact-form__required" aria-hidden="true">*</span>
+              <span class="visually-hidden">必須</span>
+            </label>
+            <input class="contact-form__input" type="datetime-local" id="date2" name="date2" required>
+          </div>
+
+          <!-- 希望プラン -->
+          <fieldset class="contact-form__group">
+            <legend class="contact-form__legend">
+              気になるプラン <span class="contact-form__required" aria-hidden="true">*</span>
+              <span class="visually-hidden">必須</span>
+            </legend>
+            <div class="contact-form__radio-group">
+              <label class="contact-form__radio">
+                <input type="radio" name="plan" value="undecided" required checked>
+                <span class="contact-form__radio-mark" aria-hidden="true"></span>
+                <span>迷っている / 相談したい</span>
+              </label>
+              <label class="contact-form__radio">
+                <input type="radio" name="plan" value="light" required>
+                <span class="contact-form__radio-mark" aria-hidden="true"></span>
+                <span>LIGHT(¥8,800/月)</span>
+              </label>
+              <label class="contact-form__radio">
+                <input type="radio" name="plan" value="standard" required>
+                <span class="contact-form__radio-mark" aria-hidden="true"></span>
+                <span>STANDARD(¥14,800/月)</span>
+              </label>
+              <label class="contact-form__radio">
+                <input type="radio" name="plan" value="premium" required>
+                <span class="contact-form__radio-mark" aria-hidden="true"></span>
+                <span>PREMIUM(¥22,800/月)</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- 補足チェックボックス -->
+          <fieldset class="contact-form__group">
+            <legend class="contact-form__legend">
+              ご要望(該当する項目があればチェック・任意)
+            </legend>
+            <div class="contact-form__check-group">
+              <label class="contact-form__check">
+                <input type="checkbox" name="note_beginner" value="1">
+                <span class="contact-form__check-mark" aria-hidden="true"></span>
+                <span>運動初心者です(基礎から教えてほしい)</span>
+              </label>
+              <label class="contact-form__check">
+                <input type="checkbox" name="note_women_only" value="1">
+                <span class="contact-form__check-mark" aria-hidden="true"></span>
+                <span>女性専用エリアの利用を希望</span>
+              </label>
+              <label class="contact-form__check">
+                <input type="checkbox" name="note_health" value="1">
+                <span class="contact-form__check-mark" aria-hidden="true"></span>
+                <span>持病・既往歴があります(当日詳しくお伝えします)</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- プライバシー同意 -->
+          <div class="contact-form__group">
+            <label class="contact-form__check">
+              <input type="checkbox" name="privacy" required>
+              <span class="contact-form__check-mark" aria-hidden="true"></span>
+              <span><a href="/privacy/" class="contact-form__privacy-link">プライバシーポリシー</a>に同意する <span class="contact-form__required" aria-hidden="true">*</span></span>
+            </label>
+          </div>
+
+          <!-- 送信 -->
+          <button type="submit" class="cta-btn cta-btn--lg trial-form__submit">
+            体験予約を申し込む
+            <span class="cta-btn__arrow" aria-hidden="true">→</span>
+          </button>
+
+          <p class="trial-form__note">
+            送信後、24時間以内に担当者よりメールまたはお電話で日時確定のご連絡をいたします。<br>
+            ご不明点は <a href="/contact/" class="trial-form__contact-link">お問い合わせフォーム</a> もしくはお電話(各店舗)へどうぞ。
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Reassurance -->
+    <section class="section trial-reassurance" aria-labelledby="reassurance-title">
+      <div class="section__inner">
+        <header class="section__chapter-block">
+          <span class="section__chapter">— PROMISE / N°03 —</span>
+          <span class="section__chapter-jp">体験当日の3つの約束</span>
+        </header>
+        <h2 id="reassurance-title" class="visually-hidden">体験当日の3つの約束</h2>
+
+        <ul class="trial-reassurance__list">
+          <li class="trial-reassurance__item">
+            <span class="trial-reassurance__icon" aria-hidden="true">01</span>
+            <h3 class="trial-reassurance__title">入会の強制は<span class="nowrap">一切ありません</span></h3>
+            <p class="trial-reassurance__text">体験後は「持ち帰って検討」が標準です。営業担当からの追加連絡も希望者のみ。</p>
+          </li>
+          <li class="trial-reassurance__item">
+            <span class="trial-reassurance__icon" aria-hidden="true">02</span>
+            <h3 class="trial-reassurance__title">手ぶらでOK<span class="nowrap">(レンタル無料)</span></h3>
+            <p class="trial-reassurance__text">ウェア・シューズ・タオル・水・シャワーセットまで全て無料貸し出し。当日いらないのは「動く意志」だけです。</p>
+          </li>
+          <li class="trial-reassurance__item">
+            <span class="trial-reassurance__icon" aria-hidden="true">03</span>
+            <h3 class="trial-reassurance__title">キャンセル料は<span class="nowrap">前日まで無料</span></h3>
+            <p class="trial-reassurance__text">予定変更はマイページ or 電話で前日 23:59 まで無料。当日キャンセルもペナルティなし(連絡だけお願いします)。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">ALPS LAB</span>
+        <p class="footer__tagline">北アルプスの麓から、本物の健康を研究する。</p>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <ul>
+            <li><a href="/services/gym/">GYM</a></li>
+            <li><a href="/services/nutrition/">NUTRITION</a></li>
+            <li><a href="/services/foods/">FOODS</a></li>
+            <li><a href="/services/supplements/">SUPPLEMENTS</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Stores</h4>
+          <ul>
+            <li><a href="/stores/#matsumoto">松本本店</a></li>
+            <li><a href="/stores/#nagano">長野店</a></li>
+            <li><a href="/stores/#karuizawa">軽井沢店</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Company</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/company/">Company</a></li>
+            <li><a href="/recruit/">Recruit</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Social</h4>
+          <ul>
+            <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="#" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 ALPS LAB Inc.</span>
+        <span>LAT. 36.2°N / LON. 137.9°E</span>
+        <span>Privacy / Terms</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/animations.js" defer></script>
+  <script src="/assets/js/components/trial-form.js" defer></script>
+</body>
+</html>

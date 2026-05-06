@@ -1,0 +1,393 @@
+/* =========================================================================
+   TRIAL / TRIAL THANKS ページ専用スタイル
+   contact.css を継承 + trial 固有スタイル
+   ========================================================================= */
+
+/* =========================================================================
+   Trial Hero (50vh)
+   ========================================================================= */
+.trial-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-3xl) var(--container-padding-desktop) var(--space-xl);
+  background: var(--color-bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+.trial-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(200, 169, 97, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.trial-hero__inner {
+  max-width: var(--max-width-narrow);
+  position: relative;
+  z-index: 1;
+}
+.trial-hero__chapter {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-md);
+}
+.trial-hero__title {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+.trial-hero__sub {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-md);
+}
+.trial-hero__lead {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+}
+
+/* =========================================================================
+   Trial Flow (3-step)
+   ========================================================================= */
+.trial-flow {
+  background: var(--color-bg-secondary);
+}
+.trial-flow__steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  list-style: none;
+  padding: 0;
+}
+.trial-flow__step {
+  position: relative;
+  padding: var(--space-lg);
+  background: var(--color-bg-primary);
+  border: 1px solid rgba(200, 169, 97, 0.2);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.trial-flow__step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: var(--color-accent-gold);
+  opacity: 0.5;
+  z-index: 1;
+}
+.trial-flow__num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-accent-gold);
+  letter-spacing: var(--ls-wide);
+}
+.trial-flow__time {
+  font-family: var(--font-en);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+.trial-flow__step-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-primary);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.trial-flow__step-jp {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+  letter-spacing: var(--ls-normal);
+  color: var(--color-text-secondary);
+}
+.trial-flow__step-text {
+  font-family: var(--font-jp);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* =========================================================================
+   Trial Form Section
+   ========================================================================= */
+.trial-form-section {
+  background: var(--color-bg-primary);
+}
+.trial-form-section__inner {
+  max-width: var(--max-width-narrow);
+}
+.trial-form-section__lead {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+  padding: var(--space-md);
+  background: var(--color-bg-secondary);
+  border-left: 3px solid var(--color-accent-gold);
+}
+.trial-form-section__lead strong {
+  color: var(--color-accent-gold);
+  font-weight: var(--fw-bold);
+}
+.trial-form__submit {
+  align-self: flex-start;
+  margin-top: var(--space-md);
+}
+.trial-form__note {
+  margin-top: var(--space-md);
+  font-family: var(--font-jp);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-loose);
+  color: var(--color-text-muted);
+}
+.trial-form__contact-link {
+  color: var(--color-accent-gold);
+  text-decoration: underline;
+}
+.trial-form__contact-link:hover {
+  text-decoration: none;
+}
+
+/* チェックボックスグループ */
+.contact-form__check-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.contact-form__check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  cursor: pointer;
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);
+  line-height: var(--lh-snug);
+  color: var(--color-text-secondary);
+}
+.contact-form__check input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.contact-form__check-mark {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--color-accent-gold);
+  background: transparent;
+  position: relative;
+  margin-top: 0.25rem;
+  transition: background 0.2s ease;
+}
+.contact-form__check input[type="checkbox"]:checked + .contact-form__check-mark::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-accent-gold);
+  font-size: 14px;
+  line-height: 1;
+}
+.contact-form__check input[type="checkbox"]:focus-visible + .contact-form__check-mark {
+  outline: 2px dashed var(--color-accent-gold);
+  outline-offset: 2px;
+}
+
+/* =========================================================================
+   Trial Reassurance(3つの約束)
+   ========================================================================= */
+.trial-reassurance {
+  background: var(--color-bg-secondary);
+}
+.trial-reassurance__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  list-style: none;
+  padding: 0;
+}
+.trial-reassurance__item {
+  padding: var(--space-lg);
+  background: var(--color-bg-primary);
+  border: 1px solid rgba(200, 169, 97, 0.15);
+  text-align: left;
+}
+.trial-reassurance__icon {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-accent-gold);
+  letter-spacing: var(--ls-wide);
+  margin-bottom: var(--space-sm);
+}
+.trial-reassurance__title {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  line-height: var(--lh-snug);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-sm) 0;
+}
+.trial-reassurance__text {
+  font-family: var(--font-jp);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+/* =========================================================================
+   Thanks Page
+   ========================================================================= */
+.trial-thanks {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl) var(--container-padding-desktop);
+  background: var(--color-bg-primary);
+  text-align: center;
+}
+.trial-thanks__inner {
+  max-width: var(--max-width-narrow);
+}
+.trial-thanks__chapter {
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold);
+  display: block;
+  margin-bottom: var(--space-md);
+}
+.trial-thanks__title {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+.trial-thanks__sub {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-lg);
+}
+.trial-thanks__lead {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+}
+.trial-thanks__notes {
+  text-align: left;
+  margin: var(--space-xl) 0;
+  padding: var(--space-lg);
+  background: var(--color-bg-secondary);
+  border-left: 3px solid var(--color-accent-gold);
+}
+.trial-thanks__notes-title {
+  font-family: var(--font-en);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-sm);
+}
+.trial-thanks__notes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+}
+.trial-thanks__notes li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: var(--space-xs);
+}
+.trial-thanks__notes li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent-gold);
+}
+.trial-thanks__back {
+  margin-top: var(--space-lg);
+}
+
+/* =========================================================================
+   レスポンシブ
+   ========================================================================= */
+@media (max-width: 1024px) {
+  .trial-flow__steps,
+  .trial-reassurance__list {
+    grid-template-columns: 1fr;
+  }
+  .trial-flow__step:not(:last-child)::after {
+    content: "↓";
+    right: 50%;
+    top: auto;
+    bottom: -1.4rem;
+    transform: translateX(50%);
+  }
+  .trial-hero__title {
+    font-size: 4.5rem;
+  }
+  .trial-thanks__title {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .trial-hero__title {
+    font-size: 3.5rem;
+  }
+  .trial-thanks__title {
+    font-size: 3rem;
+  }
+  .trial-flow__num {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .trial-hero__title {
+    font-size: 2.8rem;
+  }
+  .trial-thanks__title {
+    font-size: 2.5rem;
+  }
+}

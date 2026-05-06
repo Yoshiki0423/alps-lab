@@ -128,7 +128,7 @@
   transform: translate(-50%, -50%);
   z-index: calc(var(--z-content) + 1);
   text-align: center;
-  width: min(70%, 880px);
+  width: min(80%, 960px);
   padding: 0 var(--space-md);
 }
 .hero__separator {
@@ -166,7 +166,44 @@
   font-size: var(--fs-xl);
   line-height: var(--lh-snug);
   color: var(--color-text-primary);
-  margin: 0 0 var(--space-lg);
+  margin: 0 0 var(--space-md);
+}
+
+/* P3: ヒーロー1行サマリー(ゴールド 60% 透過の上下細罫線で囲む) */
+.hero__summary {
+  display: block;
+  margin: 0 auto var(--space-lg);
+  padding: 0.875rem var(--space-sm);
+  max-width: 720px;
+  border-top: 1px solid rgba(200, 169, 97, 0.6);
+  border-bottom: 1px solid rgba(200, 169, 97, 0.6);
+  font-family: var(--font-jp);
+  font-weight: var(--fw-regular);
+  font-size: 1rem;            /* 16px */
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.02em;
+}
+.hero__summary-line {
+  display: block;
+}
+.hero__summary-line--accent {
+  color: var(--color-accent-gold-light);
+  margin-top: 0.25rem;
+}
+@media (min-width: 1024px) {
+  .hero__summary {
+    font-size: 1.125rem;       /* 18px */
+  }
+}
+
+/* P3: プライマリ + セカンダリ CTA グループ */
+.hero__cta-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
+  align-items: center;
 }
 
 /* 底部インデックス */
@@ -681,7 +718,7 @@
     left: var(--container-padding-mobile);
   }
   .hero__center {
-    width: 90%;
+    width: min(92%, 600px);
   }
   .hero__coord,
   .hero__scroll {
@@ -694,6 +731,21 @@
   .hero__separator::before,
   .hero__separator::after {
     width: 32px;
+  }
+
+  /* P3 モバイル: ヒーローサマリー・CTA */
+  .hero__summary {
+    font-size: 0.9375rem;       /* 15px */
+    padding: 0.75rem 0.5rem;
+  }
+  .hero__cta-group {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .hero__cta-group .cta-btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .services__grid,

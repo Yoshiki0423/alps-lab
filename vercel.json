@@ -2,6 +2,9 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/services", "destination": "/services/gym" }
+    { "source": "/services", "destination": "/services/gym" },
+    { "source": "/contact", "has": [{ "type": "query", "key": "type", "value": "trial" }], "destination": "/trial", "permanent": true },
+    { "source": "/booking", "destination": "/trial", "permanent": true },
+    { "source": "/reservation", "destination": "/trial", "permanent": true }
   ]
 }
