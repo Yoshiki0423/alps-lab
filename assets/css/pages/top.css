@@ -817,6 +817,10 @@
   }
 
   /* Getting Started: モバイル時に画像を section 幅いっぱいに */
+  .getting-started {
+    /* グラデーション帯 80px + 視覚的余白 を確保 */
+    padding-bottom: calc(var(--space-2xl) + 80px);
+  }
   .getting-started__inner {
     grid-template-columns: 1fr !important;
     gap: var(--space-xl);
