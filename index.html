@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="長野発の健康研究ブランド ALPS LAB。24時間ジム×パーソナルのハイブリッド型ジムを中心に、栄養指導・冷凍宅配ミール・サプリで会員の健康をワンストップでサポート。">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <!-- OGP -->
+  <meta property="og:title" content="ALPS LAB | 北アルプスの麓から、本物の健康を研究する">
+  <meta property="og:description" content="長野発の健康研究ブランド ALPS LAB。24時間ジム×パーソナルのハイブリッド型ジム、栄養指導、冷凍宅配ミール、サプリでワンストップ健康サポート。">
+  <meta property="og:image" content="/assets/images/hero/hero-nature.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+
+  <title>ALPS LAB | 北アルプスの麓から、本物の健康を研究する</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components/button.css">
+  <link rel="stylesheet" href="/assets/css/layout/header.css">
+  <link rel="stylesheet" href="/assets/css/layout/footer.css">
+  <link rel="stylesheet" href="/assets/css/pages/top.css">
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body class="no-js" data-page="top">
+
+  <!-- Skip Link -->
+  <a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+
+  <!-- ===========================================================
+       Header (固定)
+       =========================================================== -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a class="header__logo" href="/" aria-label="ALPS LAB トップページ">ALPS LAB</a>
+      <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="/about/">About</a></li>
+          <li><a class="nav__link" href="/services/gym/">Services</a></li>
+          <li><a class="nav__link" href="/stores/">Stores</a></li>
+          <li><a class="nav__link" href="/stories/">Stories</a></li>
+          <li><a class="nav__link" href="/recruit/">Recruit</a></li>
+        </ul>
+        <a class="cta-btn" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+        <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- モバイルメニュー(ハンバーガー展開時に表示) -->
+  <nav id="mobile-menu" class="mobile-menu" aria-label="モバイルナビゲーション" aria-hidden="true">
+    <ul class="mobile-menu__list">
+      <li><a class="mobile-menu__link" href="/about/">About</a></li>
+      <li><a class="mobile-menu__link" href="/services/gym/">Services</a></li>
+      <li><a class="mobile-menu__link" href="/stores/">Stores</a></li>
+      <li><a class="mobile-menu__link" href="/stories/">Stories</a></li>
+      <li><a class="mobile-menu__link" href="/recruit/">Recruit</a></li>
+    </ul>
+    <a class="cta-btn cta-btn--lg" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ===========================================================
+         Section 1: Hero — Split Composition (NATURE × BODY)
+         =========================================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+
+      <!-- LEFT: I. NATURE -->
+      <div class="hero__pane hero__pane--nature">
+        <img class="hero__media"
+             src="/assets/images/hero/hero-nature.jpg"
+             alt="北アルプスの稜線。霧に包まれた静謐な山岳風景。"
+             width="1200" height="1080"
+             loading="eager"
+             fetchpriority="high">
+        <div class="hero__chapter hero__chapter--left">
+          <span class="hero__chapter-num">I. NATURE</span>
+          <span class="hero__chapter-jp">北アルプス山脈</span>
+        </div>
+        <div class="hero__coord" aria-hidden="true">
+          LAT. 36.2°N<br>
+          LON. 137.9°E<br>
+          NAGANO, JP
+        </div>
+      </div>
+
+      <!-- RIGHT: II. BODY -->
+      <!-- TODO: 動画素材調達後に下記 <img> を <video autoplay muted loop playsinline> に置き換え -->
+      <div class="hero__pane hero__pane--body">
+        <img class="hero__media"
+             src="/assets/images/hero/hero-body.jpg"
+             alt="トレーニング中のアスリート。ジムで身体を鍛える人物。"
+             width="1200" height="1080"
+             loading="eager">
+        <div class="hero__chapter hero__chapter--right">
+          <span class="hero__chapter-num">II. BODY</span>
+          <span class="hero__chapter-jp">本物の最終形</span>
+        </div>
+        <div class="hero__scroll" aria-hidden="true">SCROLL</div>
+      </div>
+
+      <!-- CENTER OVERLAY -->
+      <div class="hero__center">
+        <span class="hero__separator" aria-hidden="true">NATURE × BODY</span>
+        <h1 class="hero__title" id="hero-title">RESEARCH THE TRUTH OF HEALTH.</h1>
+        <p class="hero__subtitle">
+          <span class="nowrap">北アルプスの麓から、</span><span class="nowrap">本物の健康を研究する。</span>
+        </p>
+        <a class="cta-btn cta-btn--lg" href="/contact/?type=trial">
+          体験予約はこちら <span class="cta-btn__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <!-- BOTTOM INDEX -->
+      <ul class="hero__index" aria-hidden="true">
+        <li class="hero__index-item">01 GYM</li>
+        <li class="hero__index-item">02 NUTRITION</li>
+        <li class="hero__index-item">03 FOODS</li>
+        <li class="hero__index-item">04 SUPPLEMENTS</li>
+      </ul>
+    </section>
+
+    <!-- ===========================================================
+         Section 2: Mission
+         =========================================================== -->
+    <section class="section mission" aria-labelledby="mission-title">
+      <div class="section__inner">
+        <span class="mission__chapter section__chapter">
+          MISSION 01 <span class="section__chapter-jp">— 私たちの使命</span>
+        </span>
+        <h2 class="mission__title fade-up" id="mission-title">
+          <span class="nowrap">私たちは、</span><span class="nowrap"><em>3年で痩せるダイエット</em>を</span><span class="nowrap">売っているのではない。</span><br>
+          <span class="nowrap"><em>30年続く健康習慣</em>を、</span><span class="nowrap">研究している。</span>
+        </h2>
+        <p class="mission__sub fade-up">WE DON'T SELL DIETS. WE STUDY HABITS.</p>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Section 3: Services Overview
+         =========================================================== -->
+    <section class="section services" aria-labelledby="services-title">
+      <div class="section__inner">
+        <h2 id="services-title" class="section__chapter">
+          FOUR FIELDS <span class="section__chapter-jp">— 4つの研究領域</span>
+        </h2>
+        <div class="services__grid">
+
+          <a class="service-card fade-up" href="/services/gym/">
+            <img class="service-card__img"
+                 src="/assets/images/services/gym-facility-01.jpg"
+                 alt="ALPS LAB GYM のトレーニングフロア"
+                 width="800" height="450"
+                 loading="lazy">
+            <div class="service-card__body">
+              <div class="service-card__num">01</div>
+              <h3 class="service-card__title-en">GYM</h3>
+              <p class="service-card__title-jp">ジム</p>
+              <div class="service-card__divider" aria-hidden="true"></div>
+              <p class="service-card__copy">
+                <span class="nowrap">24時間×パーソナルの、</span><span class="nowrap">新しい形。</span>
+              </p>
+              <span class="service-card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a class="service-card fade-up" href="/services/nutrition/">
+            <img class="service-card__img"
+                 src="/assets/images/services/nutrition.jpg"
+                 alt="ALPS LAB NUTRITION の管理栄養士による食事指導"
+                 width="800" height="450"
+                 loading="lazy">
+            <div class="service-card__body">
+              <div class="service-card__num">02</div>
+              <h3 class="service-card__title-en">NUTRITION</h3>
+              <p class="service-card__title-jp">栄養</p>
+              <div class="service-card__divider" aria-hidden="true"></div>
+              <p class="service-card__copy">
+                <span class="nowrap">食べることは、</span><span class="nowrap">未来を選ぶこと。</span>
+              </p>
+              <span class="service-card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a class="service-card fade-up" href="/services/foods/">
+            <img class="service-card__img"
+                 src="/assets/images/services/foods.jpg"
+                 alt="ALPS LAB FOODS の冷凍宅配ミール"
+                 width="800" height="450"
+                 loading="lazy">
+            <div class="service-card__body">
+              <div class="service-card__num">03</div>
+              <h3 class="service-card__title-en">FOODS</h3>
+              <p class="service-card__title-jp">食事</p>
+              <div class="service-card__divider" aria-hidden="true"></div>
+              <p class="service-card__copy">
+                <span class="nowrap">忙しい日でも、</span><span class="nowrap">研究された食卓を。</span>
+              </p>
+              <span class="service-card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a class="service-card fade-up" href="/services/supplements/">
+            <img class="service-card__img"
+                 src="/assets/images/services/supplements.jpg"
+                 alt="ALPS LAB SUPPLEMENTS の研究に基づくサプリメント"
+                 width="800" height="450"
+                 loading="lazy">
+            <div class="service-card__body">
+              <div class="service-card__num">04</div>
+              <h3 class="service-card__title-en">SUPPLEMENTS</h3>
+              <p class="service-card__title-jp">補助</p>
+              <div class="service-card__divider" aria-hidden="true"></div>
+              <p class="service-card__copy">
+                <span class="nowrap">補うのではなく、</span><span class="nowrap">整える。</span>
+              </p>
+              <span class="service-card__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Section 4: Why ALPS LAB
+         =========================================================== -->
+    <section class="section why" aria-labelledby="why-title">
+      <div class="section__inner">
+        <h2 id="why-title" class="section__chapter">
+          WHY ALPS LAB <span class="section__chapter-jp">— 私たちが選ばれる理由</span>
+        </h2>
+        <div class="why__grid">
+
+          <article class="why-card fade-up">
+            <div class="why-card__num" aria-hidden="true">I.</div>
+            <h3 class="why-card__title">RESEARCH FIRST</h3>
+            <div class="why-card__progress" aria-hidden="true">01 / 03</div>
+            <div class="why-card__divider" aria-hidden="true"></div>
+            <p class="why-card__desc">流行ではなく、研究結果と実証に基づいた健康設計を提供する。</p>
+          </article>
+
+          <article class="why-card fade-up">
+            <div class="why-card__num" aria-hidden="true">II.</div>
+            <h3 class="why-card__title">LONG-TERM</h3>
+            <div class="why-card__progress" aria-hidden="true">02 / 03</div>
+            <div class="why-card__divider" aria-hidden="true"></div>
+            <p class="why-card__desc">3年で痩せるより、30年続けられる仕組みを。短期の結果より、続けられること。</p>
+          </article>
+
+          <article class="why-card fade-up">
+            <div class="why-card__num" aria-hidden="true">III.</div>
+            <h3 class="why-card__title">LOCAL &amp; AUTHENTIC</h3>
+            <div class="why-card__progress" aria-hidden="true">03 / 03</div>
+            <div class="why-card__divider" aria-hidden="true"></div>
+            <p class="why-card__desc">長野の自然・文化・知見を背景にした独自性。本物だけを、地方から。</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Section 5: Stories Pickup (親しみゾーン)
+         =========================================================== -->
+    <section class="section stories" aria-labelledby="stories-title">
+      <div class="section__inner">
+        <h2 id="stories-title" class="section__chapter">
+          STORIES <span class="section__chapter-jp">— ストーリーを読む</span>
+        </h2>
+        <div class="stories__grid">
+
+          <a class="story-card fade-up" href="/stories/">
+            <img class="story-card__img"
+                 src="/assets/images/stories/voice-member.jpg"
+                 alt="STANDARD 会員 田中健一さん"
+                 width="800" height="600"
+                 loading="lazy">
+            <div class="story-card__body">
+              <p class="story-card__cat">VOICE</p>
+              <h3 class="story-card__title">田中健一さん(38歳)/ STANDARD会員の声</h3>
+              <p class="story-card__excerpt">過去2回ジムを挫折しました。今回はパーソナルが月2回あるので、フォームの不安が解消されて自主トレが楽しくなりました。半年で体脂肪率8%減です。</p>
+              <span class="story-card__date">2026.04.15</span>
+            </div>
+          </a>
+
+          <a class="story-card fade-up" href="/stories/">
+            <img class="story-card__img"
+                 src="/assets/images/services/nutrition.jpg"
+                 alt="食事と体の関係を分析する"
+                 width="800" height="600"
+                 loading="lazy">
+            <div class="story-card__body">
+              <p class="story-card__cat">COLUMN</p>
+              <h3 class="story-card__title">食事と体の関係。長野の長寿県データから読み解く</h3>
+              <p class="story-card__excerpt">健康寿命日本トップクラスの長野県。その食卓に共通する3つの特徴を、研究員が分析しました。</p>
+              <span class="story-card__date">2026.03.28</span>
+            </div>
+          </a>
+
+          <a class="story-card fade-up" href="/stories/">
+            <img class="story-card__img"
+                 src="/assets/images/stores/karuizawa.jpg"
+                 alt="軽井沢店 オープン1周年"
+                 width="800" height="600"
+                 loading="lazy">
+            <div class="story-card__body">
+              <p class="story-card__cat">NEWS</p>
+              <h3 class="story-card__title">軽井沢店オープン1周年記念キャンペーン実施</h3>
+              <p class="story-card__excerpt">軽井沢店のオープンから1年。記念キャンペーンとして、入会金無料&初月50%OFFを実施いたします。</p>
+              <span class="story-card__date">2026.04.20</span>
+            </div>
+          </a>
+
+        </div>
+        <a class="stories__more" href="/stories/">すべての記事を見る →</a>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Section 6: Stores
+         =========================================================== -->
+    <section class="section stores" aria-labelledby="stores-title">
+      <div class="section__inner">
+        <h2 id="stores-title" class="section__chapter">
+          STORES <span class="section__chapter-jp">— 長野県内3店舗</span>
+        </h2>
+        <div class="stores__grid">
+
+          <article class="store-card fade-up">
+            <img class="store-card__img"
+                 src="/assets/images/stores/matsumoto.jpg"
+                 alt="松本本店"
+                 width="800" height="600"
+                 loading="lazy">
+            <div class="store-card__body">
+              <p class="store-card__num">N° 01</p>
+              <h3 class="store-card__title-en">MATSUMOTO</h3>
+              <p class="store-card__title-jp">松本本店</p>
+              <div class="store-card__divider" aria-hidden="true"></div>
+              <p class="store-card__info">
+                長野県松本市××<br>
+                24時間営業 / JR松本駅徒歩◯分
+              </p>
+              <a class="store-card__link" href="/stores/#matsumoto">詳細を見る →</a>
+            </div>
+          </article>
+
+          <article class="store-card fade-up">
+            <img class="store-card__img"
+                 src="/assets/images/stores/nagano.jpg"
+                 alt="長野店"
+                 width="800" height="600"
+                 loading="lazy">
+            <div class="store-card__body">
+              <p class="store-card__num">N° 02</p>
+              <h3 class="store-card__title-en">NAGANO</h3>
+              <p class="store-card__title-jp">長野店</p>
+              <div class="store-card__divider" aria-hidden="true"></div>
+              <p class="store-card__info">
+                長野県長野市××<br>
+                24時間営業 / JR長野駅徒歩◯分
+              </p>
+              <a class="store-card__link" href="/stores/#nagano">詳細を見る →</a>
+            </div>
+          </article>
+
+          <article class="store-card fade-up">
+            <img class="store-card__img"
+                 src="/assets/images/stores/karuizawa.jpg"
+                 alt="軽井沢店"
+                 width="800" height="600"
+                 loading="lazy">
+            <div class="store-card__body">
+              <p class="store-card__num">N° 03</p>
+              <h3 class="store-card__title-en">KARUIZAWA</h3>
+              <p class="store-card__title-jp">軽井沢店</p>
+              <div class="store-card__divider" aria-hidden="true"></div>
+              <p class="store-card__info">
+                長野県軽井沢町××<br>
+                24時間営業 / JR軽井沢駅徒歩◯分
+              </p>
+              <a class="store-card__link" href="/stores/#karuizawa">詳細を見る →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Section 7: Final CTA
+         =========================================================== -->
+    <section class="final-cta" aria-labelledby="final-cta-title">
+      <span class="final-cta__chapter">RESEARCH N° 05 — JOIN US</span>
+      <h2 id="final-cta-title" class="final-cta__title">BEGIN YOUR HEALTH RESEARCH.</h2>
+      <p class="final-cta__sub">
+        <span class="nowrap">あなたの健康習慣を、</span><span class="nowrap">研究員と一緒に設計する。</span>
+      </p>
+      <a class="cta-btn cta-btn--lg" href="/contact/?type=trial">
+        無料体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- ===========================================================
+       Footer
+       =========================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__logo">ALPS LAB</div>
+        <p class="footer__copy-line">北アルプスの麓から、本物の健康を研究する。</p>
+      </div>
+
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <ul>
+            <li><a href="/services/gym/">GYM</a></li>
+            <li><a href="/services/nutrition/">NUTRITION</a></li>
+            <li><a href="/services/foods/">FOODS</a></li>
+            <li><a href="/services/supplements/">SUPPLEMENTS</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Stores</h4>
+          <ul>
+            <li><a href="/stores/#matsumoto">松本本店</a></li>
+            <li><a href="/stores/#nagano">長野店</a></li>
+            <li><a href="/stores/#karuizawa">軽井沢店</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Company</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/company/">Company</a></li>
+            <li><a href="/recruit/">Recruit</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Social</h4>
+          <ul>
+            <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="#" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 ALPS LAB Inc.</span>
+        <span>LAT. 36.2°N / LON. 137.9°E</span>
+        <span>Privacy / Terms</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/animations.js" defer></script>
+
+</body>
+</html>

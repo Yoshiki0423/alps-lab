@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ALPS LABの会員インタビュー、コラム、お知らせ。健康とトレーニングのストーリーを発信します。">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <meta property="og:title" content="STORIES | ALPS LAB">
+  <meta property="og:description" content="ALPS LABの会員インタビュー、コラム、お知らせ。健康とトレーニングのストーリーを発信します。">
+  <meta property="og:image" content="/assets/images/stories/voice-member.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+
+  <title>STORIES | ALPS LAB</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components/button.css">
+  <link rel="stylesheet" href="/assets/css/layout/header.css">
+  <link rel="stylesheet" href="/assets/css/layout/footer.css">
+  <link rel="stylesheet" href="/assets/css/pages/stories.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body class="no-js" data-page="stories">
+
+  <a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a class="header__logo" href="/" aria-label="ALPS LAB トップページ">ALPS LAB</a>
+      <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="/about/">About</a></li>
+          <li><a class="nav__link" href="/services/">Services</a></li>
+          <li><a class="nav__link" href="/stores/">Stores</a></li>
+          <li><a class="nav__link is-current" href="/stories/" aria-current="page">Stories</a></li>
+          <li><a class="nav__link" href="/recruit/">Recruit</a></li>
+        </ul>
+        <a class="cta-btn" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+        <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="モバイルナビゲーション" aria-hidden="true">
+    <ul class="mobile-menu__list">
+      <li><a class="mobile-menu__link" href="/about/">About</a></li>
+      <li><a class="mobile-menu__link" href="/services/">Services</a></li>
+      <li><a class="mobile-menu__link" href="/stores/">Stores</a></li>
+      <li><a class="mobile-menu__link" href="/stories/">Stories</a></li>
+      <li><a class="mobile-menu__link" href="/recruit/">Recruit</a></li>
+    </ul>
+    <a class="cta-btn cta-btn--lg" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+  <main id="main">
+
+    <!-- Hero (50vh, 親しみゾーン: soft 背景) -->
+    <section class="stories-hero" aria-labelledby="hero-title">
+      <div class="stories-hero__inner">
+        <span class="stories-hero__chapter" aria-hidden="true">— STORIES — 物語を読む</span>
+        <h1 class="stories-hero__title" id="hero-title">STORIES</h1>
+        <p class="stories-hero__sub">会員の声、コラム、お知らせ。</p>
+      </div>
+    </section>
+
+    <!-- Filter -->
+    <section class="stories-filter" aria-label="カテゴリフィルター">
+      <div class="stories-filter__inner">
+        <button type="button" class="stories-filter__btn is-active" data-filter="all" aria-pressed="true">ALL</button>
+        <button type="button" class="stories-filter__btn" data-filter="voice" aria-pressed="false">VOICE</button>
+        <button type="button" class="stories-filter__btn" data-filter="column" aria-pressed="false">COLUMN</button>
+        <button type="button" class="stories-filter__btn" data-filter="news" aria-pressed="false">NEWS</button>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="stories-list" aria-label="記事一覧">
+      <div class="stories-list__inner">
+        <div class="stories-list__grid" id="storiesGrid">
+
+          <!-- VOICE 1 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/stories/voice-member.jpg"
+                   alt="STANDARD会員 田中健一さん"
+                   width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">田中健一さん(38歳)/ STANDARD会員</h2>
+                <p class="story-card__excerpt">
+                  過去2回ジムを挫折しました。今回はパーソナルが月2回あるので、フォームの不安が解消されて自主トレが楽しくなりました。半年で体脂肪率8%減です。
+                </p>
+                <span class="story-card__date">2026.04.15</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 2 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/services/nutrition.jpg"
+                   alt="PREMIUM会員 佐藤美咲さん"
+                   width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">佐藤美咲さん(45歳)/ PREMIUM会員</h2>
+                <p class="story-card__excerpt">
+                  経営者として体力勝負の毎日。栄養指導と冷凍食品サブスクで、食事に悩まなくなりました。ALPS LABは"健康のアウトソース先"です。
+                </p>
+                <span class="story-card__date">2026.04.10</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- VOICE 3 -->
+          <article class="story-card fade-up" data-cat="voice">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/services/foods.jpg"
+                   alt="LIGHT会員 鈴木麻衣さん"
+                   width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">VOICE</span>
+                <h2 class="story-card__title">鈴木麻衣さん(29歳)/ LIGHT会員</h2>
+                <p class="story-card__excerpt">
+                  夜勤明けでもいつでも行けるのが本当に助かります。月8,800円で施設のクオリティはここまで?と最初驚きました。
+                </p>
+                <span class="story-card__date">2026.04.05</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- COLUMN 1 -->
+          <article class="story-card fade-up" data-cat="column">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/services/nutrition-detail-01.jpg"
+                   alt="長野の食卓・長寿県データ"
+                   width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">COLUMN</span>
+                <h2 class="story-card__title">食事と体の関係。長野の長寿県データから読み解く</h2>
+                <p class="story-card__excerpt">
+                  健康寿命日本トップクラスの長野県。その食卓に共通する3つの特徴を、研究員が分析しました。
+                </p>
+                <span class="story-card__date">2026.03.28</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- COLUMN 2 -->
+          <article class="story-card fade-up" data-cat="column">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/services/gym-facility-03.jpg"
+                   alt="フリーウェイトのフォーム解説"
+                   width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">COLUMN</span>
+                <h2 class="story-card__title">フリーウェイトの「正しいフォーム」とは何か</h2>
+                <p class="story-card__excerpt">
+                  研究員が解説する、ベンチプレス・スクワット・デッドリフトの基本フォームと、よくある誤りの矯正法。
+                </p>
+                <span class="story-card__date">2026.03.10</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- COLUMN 3 -->
+          <article class="story-card fade-up" data-cat="column">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/services/supplements-lineup-03.jpg"
+                   alt="マルチビタミンの選び方"
+                   width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">COLUMN</span>
+                <h2 class="story-card__title">マルチビタミンの選び方。配合量と原料の見分け方</h2>
+                <p class="story-card__excerpt">
+                  サプリメントの「中身」をどう判断するか。研究員が原料表記の読み方を、実例つきで解説します。
+                </p>
+                <span class="story-card__date">2026.02.20</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- NEWS 1 -->
+          <article class="story-card fade-up" data-cat="news">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/stores/karuizawa.jpg"
+                   alt="軽井沢店オープン1周年"
+                   width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">NEWS</span>
+                <h2 class="story-card__title">軽井沢店オープン1周年記念キャンペーンを実施します</h2>
+                <p class="story-card__excerpt">
+                  軽井沢店のオープンから1年。記念キャンペーンとして、入会金無料&初月50%OFFを実施いたします。期間: 2026年5月1日〜5月31日。
+                </p>
+                <span class="story-card__date">2026.04.20</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- NEWS 2 -->
+          <article class="story-card fade-up" data-cat="news">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/services/foods-lineup-02.jpg"
+                   alt="冷凍宅配ミール 販売開始"
+                   width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">NEWS</span>
+                <h2 class="story-card__title">冷凍宅配ミール「ALPS LAB FOODS」販売開始のお知らせ</h2>
+                <p class="story-card__excerpt">
+                  長野県産食材を使った冷凍宅配ミールサービスを開始しました。管理栄養士監修のメニューを全国にお届けします。
+                </p>
+                <span class="story-card__date">2026.03.15</span>
+              </div>
+            </a>
+          </article>
+
+          <!-- NEWS 3 -->
+          <article class="story-card fade-up" data-cat="news">
+            <a class="story-card__link" href="#" data-coming-soon>
+              <img src="/assets/images/about/representative.jpg"
+                   alt="信濃毎日新聞掲載"
+                   width="800" height="600" loading="lazy">
+              <div class="story-card__body">
+                <span class="story-card__cat">NEWS</span>
+                <h2 class="story-card__title">信濃毎日新聞に当社代表のインタビューが掲載されました</h2>
+                <p class="story-card__excerpt">
+                  「長野発の健康ブランド」として、当社代表のインタビュー記事が掲載されました。長野の健康知見を全国に広げるビジョンについて語っています。
+                </p>
+                <span class="story-card__date">2026.02.01</span>
+              </div>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Coming Soon Toast (記事クリック時に表示) -->
+    <div class="story-toast" role="status" aria-live="polite" id="storyToast" hidden>
+      <span>本記事は近日公開予定です。</span>
+    </div>
+
+    <!-- Final CTA -->
+    <section class="final-cta" aria-labelledby="final-cta-title">
+      <span class="final-cta__chapter">RESEARCH N° 05 — JOIN US</span>
+      <h2 id="final-cta-title" class="final-cta__title">BEGIN YOUR HEALTH RESEARCH.</h2>
+      <p class="final-cta__sub">
+        <span class="nowrap">あなたの健康習慣を、</span><span class="nowrap">研究員と一緒に設計する。</span>
+      </p>
+      <a class="cta-btn cta-btn--lg" href="/contact/?type=trial">
+        無料体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__logo">ALPS LAB</div>
+        <p class="footer__copy-line">北アルプスの麓から、本物の健康を研究する。</p>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <ul>
+            <li><a href="/services/gym/">GYM</a></li>
+            <li><a href="/services/nutrition/">NUTRITION</a></li>
+            <li><a href="/services/foods/">FOODS</a></li>
+            <li><a href="/services/supplements/">SUPPLEMENTS</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Stores</h4>
+          <ul>
+            <li><a href="/stores/#matsumoto">松本本店</a></li>
+            <li><a href="/stores/#nagano">長野店</a></li>
+            <li><a href="/stores/#karuizawa">軽井沢店</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Company</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/company/">Company</a></li>
+            <li><a href="/recruit/">Recruit</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Social</h4>
+          <ul>
+            <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="#" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 ALPS LAB Inc.</span>
+        <span>LAT. 36.2°N / LON. 137.9°E</span>
+        <span>Privacy / Terms</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/animations.js" defer></script>
+  <script src="/assets/js/components/stories-filter.js" defer></script>
+</body>
+</html>

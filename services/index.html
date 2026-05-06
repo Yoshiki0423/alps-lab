@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ALPS LABの4つの研究領域。GYM・NUTRITION・FOODS・SUPPLEMENTSで、会員の健康をワンストップでサポート。">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <!-- OGP -->
+  <meta property="og:title" content="SERVICES | ALPS LAB">
+  <meta property="og:description" content="ALPS LABの4つの研究領域。GYM・NUTRITION・FOODS・SUPPLEMENTSで、会員の健康をワンストップでサポート。">
+  <meta property="og:image" content="/assets/images/hero/hero-nature.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+
+  <title>SERVICES | ALPS LAB</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components/button.css">
+  <link rel="stylesheet" href="/assets/css/layout/header.css">
+  <link rel="stylesheet" href="/assets/css/layout/footer.css">
+  <link rel="stylesheet" href="/assets/css/pages/services.css">
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body class="no-js" data-page="services">
+
+  <a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a class="header__logo" href="/" aria-label="ALPS LAB トップページ">ALPS LAB</a>
+      <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="/about/">About</a></li>
+          <li><a class="nav__link is-current" href="/services/" aria-current="page">Services</a></li>
+          <li><a class="nav__link" href="/stores/">Stores</a></li>
+          <li><a class="nav__link" href="/stories/">Stories</a></li>
+          <li><a class="nav__link" href="/recruit/">Recruit</a></li>
+        </ul>
+        <a class="cta-btn" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+        <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="モバイルナビゲーション" aria-hidden="true">
+    <ul class="mobile-menu__list">
+      <li><a class="mobile-menu__link" href="/about/">About</a></li>
+      <li><a class="mobile-menu__link" href="/services/">Services</a></li>
+      <li><a class="mobile-menu__link" href="/stores/">Stores</a></li>
+      <li><a class="mobile-menu__link" href="/stories/">Stories</a></li>
+      <li><a class="mobile-menu__link" href="/recruit/">Recruit</a></li>
+    </ul>
+    <a class="cta-btn cta-btn--lg" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ===========================================================
+         Section 1: Hero (60vh)
+         =========================================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__inner">
+        <span class="hero__chapter" aria-hidden="true">— FOUR RESEARCH FIELDS / N° 01–04 —</span>
+        <h1 class="hero__title" id="hero-title">FOUR RESEARCH<br>FIELDS</h1>
+        <p class="hero__sub">4つの研究領域</p>
+        <p class="hero__lead">
+          <span class="nowrap">運動・栄養・食事・補助。</span><span class="nowrap">会員の健康を多角的に研究し、</span><span class="nowrap">ワンストップで提供する。</span>
+        </p>
+      </div>
+      <div class="hero__scroll-cue" aria-hidden="true">
+        <span>SCROLL</span>
+        <span class="hero__scroll-arrow">↓</span>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Section 2: Services Cards (4事業 横長カード・左右交互)
+         =========================================================== -->
+    <section class="section service-cards" aria-labelledby="service-cards-title">
+      <div class="section__inner">
+        <h2 id="service-cards-title" class="visually-hidden">事業ラインナップ</h2>
+
+        <article class="service-card-row fade-up">
+          <a class="service-card-row__media" href="/services/gym/" aria-label="GYM 詳細を見る">
+            <img src="/assets/images/services/gym-facility-01.jpg"
+                 alt="ALPS LAB GYM のトレーニングフロア"
+                 width="960" height="540" loading="lazy">
+          </a>
+          <div class="service-card-row__body">
+            <span class="service-card-row__num">N° 01</span>
+            <h3 class="service-card-row__title-en">GYM</h3>
+            <p class="service-card-row__title-jp">24時間×パーソナルの、新しい形。</p>
+            <div class="service-card-row__divider" aria-hidden="true"></div>
+            <p class="service-card-row__desc">
+              24時間営業のジムに、月2〜4回のパーソナルを組み合わせたハイブリッド型。続けながら、結果も出る。
+            </p>
+            <a class="service-card-row__link" href="/services/gym/">
+              詳細を見る <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card-row service-card-row--reverse fade-up">
+          <a class="service-card-row__media" href="/services/nutrition/" aria-label="NUTRITION 詳細を見る">
+            <img src="/assets/images/services/nutrition.jpg"
+                 alt="ALPS LAB NUTRITION の管理栄養士による食事指導"
+                 width="960" height="540" loading="lazy">
+          </a>
+          <div class="service-card-row__body">
+            <span class="service-card-row__num">N° 02</span>
+            <h3 class="service-card-row__title-en">NUTRITION</h3>
+            <p class="service-card-row__title-jp">食べることは、未来を選ぶこと。</p>
+            <div class="service-card-row__divider" aria-hidden="true"></div>
+            <p class="service-card-row__desc">
+              管理栄養士が、あなたの生活と目標に合わせた食事プランを設計します。
+            </p>
+            <a class="service-card-row__link" href="/services/nutrition/">
+              詳細を見る <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card-row fade-up">
+          <a class="service-card-row__media" href="/services/foods/" aria-label="FOODS 詳細を見る">
+            <img src="/assets/images/services/foods.jpg"
+                 alt="ALPS LAB FOODS の冷凍宅配ミール"
+                 width="960" height="540" loading="lazy">
+          </a>
+          <div class="service-card-row__body">
+            <span class="service-card-row__num">N° 03</span>
+            <h3 class="service-card-row__title-en">FOODS</h3>
+            <p class="service-card-row__title-jp">忙しい日でも、研究された食卓を。</p>
+            <div class="service-card-row__divider" aria-hidden="true"></div>
+            <p class="service-card-row__desc">
+              高タンパク低糖質の冷凍宅配ミール。研究員が監修した、忙しい日の頼れる選択肢。
+            </p>
+            <a class="service-card-row__link" href="/services/foods/">
+              詳細を見る <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card-row service-card-row--reverse fade-up">
+          <a class="service-card-row__media" href="/services/supplements/" aria-label="SUPPLEMENTS 詳細を見る">
+            <img src="/assets/images/services/supplements.jpg"
+                 alt="ALPS LAB SUPPLEMENTS の研究に基づくサプリメント"
+                 width="960" height="540" loading="lazy">
+          </a>
+          <div class="service-card-row__body">
+            <span class="service-card-row__num">N° 04</span>
+            <h3 class="service-card-row__title-en">SUPPLEMENTS</h3>
+            <p class="service-card-row__title-jp">補うのではなく、整える。</p>
+            <div class="service-card-row__divider" aria-hidden="true"></div>
+            <p class="service-card-row__desc">
+              不足を補うのではなく、身体を整えるための、研究に基づいたサプリメント。
+            </p>
+            <a class="service-card-row__link" href="/services/supplements/">
+              詳細を見る <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Section 3: Connection Diagram (事業の繋がり)
+         =========================================================== -->
+    <section class="section connection" aria-labelledby="connection-title">
+      <div class="section__inner">
+        <h2 id="connection-title" class="section__chapter">
+          HOW THEY CONNECT <span class="section__chapter-jp">— 事業の繋がり</span>
+        </h2>
+
+        <ol class="connection__flow">
+          <li class="connection__node fade-up">
+            <span class="connection__num">01</span>
+            <span class="connection__text">GYM で運動</span>
+          </li>
+          <li class="connection__arrow fade-up" aria-hidden="true">↓</li>
+
+          <li class="connection__node fade-up">
+            <span class="connection__num">02</span>
+            <span class="connection__text">栄養指導で食事改善</span>
+          </li>
+          <li class="connection__arrow fade-up" aria-hidden="true">↓</li>
+
+          <li class="connection__node fade-up">
+            <span class="connection__num">03</span>
+            <span class="connection__text">冷凍食品で実行</span>
+          </li>
+          <li class="connection__arrow fade-up" aria-hidden="true">↓</li>
+
+          <li class="connection__node fade-up">
+            <span class="connection__num">04</span>
+            <span class="connection__text">サプリで補完</span>
+          </li>
+          <li class="connection__arrow fade-up" aria-hidden="true">↓</li>
+
+          <li class="connection__node connection__node--final fade-up">
+            <span class="connection__num">→</span>
+            <span class="connection__text">継続的な健康</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Final CTA
+         =========================================================== -->
+    <section class="final-cta" aria-labelledby="final-cta-title">
+      <span class="final-cta__chapter">RESEARCH N° 05 — JOIN US</span>
+      <h2 id="final-cta-title" class="final-cta__title">BEGIN YOUR HEALTH RESEARCH.</h2>
+      <p class="final-cta__sub">
+        <span class="nowrap">あなたの健康習慣を、</span><span class="nowrap">研究員と一緒に設計する。</span>
+      </p>
+      <a class="cta-btn cta-btn--lg" href="/contact/?type=trial">
+        無料体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__logo">ALPS LAB</div>
+        <p class="footer__copy-line">北アルプスの麓から、本物の健康を研究する。</p>
+      </div>
+
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <ul>
+            <li><a href="/services/gym/">GYM</a></li>
+            <li><a href="/services/nutrition/">NUTRITION</a></li>
+            <li><a href="/services/foods/">FOODS</a></li>
+            <li><a href="/services/supplements/">SUPPLEMENTS</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Stores</h4>
+          <ul>
+            <li><a href="/stores/#matsumoto">松本本店</a></li>
+            <li><a href="/stores/#nagano">長野店</a></li>
+            <li><a href="/stores/#karuizawa">軽井沢店</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Company</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/company/">Company</a></li>
+            <li><a href="/recruit/">Recruit</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Social</h4>
+          <ul>
+            <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="#" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 ALPS LAB Inc.</span>
+        <span>LAT. 36.2°N / LON. 137.9°E</span>
+        <span>Privacy / Terms</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/animations.js" defer></script>
+
+</body>
+</html>

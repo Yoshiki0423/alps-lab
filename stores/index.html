@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="長野県内3店舗。松本本店・長野店・軽井沢店。北アルプスの麓から、本物の健康を提供します。">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <meta property="og:title" content="STORES | ALPS LAB">
+  <meta property="og:description" content="長野県内3店舗。松本本店・長野店・軽井沢店。北アルプスの麓から、本物の健康を提供します。">
+  <meta property="og:image" content="/assets/images/stores/matsumoto.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+
+  <title>STORES | ALPS LAB</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components/button.css">
+  <link rel="stylesheet" href="/assets/css/layout/header.css">
+  <link rel="stylesheet" href="/assets/css/layout/footer.css">
+  <link rel="stylesheet" href="/assets/css/pages/stores.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body class="no-js" data-page="stores">
+
+  <a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a class="header__logo" href="/" aria-label="ALPS LAB トップページ">ALPS LAB</a>
+      <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="/about/">About</a></li>
+          <li><a class="nav__link" href="/services/">Services</a></li>
+          <li><a class="nav__link is-current" href="/stores/" aria-current="page">Stores</a></li>
+          <li><a class="nav__link" href="/stories/">Stories</a></li>
+          <li><a class="nav__link" href="/recruit/">Recruit</a></li>
+        </ul>
+        <a class="cta-btn" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+        <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="モバイルナビゲーション" aria-hidden="true">
+    <ul class="mobile-menu__list">
+      <li><a class="mobile-menu__link" href="/about/">About</a></li>
+      <li><a class="mobile-menu__link" href="/services/">Services</a></li>
+      <li><a class="mobile-menu__link" href="/stores/">Stores</a></li>
+      <li><a class="mobile-menu__link" href="/stories/">Stories</a></li>
+      <li><a class="mobile-menu__link" href="/recruit/">Recruit</a></li>
+    </ul>
+    <a class="cta-btn cta-btn--lg" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+  <main id="main">
+
+    <!-- Hero (60vh) -->
+    <section class="stores-hero" aria-labelledby="hero-title">
+      <img class="stores-hero__media"
+           src="/assets/images/stores/stores-hero.jpg"
+           alt="長野県・北アルプスの俯瞰風景"
+           width="1920" height="1080"
+           loading="eager"
+           fetchpriority="high">
+      <div class="stores-hero__inner">
+        <span class="stores-hero__chapter" aria-hidden="true">— STORES / N°01–03 —</span>
+        <h1 class="stores-hero__title" id="hero-title">THREE LOCATIONS<br>IN NAGANO.</h1>
+        <p class="stores-hero__sub">長野県内3店舗</p>
+      </div>
+      <div class="stores-hero__bottom" aria-hidden="true">
+        <span>松本 / 長野 / 軽井沢</span>
+        <span>LAT. 36.2°N / LON. 137.9°E</span>
+      </div>
+    </section>
+
+    <!-- Store 01: 松本本店 -->
+    <section id="matsumoto" class="store-section" aria-labelledby="store-01-title">
+      <div class="store-section__grid">
+        <a class="store-section__media" href="#" aria-label="松本本店の地図を見る">
+          <img src="/assets/images/stores/matsumoto.jpg"
+               alt="松本本店 外観"
+               width="960" height="640" loading="lazy">
+          <span class="store-section__map-tag" aria-hidden="true">📍 MAP</span>
+        </a>
+        <div class="store-section__body fade-up">
+          <span class="store-section__num">N° 01 / MATSUMOTO</span>
+          <h2 class="store-section__title-en" id="store-01-title">MATSUMOTO HONTEN</h2>
+          <p class="store-section__title-jp">松本本店</p>
+          <div class="store-section__divider" aria-hidden="true"></div>
+          <dl class="store-section__info">
+            <dt>住所</dt>
+            <dd>〒390-0XXX 長野県松本市××(実住所要確認)</dd>
+            <dt>電話</dt>
+            <dd>0263-XX-XXXX</dd>
+            <dt>営業時間</dt>
+            <dd>24時間営業(スタッフ常駐 7:00-22:00)</dd>
+            <dt>アクセス</dt>
+            <dd>JR松本駅 徒歩◯分</dd>
+            <dt>主要設備</dt>
+            <dd>フリーウェイト / マシン / パーソナルブース / スタジオ / ロッカー / ラウンジ</dd>
+          </dl>
+          <div class="store-section__actions">
+            <a class="store-section__btn store-section__btn--gold" href="#" rel="noopener noreferrer">
+              Google Map で開く <span aria-hidden="true">→</span>
+            </a>
+            <a class="store-section__btn store-section__btn--red" href="/contact/?type=trial&store=matsumoto">
+              体験予約 <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Store 02: 長野店 -->
+    <section id="nagano" class="store-section store-section--alt store-section--reverse" aria-labelledby="store-02-title">
+      <div class="store-section__grid">
+        <a class="store-section__media" href="#" aria-label="長野店の地図を見る">
+          <img src="/assets/images/stores/nagano.jpg"
+               alt="長野店 外観"
+               width="960" height="640" loading="lazy">
+          <span class="store-section__map-tag" aria-hidden="true">📍 MAP</span>
+        </a>
+        <div class="store-section__body fade-up">
+          <span class="store-section__num">N° 02 / NAGANO</span>
+          <h2 class="store-section__title-en" id="store-02-title">NAGANO TEN</h2>
+          <p class="store-section__title-jp">長野店</p>
+          <div class="store-section__divider" aria-hidden="true"></div>
+          <dl class="store-section__info">
+            <dt>住所</dt>
+            <dd>〒380-0XXX 長野県長野市××(実住所要確認)</dd>
+            <dt>電話</dt>
+            <dd>026-XXX-XXXX</dd>
+            <dt>営業時間</dt>
+            <dd>24時間営業(スタッフ常駐 7:00-22:00)</dd>
+            <dt>アクセス</dt>
+            <dd>JR長野駅 徒歩◯分</dd>
+            <dt>主要設備</dt>
+            <dd>フリーウェイト / マシン / パーソナルブース / ロッカー / ラウンジ</dd>
+          </dl>
+          <div class="store-section__actions">
+            <a class="store-section__btn store-section__btn--gold" href="#" rel="noopener noreferrer">
+              Google Map で開く <span aria-hidden="true">→</span>
+            </a>
+            <a class="store-section__btn store-section__btn--red" href="/contact/?type=trial&store=nagano">
+              体験予約 <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Store 03: 軽井沢店 -->
+    <section id="karuizawa" class="store-section" aria-labelledby="store-03-title">
+      <div class="store-section__grid">
+        <a class="store-section__media" href="#" aria-label="軽井沢店の地図を見る">
+          <img src="/assets/images/stores/karuizawa.jpg"
+               alt="軽井沢店 外観"
+               width="960" height="640" loading="lazy">
+          <span class="store-section__map-tag" aria-hidden="true">📍 MAP</span>
+        </a>
+        <div class="store-section__body fade-up">
+          <span class="store-section__num">N° 03 / KARUIZAWA</span>
+          <h2 class="store-section__title-en" id="store-03-title">KARUIZAWA TEN</h2>
+          <p class="store-section__title-jp">軽井沢店</p>
+          <div class="store-section__divider" aria-hidden="true"></div>
+          <dl class="store-section__info">
+            <dt>住所</dt>
+            <dd>〒389-0XXX 長野県北佐久郡軽井沢町××(実住所要確認)</dd>
+            <dt>電話</dt>
+            <dd>0267-XX-XXXX</dd>
+            <dt>営業時間</dt>
+            <dd>24時間営業(スタッフ常駐 7:00-22:00)</dd>
+            <dt>アクセス</dt>
+            <dd>JR軽井沢駅 徒歩◯分</dd>
+            <dt>主要設備</dt>
+            <dd>フリーウェイト / マシン / プレミアムスタジオ / スパ / ラウンジ</dd>
+          </dl>
+          <div class="store-section__actions">
+            <a class="store-section__btn store-section__btn--gold" href="#" rel="noopener noreferrer">
+              Google Map で開く <span aria-hidden="true">→</span>
+            </a>
+            <a class="store-section__btn store-section__btn--red" href="/contact/?type=trial&store=karuizawa">
+              体験予約 <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coming Soon (拡大予定) -->
+    <section class="section coming-soon" aria-labelledby="coming-title">
+      <div class="section__inner">
+        <h2 id="coming-title" class="section__chapter">
+          COMING SOON <span class="section__chapter-jp">— 拡大予定</span>
+        </h2>
+        <ul class="coming-soon__list">
+          <li class="fade-up">UEDA</li>
+          <li class="fade-up">SUWA</li>
+          <li class="fade-up">TOKYO</li>
+          <li class="fade-up">YOKOHAMA</li>
+        </ul>
+        <p class="coming-soon__msg fade-up">
+          <span class="nowrap">長野県発のブランドが、</span><span class="nowrap">全国へ。</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" aria-labelledby="final-cta-title">
+      <span class="final-cta__chapter">RESEARCH N° 05 — JOIN US</span>
+      <h2 id="final-cta-title" class="final-cta__title">VISIT YOUR<br>NEAREST STORE.</h2>
+      <p class="final-cta__sub">
+        <span class="nowrap">無料体験予約・</span><span class="nowrap">店舗見学を受付中。</span>
+      </p>
+      <a class="cta-btn cta-btn--lg" href="/contact/?type=trial">
+        無料体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__logo">ALPS LAB</div>
+        <p class="footer__copy-line">北アルプスの麓から、本物の健康を研究する。</p>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <ul>
+            <li><a href="/services/gym/">GYM</a></li>
+            <li><a href="/services/nutrition/">NUTRITION</a></li>
+            <li><a href="/services/foods/">FOODS</a></li>
+            <li><a href="/services/supplements/">SUPPLEMENTS</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Stores</h4>
+          <ul>
+            <li><a href="/stores/#matsumoto">松本本店</a></li>
+            <li><a href="/stores/#nagano">長野店</a></li>
+            <li><a href="/stores/#karuizawa">軽井沢店</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Company</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/company/">Company</a></li>
+            <li><a href="/recruit/">Recruit</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Social</h4>
+          <ul>
+            <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="#" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 ALPS LAB Inc.</span>
+        <span>LAT. 36.2°N / LON. 137.9°E</span>
+        <span>Privacy / Terms</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/animations.js" defer></script>
+</body>
+</html>

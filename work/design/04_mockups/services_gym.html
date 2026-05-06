@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="24時間×パーソナルのハイブリッド型ジム。長野県内3店舗。月額8,800円〜、月2回のパーソナルで効率的に結果を出す。">
+<meta name="theme-color" content="#0A0A0A">
+<title>GYM | ALPS LAB</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../02_design_tokens.css">
+
+<style>
+*,*::before,*::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, video { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; background: none; border: 0; cursor: pointer; color: inherit; }
+ul { list-style: none; padding: 0; margin: 0; }
+
+.skip-link { position: absolute; top: -100px; left: 0; background: var(--color-accent-gold); color: #000; padding: 0.5rem 1rem; z-index: 9999; }
+.skip-link:focus { top: 0; }
+
+/* ===== Header (index.html と共通) ===== */
+.header {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--header-height);
+  display: flex; align-items: center;
+  padding: 0 var(--container-padding-desktop);
+  z-index: var(--z-header);
+  background: transparent;
+  transition: background var(--duration-base) var(--ease-out), backdrop-filter var(--duration-base) var(--ease-out);
+}
+.header.is-scrolled { background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-border-soft); }
+.header__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: var(--max-width); margin: 0 auto; }
+.header__logo { font-family: var(--font-display); font-size: 1.25rem; letter-spacing: var(--ls-wider); transition: color var(--duration-base) var(--ease-out); }
+.header__logo:hover { color: var(--color-accent-gold); }
+.nav { display: flex; gap: var(--space-md); align-items: center; }
+.nav__list { display: flex; gap: var(--space-md); }
+.nav__link {
+  font-family: var(--font-en); font-size: var(--fs-sm); font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-text-secondary);
+  position: relative; padding: 0.5rem 0;
+}
+.nav__link::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: var(--color-accent-gold); transform: scaleX(0); transform-origin: left; transition: transform 300ms var(--ease-out); }
+.nav__link:hover { color: var(--color-text-primary); }
+.nav__link:hover::after, .nav__link.is-current::after { transform: scaleX(1); }
+.nav__link.is-current { color: var(--color-text-primary); }
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--color-accent-red); color: var(--color-text-primary);
+  padding: 0.75rem 1.5rem; font-family: var(--font-jp); font-size: var(--fs-sm);
+  font-weight: var(--fw-medium); letter-spacing: var(--ls-wide); border-radius: var(--radius-md);
+  transition: background var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out);
+}
+.cta-btn:hover { background: var(--color-accent-red-hover); box-shadow: var(--shadow-glow-red); }
+.cta-btn--lg { padding: 1.5rem 4rem; font-size: var(--fs-md); }
+.cta-btn__arrow { transition: transform var(--duration-base) var(--ease-out); }
+.cta-btn:hover .cta-btn__arrow { transform: translateX(4px); }
+.cta-btn--gold-outline {
+  background: transparent; color: var(--color-accent-gold); border: 1px solid var(--color-accent-gold);
+}
+.cta-btn--gold-outline:hover { background: var(--color-accent-gold); color: #000; box-shadow: var(--shadow-glow-gold); }
+
+.hamburger { display: none; }
+
+/* ===== Hero (動画背景) ===== */
+.hero {
+  position: relative; height: 100vh; min-height: 720px;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+  text-align: center;
+}
+.hero__media {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(0.5) saturate(0.7) contrast(1.05);
+  z-index: 0;
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.1) 40%, rgba(10,10,10,0.85) 100%);
+  z-index: 1;
+}
+.hero__inner { position: relative; z-index: 2; padding: 0 var(--container-padding-desktop); max-width: var(--max-width); }
+.hero__chapter {
+  display: inline-flex; align-items: center; gap: 1rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-md);             /* 10 → 18px */
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+.hero__chapter::before, .hero__chapter::after {
+  content: ""; width: 80px; height: 1px;  /* 中央配置の両側罫線、80px 維持 */
+  background: var(--color-accent-gold); opacity: 0.6;
+}
+.hero__title-jp {
+  font-family: var(--font-jp); font-weight: var(--fw-bold);
+  font-size: var(--fs-3xl); line-height: var(--lh-snug);
+  margin: 0 0 var(--space-md);
+}
+.hero__title-en {
+  font-family: var(--font-display); font-size: var(--fs-xl);
+  letter-spacing: var(--ls-wide); color: var(--color-accent-gold-dim);
+  margin: 0 0 var(--space-md);
+}
+.hero__lead {
+  font-family: var(--font-jp); font-size: var(--fs-md);
+  color: var(--color-text-secondary); margin: 0 0 var(--space-lg);
+  max-width: 720px; margin-left: auto; margin-right: auto;
+}
+.hero__bottom {
+  position: absolute; bottom: var(--space-md); left: var(--container-padding-desktop); right: var(--container-padding-desktop);
+  display: flex; justify-content: space-between; align-items: end;
+  z-index: 2;
+  font-family: var(--font-en); font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest); color: var(--color-accent-gold-dim);
+}
+
+/* ===== Common Section ===== */
+.section { padding: var(--space-xl) var(--container-padding-desktop); position: relative; }
+.section__inner { max-width: var(--max-width); margin: 0 auto; }
+.section__chapter {
+  display: inline-flex; align-items: center; gap: 1rem; margin-bottom: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-md);             /* 10 → 18px */
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+.section__chapter::before {
+  content: ""; width: 64px; height: 1px;  /* 40 → 64px */
+  background: var(--color-accent-gold); opacity: 0.6;
+}
+.section__chapter-jp {
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);             /* 10 → 16px */
+  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* ===== Concept ===== */
+.concept {
+  min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; background: var(--color-bg-primary);
+  border-top: 1px solid rgba(200,169,97,0.15);
+  border-bottom: 1px solid rgba(200,169,97,0.15);
+}
+.concept__chapter { margin-bottom: var(--space-lg); }
+.concept__text {
+  font-family: var(--font-jp); font-weight: var(--fw-bold);
+  font-size: var(--fs-2xl); line-height: var(--lh-snug);
+  margin: 0 0 var(--space-md); max-width: 1080px;
+}
+.concept__text em {
+  font-style: normal;
+  background-image: linear-gradient(180deg, transparent 60%, rgba(200,169,97,0.4) 60%);
+  background-repeat: no-repeat;
+}
+
+/* ===== Facilities ===== */
+.facilities { background: var(--color-bg-secondary); }
+.facilities__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.facility-card { position: relative; overflow: hidden; border-radius: var(--radius-md); aspect-ratio: 4/3; }
+.facility-card__img {
+  width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85);
+  transition: transform 600ms var(--ease-out), filter var(--duration-base) var(--ease-out);
+}
+.facility-card:hover .facility-card__img { transform: scale(1.05); filter: brightness(1); }
+.facility-card__caption {
+  position: absolute; left: var(--space-sm); top: var(--space-sm);
+  font-family: var(--font-en); font-size: var(--fs-xs);          /* 10 → 12px */
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest); color: var(--color-accent-gold);
+}
+.facility-card__title {
+  position: absolute; left: var(--space-sm); bottom: var(--space-sm);
+  font-family: var(--font-display); font-size: var(--fs-xl);     /* 18 → 32px:画像オーバーレイ用大型化 */
+  color: var(--color-text-primary); letter-spacing: var(--ls-wide);
+  line-height: var(--lh-tight);
+}
+
+/* ===== Pricing ===== */
+.pricing { background: var(--color-bg-primary); }
+.pricing__grid {
+  display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: var(--space-md);
+  align-items: stretch;
+  margin-top: var(--space-2xl);
+}
+.plan-card {
+  position: relative;
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg) var(--space-md);
+  display: flex; flex-direction: column;
+}
+.plan-card--standard {
+  border: 2px solid var(--color-accent-gold);
+  box-shadow: var(--shadow-glow-gold);
+  transform: scale(1.02);
+  z-index: 1;
+}
+.plan-card__ribbon {
+  position: absolute; top: -16px; left: 50%; transform: translateX(-50%);
+  background: var(--color-accent-gold); color: #000;
+  padding: 0.4rem 1.5rem;
+  font-family: var(--font-en); font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest); font-weight: var(--fw-bold);
+  border-radius: var(--radius-sm);
+}
+.plan-card__num {
+  font-family: var(--font-en); font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest); color: var(--color-accent-gold);
+  margin-bottom: 0.5rem;
+}
+.plan-card__name {
+  font-family: var(--font-display); font-size: var(--fs-2xl);
+  letter-spacing: var(--ls-wide); margin: 0 0 var(--space-md);
+}
+.plan-card--standard .plan-card__name { color: var(--color-accent-gold); }
+.plan-card__price {
+  font-family: var(--font-display); font-size: var(--fs-3xl);
+  line-height: 1; margin: 0;
+}
+.plan-card__price-suffix {
+  font-family: var(--font-en); font-size: var(--fs-sm);
+  color: var(--color-text-muted); margin-left: 0.25rem;
+}
+.plan-card__divider { height: 1px; background: rgba(200,169,97,0.3); margin: var(--space-md) 0; }
+.plan-card__features { flex: 1; margin: 0 0 var(--space-md); }
+.plan-card__features li {
+  font-family: var(--font-jp); font-size: var(--fs-sm);
+  color: var(--color-text-secondary);
+  padding-left: 1.5rem; position: relative;
+  margin-bottom: 0.5rem; line-height: var(--lh-snug);
+}
+.plan-card__features li::before {
+  content: "✓"; position: absolute; left: 0; top: 0;
+  color: var(--color-accent-gold); font-weight: bold;
+}
+.plan-card__cta {
+  display: inline-flex; justify-content: center; align-items: center; gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--color-accent-gold);
+  color: var(--color-accent-gold);
+  font-family: var(--font-jp); font-size: var(--fs-sm); font-weight: var(--fw-medium);
+  border-radius: var(--radius-md);
+  transition: background var(--duration-base), color var(--duration-base);
+}
+.plan-card__cta:hover { background: var(--color-accent-gold); color: #000; }
+.plan-card--standard .plan-card__cta { background: var(--color-accent-gold); color: #000; border: 0; }
+.plan-card--standard .plan-card__cta:hover { background: var(--color-accent-gold-light); }
+
+/* ===== Trainers (親しみゾーン) ===== */
+.trainers {
+  background: var(--color-bg-soft); color: var(--color-text-soft);
+  position: relative;
+}
+.trainers::before {
+  content: ""; position: absolute; top: -80px; left: 0; right: 0; height: 80px;
+  background: linear-gradient(180deg, var(--color-bg-primary), var(--color-bg-soft));
+}
+.trainers .section__chapter { color: var(--color-accent-gold-dim); }
+.trainers .section__chapter-jp { color: rgba(26,26,26,0.6); }
+.trainers__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.trainer-card { background: transparent; }
+.trainer-card__img {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-md);
+  filter: sepia(0.4) brightness(0.95);
+  transition: filter 800ms var(--ease-out), transform 600ms var(--ease-out);
+}
+.trainer-card:hover .trainer-card__img { filter: sepia(0) brightness(1); transform: scale(1.02); }
+.trainer-card__name {
+  font-family: var(--font-jp); font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);                /* 18 → 24px */
+  line-height: var(--lh-snug);
+  margin: var(--space-sm) 0 0.25rem;
+}
+.trainer-card__role {
+  font-family: var(--font-en); font-size: var(--fs-xs);  /* 10 → 12px */
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest); color: var(--color-accent-gold-dim);
+}
+.trainer-card__divider { height: 1px; background: rgba(200,169,97,0.5); width: 40px; margin: 0.75rem 0; }
+.trainer-card__quote {
+  font-family: var(--font-jp); font-style: italic;
+  font-size: var(--fs-base);              /* 14 → 16px */
+  line-height: var(--lh-normal);
+  color: rgba(26,26,26,0.75);
+}
+
+/* ===== Flow ===== */
+.flow {
+  background: var(--color-bg-primary); position: relative;
+}
+.flow::before {
+  content: ""; position: absolute; top: -80px; left: 0; right: 0; height: 80px;
+  background: linear-gradient(180deg, var(--color-bg-soft), var(--color-bg-primary));
+}
+.flow__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md);
+  margin-top: var(--space-lg);
+  position: relative;
+}
+.flow-step { text-align: left; padding-right: var(--space-md); position: relative; }
+.flow-step:not(:last-child)::after {
+  content: "→"; position: absolute; right: -8px; top: 0;
+  color: var(--color-accent-gold); font-family: var(--font-en); font-size: var(--fs-xl);
+}
+.flow-step__num {
+  font-family: var(--font-en); font-size: var(--fs-xs);    /* 10 → 12px */
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest); color: var(--color-accent-gold);
+}
+.flow-step__title {
+  font-family: var(--font-jp); font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);                                 /* 18 → 24px */
+  line-height: var(--lh-snug);
+  margin: 0.5rem 0 0.75rem;
+}
+.flow-step__divider { height: 1px; width: 40px; background: rgba(200,169,97,0.5); margin-bottom: 0.75rem; }
+.flow-step__desc {
+  font-family: var(--font-jp); font-size: var(--fs-base);  /* 14 → 16px */
+  color: var(--color-text-secondary); line-height: var(--lh-loose);
+}
+
+/* ===== FAQ ===== */
+.faq { background: var(--color-bg-secondary); }
+.faq__list { margin-top: var(--space-lg); max-width: var(--max-width-narrow); margin-left: auto; margin-right: auto; }
+.faq-item { border-top: 1px solid var(--color-border-soft); }
+.faq-item:last-child { border-bottom: 1px solid var(--color-border-soft); }
+.faq-item__q {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: var(--space-md) 0;
+  font-family: var(--font-jp); font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  cursor: pointer; width: 100%; text-align: left;
+}
+.faq-item__q-prefix { font-family: var(--font-display); color: var(--color-accent-gold); margin-right: 0.5rem; }
+.faq-item__icon {
+  display: inline-block; width: 16px; height: 16px; position: relative;
+  transition: transform 200ms var(--ease-out);
+}
+.faq-item__icon::before, .faq-item__icon::after {
+  content: ""; position: absolute; background: var(--color-accent-gold);
+}
+.faq-item__icon::before { left: 0; right: 0; top: 50%; height: 1px; transform: translateY(-0.5px); }
+.faq-item__icon::after  { top: 0; bottom: 0; left: 50%; width: 1px; transform: translateX(-0.5px); transition: transform 200ms; }
+.faq-item.is-open .faq-item__icon::after { transform: translateX(-0.5px) scaleY(0); }
+.faq-item__a {
+  max-height: 0; overflow: hidden; transition: max-height 300ms var(--ease-out);
+}
+.faq-item.is-open .faq-item__a { max-height: 400px; }
+.faq-item__a-inner {
+  padding: 0 0 var(--space-md);
+  font-family: var(--font-jp); font-size: var(--fs-base);
+  color: var(--color-text-secondary); line-height: var(--lh-loose);
+}
+
+/* ===== Final CTA & Footer (index.html と共通) ===== */
+.final-cta {
+  position: relative; min-height: 70vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center;
+  background: radial-gradient(ellipse at 80% 100%, rgba(200,48,46,0.25), transparent 60%), var(--color-bg-primary);
+  padding: var(--space-xl) var(--container-padding-desktop);
+}
+.final-cta__chapter {
+  display: inline-flex; align-items: center; gap: 1rem; margin-bottom: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-md);             /* 10 → 18px */
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+.final-cta__chapter::before, .final-cta__chapter::after {
+  content: ""; width: 80px; height: 1px;
+  background: var(--color-accent-gold); opacity: 0.6;
+}
+.final-cta__title {
+  font-family: var(--font-display); font-size: var(--fs-4xl);
+  letter-spacing: var(--ls-wide); line-height: var(--lh-tight); margin: 0 0 var(--space-sm);
+}
+.final-cta__sub {
+  font-family: var(--font-jp); font-weight: var(--fw-bold);
+  font-size: var(--fs-xl); margin: 0 0 var(--space-lg); color: var(--color-text-secondary);
+}
+
+.footer { background: var(--color-bg-secondary); padding: var(--space-xl) var(--container-padding-desktop) var(--space-md); color: var(--color-text-secondary); font-size: var(--fs-sm); }
+.footer__inner { max-width: var(--max-width); margin: 0 auto; }
+.footer__top { display: flex; flex-direction: column; gap: var(--space-md); padding-bottom: var(--space-lg); border-bottom: 1px solid var(--color-border-soft); }
+.footer__logo { font-family: var(--font-display); font-size: var(--fs-2xl); color: var(--color-accent-gold); letter-spacing: var(--ls-wider); }
+.footer__copy-line { font-family: var(--font-jp); font-size: var(--fs-md); color: var(--color-text-secondary); }
+.footer__columns { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); padding: var(--space-lg) 0; }
+.footer__col-title { font-family: var(--font-en); font-size: var(--fs-xs); letter-spacing: var(--ls-widest); color: var(--color-accent-gold); margin: 0 0 var(--space-sm); text-transform: uppercase; }
+.footer__col ul li { margin-bottom: 0.5rem; }
+.footer__col a { color: var(--color-text-secondary); font-size: var(--fs-sm); transition: color var(--duration-base) var(--ease-out); }
+.footer__col a:hover { color: var(--color-text-primary); }
+.footer__bottom { display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-md); border-top: 1px solid var(--color-border-soft); font-family: var(--font-en); font-size: var(--fs-2xs); letter-spacing: var(--ls-wider); color: var(--color-text-muted); }
+
+/* ===== Responsive ===== */
+@media (max-width: 1023px) {
+  .section, .final-cta, .footer { padding-left: var(--container-padding-tablet); padding-right: var(--container-padding-tablet); }
+  .facilities__grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing__grid { grid-template-columns: 1fr; }
+  .plan-card--standard { transform: none; order: -1; }
+  .trainers__grid { grid-template-columns: repeat(2, 1fr); }
+  .flow__grid { grid-template-columns: 1fr; }
+  .flow-step:not(:last-child)::after { content: "↓"; right: 50%; bottom: -32px; top: auto; transform: translateX(50%); }
+  .footer__columns { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+  .section, .final-cta, .footer { padding-left: var(--container-padding-mobile); padding-right: var(--container-padding-mobile); }
+  .header { padding: 0 var(--container-padding-mobile); height: var(--header-height-mobile); }
+  .nav__list, .header .cta-btn { display: none; }
+  .hamburger { display: flex; flex-direction: column; gap: 5px; padding: 8px; }
+  .hamburger span { width: 24px; height: 2px; background: var(--color-text-primary); }
+
+  .hero__bottom { left: var(--container-padding-mobile); right: var(--container-padding-mobile); flex-direction: column; gap: var(--space-xs); align-items: flex-start; }
+  .facilities__grid { grid-template-columns: 1fr; }
+  .trainers__grid { grid-template-columns: repeat(2, 1fr); }
+  .footer__columns { grid-template-columns: 1fr; }
+  .footer__bottom { flex-direction: column; gap: var(--space-xs); text-align: center; }
+}
+
+.fade-up { opacity: 1; transform: translateY(0); }
+.no-js .fade-up { opacity: 1 !important; transform: none !important; }
+</style>
+</head>
+<body class="no-js">
+<a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+
+<header class="header" role="banner">
+  <div class="header__inner">
+    <a class="header__logo" href="/">ALPS LAB</a>
+    <nav class="nav" role="navigation" aria-label="メイン">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="/about/">About</a></li>
+        <li><a class="nav__link is-current" href="/services/">Services</a></li>
+        <li><a class="nav__link" href="/stores/">Stores</a></li>
+        <li><a class="nav__link" href="/stories/">Stories</a></li>
+        <li><a class="nav__link" href="/recruit/">Recruit</a></li>
+      </ul>
+      <a class="cta-btn" href="/contact/">体験予約 <span class="cta-btn__arrow">→</span></a>
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <video class="hero__media" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80&auto=format&fit=crop" aria-hidden="true">
+      <!-- Coderへ: assets/videos/gym-hero.webm -->
+    </video>
+    <div class="hero__inner">
+      <span class="hero__chapter">ALPS LAB GYM / N°01</span>
+      <h1 class="hero__title-jp" id="hero-title"><span class="nowrap">ジムを、</span><span class="nowrap">人生のインフラに。</span></h1>
+      <p class="hero__title-en">MAKE THE GYM A LIFE INFRASTRUCTURE.</p>
+      <p class="hero__lead"><span class="nowrap">24時間ジム×月2~4回パーソナルの</span><span class="nowrap">ハイブリッド。</span><span class="nowrap">長野県内3店舗。</span></p>
+      <a class="cta-btn cta-btn--lg" href="/contact/?type=trial">
+        体験予約はこちら <span class="cta-btn__arrow">→</span>
+      </a>
+    </div>
+    <div class="hero__bottom">
+      <span>松本本店 / 長野店 / 軽井沢店</span>
+      <span>SCROLL ↓</span>
+    </div>
+  </section>
+
+  <!-- Concept -->
+  <section class="section concept" aria-labelledby="concept-title">
+    <span class="concept__chapter section__chapter">CONCEPT 02 <span class="section__chapter-jp">— 私たちの設計思想</span></span>
+    <h2 class="concept__text fade-up" id="concept-title">
+      <span class="nowrap">24時間ジムは「<em>自由</em>」だが</span><span class="nowrap">「迷子」になる。</span><br>
+      <span class="nowrap">パーソナルジムは「<em>結果</em>」が出るが</span><span class="nowrap">「終わり」が来る。</span>
+    </h2>
+    <p class="concept__text fade-up" style="font-size: var(--fs-lg); color: var(--color-text-secondary); margin-top: var(--space-md);">
+      <span class="nowrap">ALPS LAB GYM は、</span><span class="nowrap">その両方の弱点を、</span><span class="nowrap"><em>ハイブリッド</em>で解決します。</span>
+    </p>
+  </section>
+
+  <!-- Facilities -->
+  <section class="section facilities" aria-labelledby="facilities-title">
+    <div class="section__inner">
+      <h2 id="facilities-title" class="section__chapter">FACILITIES 03 <span class="section__chapter-jp">— 設備</span></h2>
+      <div class="facilities__grid">
+        <figure class="facility-card fade-up">
+          <img class="facility-card__img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=70&auto=format&fit=crop" alt="フリーウェイトエリア" loading="lazy">
+          <figcaption>
+            <span class="facility-card__caption">FACILITY 01</span>
+            <span class="facility-card__title">FREE WEIGHT</span>
+          </figcaption>
+        </figure>
+        <figure class="facility-card fade-up">
+          <img class="facility-card__img" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=70&auto=format&fit=crop" alt="マシンエリア" loading="lazy">
+          <figcaption>
+            <span class="facility-card__caption">FACILITY 02</span>
+            <span class="facility-card__title">MACHINES</span>
+          </figcaption>
+        </figure>
+        <figure class="facility-card fade-up">
+          <img class="facility-card__img" src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=70&auto=format&fit=crop" alt="スタジオ" loading="lazy">
+          <figcaption>
+            <span class="facility-card__caption">FACILITY 03</span>
+            <span class="facility-card__title">STUDIO</span>
+          </figcaption>
+        </figure>
+        <figure class="facility-card fade-up">
+          <img class="facility-card__img" src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=70&auto=format&fit=crop" alt="パーソナルブース" loading="lazy">
+          <figcaption>
+            <span class="facility-card__caption">FACILITY 04</span>
+            <span class="facility-card__title">PERSONAL BOOTH</span>
+          </figcaption>
+        </figure>
+        <figure class="facility-card fade-up">
+          <img class="facility-card__img" src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=800&q=70&auto=format&fit=crop" alt="ロッカールーム" loading="lazy">
+          <figcaption>
+            <span class="facility-card__caption">FACILITY 05</span>
+            <span class="facility-card__title">LOCKER</span>
+          </figcaption>
+        </figure>
+        <figure class="facility-card fade-up">
+          <img class="facility-card__img" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=70&auto=format&fit=crop" alt="ラウンジ" loading="lazy">
+          <figcaption>
+            <span class="facility-card__caption">FACILITY 06</span>
+            <span class="facility-card__title">LOUNGE</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section pricing" aria-labelledby="pricing-title">
+    <div class="section__inner">
+      <h2 id="pricing-title" class="section__chapter">PRICING 04 <span class="section__chapter-jp">— 料金プラン</span></h2>
+
+      <div class="pricing__grid">
+        <article class="plan-card fade-up">
+          <div class="plan-card__num">N° 01</div>
+          <h3 class="plan-card__name">LIGHT</h3>
+          <p class="plan-card__price">¥8,800<span class="plan-card__price-suffix">/月</span></p>
+          <div class="plan-card__divider"></div>
+          <ul class="plan-card__features">
+            <li>24時間ジム使い放題</li>
+            <li>無料オリエンテーション(60分)</li>
+            <li>専用アプリ利用可</li>
+          </ul>
+          <a class="plan-card__cta" href="/contact/?plan=light">このプランを選ぶ →</a>
+        </article>
+
+        <article class="plan-card plan-card--standard fade-up">
+          <span class="plan-card__ribbon">★ OUR PICK ★</span>
+          <div class="plan-card__num">N° 02</div>
+          <h3 class="plan-card__name">STANDARD</h3>
+          <p class="plan-card__price">¥14,800<span class="plan-card__price-suffix">/月</span></p>
+          <div class="plan-card__divider"></div>
+          <ul class="plan-card__features">
+            <li>24時間ジム使い放題</li>
+            <li>月2回×30分パーソナル</li>
+            <li>無料オリエンテーション</li>
+            <li>専用アプリ利用可</li>
+            <li>月次フィードバック</li>
+          </ul>
+          <a class="plan-card__cta" href="/contact/?plan=standard">このプランを選ぶ →</a>
+        </article>
+
+        <article class="plan-card fade-up">
+          <div class="plan-card__num">N° 03</div>
+          <h3 class="plan-card__name">PREMIUM</h3>
+          <p class="plan-card__price">¥22,800<span class="plan-card__price-suffix">/月</span></p>
+          <div class="plan-card__divider"></div>
+          <ul class="plan-card__features">
+            <li>24時間ジム使い放題</li>
+            <li>月4回×30分パーソナル</li>
+            <li>NUTRITION 月1回無料</li>
+            <li>SUPPLEMENTS 10%OFF</li>
+          </ul>
+          <a class="plan-card__cta" href="/contact/?plan=premium">このプランを選ぶ →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trainers (親しみゾーン) -->
+  <section class="section trainers" aria-labelledby="trainers-title">
+    <div class="section__inner">
+      <h2 id="trainers-title" class="section__chapter">TRAINERS 05 <span class="section__chapter-jp">— トレーナー紹介</span></h2>
+      <div class="trainers__grid">
+
+        <article class="trainer-card fade-up">
+          <img class="trainer-card__img" src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=800&q=70&auto=format&fit=crop" alt="山田 拓海 ヘッドトレーナー" loading="lazy">
+          <h3 class="trainer-card__name">山田 拓海</h3>
+          <p class="trainer-card__role">HEAD TRAINER / MATSUMOTO</p>
+          <div class="trainer-card__divider"></div>
+          <p class="trainer-card__quote">「<span class="nowrap">『正しいフォーム』は、</span><span class="nowrap">一生の財産になります</span>」</p>
+        </article>
+
+        <article class="trainer-card fade-up">
+          <img class="trainer-card__img" src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=800&q=70&auto=format&fit=crop" alt="佐々木 優香 トレーナー" loading="lazy">
+          <h3 class="trainer-card__name">佐々木 優香</h3>
+          <p class="trainer-card__role">PERSONAL TRAINER / NAGANO</p>
+          <div class="trainer-card__divider"></div>
+          <p class="trainer-card__quote">「<span class="nowrap">女性の身体に寄り添った</span><span class="nowrap">トレーニング設計が得意です</span>」</p>
+        </article>
+
+        <article class="trainer-card fade-up">
+          <img class="trainer-card__img" src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=70&auto=format&fit=crop" alt="中村 健介 チーフトレーナー" loading="lazy">
+          <h3 class="trainer-card__name">中村 健介</h3>
+          <p class="trainer-card__role">CHIEF TRAINER / KARUIZAWA</p>
+          <div class="trainer-card__divider"></div>
+          <p class="trainer-card__quote">「<span class="nowrap">リハビリ的な</span><span class="nowrap">アプローチも可能です</span>」</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Flow -->
+  <section class="section flow" aria-labelledby="flow-title">
+    <div class="section__inner">
+      <h2 id="flow-title" class="section__chapter">FLOW 06 <span class="section__chapter-jp">— 利用の流れ</span></h2>
+      <div class="flow__grid">
+
+        <article class="flow-step fade-up">
+          <span class="flow-step__num">STEP 01</span>
+          <h3 class="flow-step__title">入会前カウンセリング</h3>
+          <div class="flow-step__divider"></div>
+          <p class="flow-step__desc"><span class="nowrap">現状と目標をヒアリング、</span><span class="nowrap">最適なプランをご提案。</span></p>
+        </article>
+        <article class="flow-step fade-up">
+          <span class="flow-step__num">STEP 02</span>
+          <h3 class="flow-step__title">オリエンテーション</h3>
+          <div class="flow-step__divider"></div>
+          <p class="flow-step__desc"><span class="nowrap">マシンの使い方や</span><span class="nowrap">安全な動作を</span><span class="nowrap">60分でレクチャー。</span></p>
+        </article>
+        <article class="flow-step fade-up">
+          <span class="flow-step__num">STEP 03</span>
+          <h3 class="flow-step__title">通常利用</h3>
+          <div class="flow-step__divider"></div>
+          <p class="flow-step__desc"><span class="nowrap">24時間いつでも、</span><span class="nowrap">自分のペースで利用。</span></p>
+        </article>
+        <article class="flow-step fade-up">
+          <span class="flow-step__num">STEP 04</span>
+          <h3 class="flow-step__title">月次フィードバック</h3>
+          <div class="flow-step__divider"></div>
+          <p class="flow-step__desc"><span class="nowrap">パーソナルでフォーム確認・</span><span class="nowrap">次月の目標設定。</span></p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq" aria-labelledby="faq-title">
+    <div class="section__inner">
+      <h2 id="faq-title" class="section__chapter">FAQ 07 <span class="section__chapter-jp">— よくある質問</span></h2>
+      <div class="faq__list">
+        <article class="faq-item">
+          <button class="faq-item__q" aria-expanded="false">
+            <span><span class="faq-item__q-prefix">Q1.</span>24時間営業ですか?</span>
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-item__a">
+            <div class="faq-item__a-inner">
+              はい。スタッフ常駐時間外も、専用キーで入館できます。深夜・早朝も安全に利用いただけるよう、防犯カメラとSOSボタンを完備しています。
+            </div>
+          </div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-item__q" aria-expanded="false">
+            <span><span class="faq-item__q-prefix">Q2.</span>パーソナルトレーニングは予約が必要ですか?</span>
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-item__a">
+            <div class="faq-item__a-inner">
+              はい、専用アプリから24時間予約可能です。STANDARD会員は月2回、PREMIUM会員は月4回までご利用いただけます。
+            </div>
+          </div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-item__q" aria-expanded="false">
+            <span><span class="faq-item__q-prefix">Q3.</span>初心者でも大丈夫でしょうか?</span>
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-item__a">
+            <div class="faq-item__a-inner">
+              もちろんです。入会後は必ず無料のオリエンテーション(60分)を実施し、マシンの使い方や安全な動作をレクチャーします。
+            </div>
+          </div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-item__q" aria-expanded="false">
+            <span><span class="faq-item__q-prefix">Q4.</span>プラン変更は可能ですか?</span>
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-item__a">
+            <div class="faq-item__a-inner">
+              月単位で変更可能です。アプリまたは店舗で手続きできます。
+            </div>
+          </div>
+        </article>
+        <article class="faq-item">
+          <button class="faq-item__q" aria-expanded="false">
+            <span><span class="faq-item__q-prefix">Q5.</span>解約はいつでもできますか?</span>
+            <span class="faq-item__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-item__a">
+            <div class="faq-item__a-inner">
+              解約は前月の25日までにお申し出いただければ、翌月末で解約となります。最低契約期間はありません。
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta" aria-labelledby="final-cta-title">
+    <span class="final-cta__chapter">RESEARCH N° 08 — JOIN US</span>
+    <h2 id="final-cta-title" class="final-cta__title">BEGIN YOUR HEALTH RESEARCH.</h2>
+    <p class="final-cta__sub"><span class="nowrap">まずは無料体験から。</span><span class="nowrap">研究員と一緒に、</span><span class="nowrap">あなたの健康習慣を設計する。</span></p>
+    <a class="cta-btn cta-btn--lg" href="/contact/?type=trial">
+      無料体験予約 <span class="cta-btn__arrow">→</span>
+    </a>
+  </section>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__logo">ALPS LAB</div>
+      <p class="footer__copy-line">北アルプスの麓から、本物の健康を研究する。</p>
+    </div>
+    <div class="footer__columns">
+      <div class="footer__col">
+        <h4 class="footer__col-title">Services</h4>
+        <ul>
+          <li><a href="/services/gym/">GYM</a></li>
+          <li><a href="/services/nutrition/">NUTRITION</a></li>
+          <li><a href="/services/foods/">FOODS</a></li>
+          <li><a href="/services/supplements/">SUPPLEMENTS</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Stores</h4>
+        <ul>
+          <li><a href="/stores/#matsumoto">松本本店</a></li>
+          <li><a href="/stores/#nagano">長野店</a></li>
+          <li><a href="/stores/#karuizawa">軽井沢店</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Company</h4>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/company/">Company</a></li>
+          <li><a href="/recruit/">Recruit</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Social</h4>
+        <ul>
+          <li><a href="#" rel="noopener">Instagram</a></li>
+          <li><a href="#" rel="noopener">X (Twitter)</a></li>
+          <li><a href="#" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 ALPS LAB Inc.</span>
+      <span>LAT. 36.2°N / LON. 137.9°E</span>
+      <span>Privacy / Terms</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+  document.documentElement.classList.remove('no-js');
+  document.body.classList.remove('no-js');
+
+  // FAQ アコーディオン
+  document.querySelectorAll('.faq-item__q').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+
+  window.addEventListener('load', () => {
+    if (!window.gsap) return;
+    gsap.registerPlugin(ScrollTrigger);
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    ScrollTrigger.create({ start: 'top -80', end: 99999, toggleClass: { className: 'is-scrolled', targets: '.header' } });
+
+    // Hero load
+    const tl = gsap.timeline();
+    tl
+      .from('.hero__chapter', { opacity: 0, scaleX: 0, transformOrigin: 'center', duration: 0.8 })
+      .from('.hero__title-jp', { opacity: 0, y: 16, duration: 0.6 }, '-=0.4')
+      .from('.hero__title-en', { opacity: 0, y: 16, duration: 0.6 }, '-=0.4')
+      .from('.hero__lead',     { opacity: 0, y: 16, duration: 0.6 }, '-=0.4')
+      .from('.hero .cta-btn',  { opacity: 0, y: 16, duration: 0.5, ease: 'back.out(1.4)' }, '-=0.3')
+      .from('.hero__bottom',   { opacity: 0, y: 8, duration: 0.5 }, '-=0.2');
+
+    gsap.utils.toArray('.fade-up').forEach((el) => {
+      gsap.from(el, { opacity: 0, y: 24, duration: 0.8, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%' } });
+    });
+  });
+</script>
+</body>
+</html>

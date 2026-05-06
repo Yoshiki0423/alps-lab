@@ -1,0 +1,37 @@
+# =========================================================
+# ALPS LAB .gitignore
+# =========================================================
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (将来 Node.js を使う場合の備え)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Vercel(ローカル設定。deploy 時に自動生成される)
+.vercel/
+
+# 環境変数
+.env
+.env.local
+.env.*.local
+
+# ローカル開発用ツール(コミットしない)
+.tools/
+
+# ログ・一時ファイル
+*.log
+*.tmp
+.cache/

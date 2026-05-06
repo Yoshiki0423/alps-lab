@@ -1,0 +1,104 @@
+/* =========================================================================
+   Base — html / body / 共通要素のベーススタイル
+   tokens.css の CSS 変数を前提に、全ページ共通の基本スタイルを定義する。
+   ========================================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  overflow-x: hidden;
+}
+
+/* リンク・ボタンのフォーカスリング(アクセシビリティ) */
+:focus-visible {
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: 2px;
+}
+
+/* スキップリンク(視覚的に隠し、フォーカス時に表示) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--color-accent-gold);
+  color: #000;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-jp);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  z-index: 9999;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* 共通: セクション・コンテナ */
+.section {
+  padding: var(--space-xl) var(--container-padding-desktop);
+  position: relative;
+}
+.section__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* 章ラベル(セクション主見出し上に置く)
+   tokens.css の .chapter-label と同等の値を section 互換クラスとして定義 */
+.section__chapter {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+.section__chapter::before {
+  content: "";
+  width: 64px;
+  height: 1px;
+  background: var(--color-accent-gold);
+  opacity: 0.6;
+}
+.section__chapter-jp {
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* GSAP ロード前のフェードアップ初期値(JS無効環境ではそのまま表示) */
+.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+.no-js .fade-up {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* レスポンシブ — section 共通 */
+@media (max-width: 1023px) {
+  .section {
+    padding-left: var(--container-padding-tablet);
+    padding-right: var(--container-padding-tablet);
+  }
+}
+@media (max-width: 767px) {
+  .section {
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+  }
+}

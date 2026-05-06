@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="長野発の健康研究ブランド ALPS LAB の理念と物語。北アルプスの麓から、本物の健康を研究する私たちの想い。">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <!-- OGP -->
+  <meta property="og:title" content="ABOUT | ALPS LAB">
+  <meta property="og:description" content="長野発の健康研究ブランド ALPS LAB の理念と物語。北アルプスの麓から、本物の健康を研究する私たちの想い。">
+  <meta property="og:image" content="/assets/images/hero/hero-nature.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+
+  <title>ABOUT | ALPS LAB</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components/button.css">
+  <link rel="stylesheet" href="/assets/css/layout/header.css">
+  <link rel="stylesheet" href="/assets/css/layout/footer.css">
+  <link rel="stylesheet" href="/assets/css/pages/about.css">
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body class="no-js" data-page="about">
+
+  <a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a class="header__logo" href="/" aria-label="ALPS LAB トップページ">ALPS LAB</a>
+      <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="nav__list">
+          <li><a class="nav__link is-current" href="/about/" aria-current="page">About</a></li>
+          <li><a class="nav__link" href="/services/gym/">Services</a></li>
+          <li><a class="nav__link" href="/stores/">Stores</a></li>
+          <li><a class="nav__link" href="/stories/">Stories</a></li>
+          <li><a class="nav__link" href="/recruit/">Recruit</a></li>
+        </ul>
+        <a class="cta-btn" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+        <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="モバイルナビゲーション" aria-hidden="true">
+    <ul class="mobile-menu__list">
+      <li><a class="mobile-menu__link" href="/about/">About</a></li>
+      <li><a class="mobile-menu__link" href="/services/gym/">Services</a></li>
+      <li><a class="mobile-menu__link" href="/stores/">Stores</a></li>
+      <li><a class="mobile-menu__link" href="/stories/">Stories</a></li>
+      <li><a class="mobile-menu__link" href="/recruit/">Recruit</a></li>
+    </ul>
+    <a class="cta-btn cta-btn--lg" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ===========================================================
+         Hero (北アルプス全画面)
+         =========================================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero__media"
+           src="/assets/images/hero/hero-nature.jpg"
+           alt="北アルプスの稜線と霧。長野の自然を象徴する山岳風景。"
+           width="1920" height="1080"
+           loading="eager"
+           fetchpriority="high">
+      <div class="hero__inner">
+        <span class="hero__chapter" aria-hidden="true">ABOUT ALPS LAB</span>
+        <h1 class="hero__title" id="hero-title">RESEARCH THE TRUTH<br>OF HEALTH.</h1>
+        <p class="hero__sub">
+          <span class="nowrap">私たちは、</span><span class="nowrap">健康を「研究」する集団です。</span>
+        </p>
+      </div>
+      <div class="hero__bottom" aria-hidden="true">
+        <span>FROM NAGANO, JAPAN</span>
+        <span>LAT. 36.2°N / LON. 137.9°E</span>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Mission / Vision / Values
+         =========================================================== -->
+    <section class="section mvv">
+      <div class="section__inner">
+
+        <div class="mvv__block" aria-labelledby="mission-title">
+          <span class="mvv__chapter section__chapter">
+            MISSION 01 <span class="section__chapter-jp">— 私たちの使命</span>
+          </span>
+          <h2 class="mvv__title fade-up" id="mission-title">
+            <span class="nowrap">日本の健康寿命を、</span><span class="nowrap">地方から伸ばす。</span>
+          </h2>
+          <p class="mvv__sub-en fade-up">EXTEND HEALTHY LIFE FROM THE LOCAL FRONTIER.</p>
+          <p class="mvv__desc fade-up">
+            <span class="nowrap">健康寿命日本一クラスの長野県を起点に、</span><span class="nowrap">運動・食・知識を統合した</span><span class="nowrap">本物の健康習慣を全国に広げる。</span>
+          </p>
+        </div>
+
+        <div class="mvv__block" aria-labelledby="vision-title">
+          <span class="mvv__chapter section__chapter">
+            VISION 02 <span class="section__chapter-jp">— 目指す姿</span>
+          </span>
+          <h2 class="mvv__title fade-up" id="vision-title">
+            <span class="nowrap">ジムを、</span><span class="nowrap">人生のインフラに。</span>
+          </h2>
+          <p class="mvv__sub-en fade-up">MAKE THE GYM A LIFE INFRASTRUCTURE.</p>
+          <p class="mvv__desc fade-up">
+            <span class="nowrap">一過性のダイエットや筋トレではなく、</span><span class="nowrap">研究と実践に基づいた健康習慣を、</span><span class="nowrap">生涯にわたって支えるブランドになる。</span>
+          </p>
+        </div>
+
+        <div class="mvv__block" aria-labelledby="values-title">
+          <h2 id="values-title" class="mvv__chapter section__chapter">
+            VALUES 03 <span class="section__chapter-jp">— 行動指針</span>
+          </h2>
+          <div class="values__grid">
+
+            <article class="value-card fade-up">
+              <div class="value-card__num" aria-hidden="true">I.</div>
+              <h3 class="value-card__title">RESEARCH FIRST</h3>
+              <p class="value-card__desc">
+                <span class="nowrap">根拠に基づく。</span><span class="nowrap">流行ではなく、</span><span class="nowrap">研究結果と実証に基づいた</span><span class="nowrap">健康設計。</span>
+              </p>
+            </article>
+            <article class="value-card fade-up">
+              <div class="value-card__num" aria-hidden="true">II.</div>
+              <h3 class="value-card__title">LONG-TERM</h3>
+              <p class="value-card__desc">
+                <span class="nowrap">短期の結果より、</span><span class="nowrap">続けられること。</span><span class="nowrap">30年続けられる仕組みを作る。</span>
+              </p>
+            </article>
+            <article class="value-card fade-up">
+              <div class="value-card__num" aria-hidden="true">III.</div>
+              <h3 class="value-card__title">LOCAL &amp; AUTHENTIC</h3>
+              <p class="value-card__desc">
+                <span class="nowrap">地域に根ざし、</span><span class="nowrap">本物であること。</span><span class="nowrap">長野の自然・文化・知見を背景に。</span>
+              </p>
+            </article>
+            <article class="value-card fade-up">
+              <div class="value-card__num" aria-hidden="true">IV.</div>
+              <h3 class="value-card__title">INCLUSIVE</h3>
+              <p class="value-card__desc">
+                <span class="nowrap">初心者から本格派まで</span><span class="nowrap">歓迎する。</span><span class="nowrap">安心して入れる価格帯から</span><span class="nowrap">本気のアスリートまで。</span>
+              </p>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Story (創業の物語)
+         =========================================================== -->
+    <section class="section story" aria-labelledby="story-title">
+      <div class="section__inner">
+        <h2 id="story-title" class="section__chapter">
+          STORY 04 <span class="section__chapter-jp">— 創業の物語</span>
+        </h2>
+
+        <div class="story__intro fade-up">
+          <p>長野県は、健康寿命が日本トップクラスの土地です。私たちが見たのは、自然と共に暮らし、丁寧に食べ、長く動き続ける人々の姿でした。</p>
+          <p>一方で都市部では、ジムに通っても続かず、食事は乱れ、サプリだけが増えていく ——そんな人々が増え続けています。</p>
+          <p>ALPS LABは、長野が培ってきた健康の知恵を、運動・食・知識として再構築し、全国の人々に届けるために生まれました。</p>
+        </div>
+
+        <ol class="story__timeline">
+
+          <li class="story-event fade-up">
+            <div>
+              <span class="story-event__year">2023</span>
+              <h3 class="story-event__title">創業の動機</h3>
+              <p class="story-event__desc">
+                <span class="nowrap">長野で見つけた</span><span class="nowrap">「健康の本質」を</span><span class="nowrap">全国へ届けるために、</span><span class="nowrap">起業を決意。</span>
+              </p>
+            </div>
+            <img class="story-event__img"
+                 src="/assets/images/about/story-2023.jpg"
+                 alt="長野の自然風景"
+                 width="640" height="480"
+                 loading="lazy">
+          </li>
+
+          <li class="story-event fade-up">
+            <div>
+              <span class="story-event__year">2024</span>
+              <h3 class="story-event__title">1号店オープン</h3>
+              <p class="story-event__desc">
+                <span class="nowrap">松本本店をオープン。</span><span class="nowrap">ハイブリッド型ジムという</span><span class="nowrap">コンセプトで運営開始。</span>
+              </p>
+            </div>
+            <img class="story-event__img"
+                 src="/assets/images/about/story-2024.jpg"
+                 alt="松本本店の外観"
+                 width="640" height="480"
+                 loading="lazy">
+          </li>
+
+          <li class="story-event fade-up">
+            <div>
+              <span class="story-event__year">2025</span>
+              <h3 class="story-event__title">事業拡大</h3>
+              <p class="story-event__desc">
+                <span class="nowrap">NUTRITION・FOODS事業を開始。</span><span class="nowrap">長野店もオープン。</span>
+              </p>
+            </div>
+            <img class="story-event__img"
+                 src="/assets/images/about/story-2025.jpg"
+                 alt="長野店"
+                 width="640" height="480"
+                 loading="lazy">
+          </li>
+
+          <li class="story-event is-current fade-up">
+            <div>
+              <span class="story-event__year">2026</span>
+              <h3 class="story-event__title">現在(3店舗体制)</h3>
+              <p class="story-event__desc">
+                <span class="nowrap">軽井沢店を加えた3店舗体制。</span><span class="nowrap">SUPPLEMENTS事業も開始。</span>
+              </p>
+            </div>
+            <img class="story-event__img"
+                 src="/assets/images/stores/karuizawa.jpg"
+                 alt="軽井沢店"
+                 width="640" height="480"
+                 loading="lazy">
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Message (代表メッセージ)
+         =========================================================== -->
+    <section class="section message" aria-labelledby="message-title">
+      <div class="section__inner">
+        <h2 id="message-title" class="section__chapter">
+          MESSAGE 05 <span class="section__chapter-jp">— 代表メッセージ</span>
+        </h2>
+        <div class="message__grid">
+          <img class="message__img fade-up"
+               src="/assets/images/about/representative.jpg"
+               alt="代表取締役のポートレート"
+               width="800" height="1000"
+               loading="lazy">
+          <div class="message__quote fade-up">
+            <p class="message__text">
+              「<span class="nowrap">健康は、</span><span class="nowrap">努力ではなく仕組みで作るもの</span>」。<br>
+              <span class="nowrap">私たち研究員一同、</span><span class="nowrap">長野の地から、</span><span class="nowrap">その仕組みを世の中に提供していきます。</span><br>
+              <span class="nowrap">一緒に、</span><span class="nowrap">人生のインフラを作っていきませんか。</span>
+            </p>
+            <div class="message__divider" aria-hidden="true"></div>
+            <p class="message__signature">
+              REPRESENTATIVE DIRECTOR
+              <strong>代表取締役 ◯◯◯◯</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Team
+         =========================================================== -->
+    <section class="section team" aria-labelledby="team-title">
+      <div class="section__inner">
+        <h2 id="team-title" class="section__chapter">
+          TEAM 06 <span class="section__chapter-jp">— チーム</span>
+        </h2>
+        <div class="team__grid">
+
+          <article class="team-member fade-up">
+            <img class="team-member__img"
+                 src="/assets/images/trainers/yamada-takumi.jpg"
+                 alt="山田 拓海"
+                 width="600" height="600"
+                 loading="lazy">
+            <h3 class="team-member__name">山田 拓海</h3>
+            <p class="team-member__role">HEAD TRAINER</p>
+          </article>
+          <article class="team-member fade-up">
+            <img class="team-member__img"
+                 src="/assets/images/trainers/sasaki-yuka.jpg"
+                 alt="佐々木 優香"
+                 width="600" height="600"
+                 loading="lazy">
+            <h3 class="team-member__name">佐々木 優香</h3>
+            <p class="team-member__role">PERSONAL TRAINER</p>
+          </article>
+          <article class="team-member fade-up">
+            <img class="team-member__img"
+                 src="/assets/images/trainers/nakamura-kensuke.jpg"
+                 alt="中村 健介"
+                 width="600" height="600"
+                 loading="lazy">
+            <h3 class="team-member__name">中村 健介</h3>
+            <p class="team-member__role">CHIEF TRAINER</p>
+          </article>
+          <article class="team-member fade-up">
+            <img class="team-member__img"
+                 src="/assets/images/trainers/team-04.jpg"
+                 alt="小林 由香"
+                 width="600" height="600"
+                 loading="lazy">
+            <h3 class="team-member__name">小林 由香</h3>
+            <p class="team-member__role">REGISTERED DIETITIAN</p>
+          </article>
+          <article class="team-member fade-up">
+            <img class="team-member__img"
+                 src="/assets/images/trainers/team-05.jpg"
+                 alt="高橋 沙織"
+                 width="600" height="600"
+                 loading="lazy">
+            <h3 class="team-member__name">高橋 沙織</h3>
+            <p class="team-member__role">REGISTERED DIETITIAN</p>
+          </article>
+          <article class="team-member fade-up">
+            <img class="team-member__img"
+                 src="/assets/images/trainers/team-06.jpg"
+                 alt="井上 智也"
+                 width="600" height="600"
+                 loading="lazy">
+            <h3 class="team-member__name">井上 智也</h3>
+            <p class="team-member__role">STORE MANAGER</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Final CTA
+         =========================================================== -->
+    <section class="final-cta" aria-labelledby="final-cta-title">
+      <span class="final-cta__chapter">RESEARCH N° 06 — JOIN US</span>
+      <h2 id="final-cta-title" class="final-cta__title">BEGIN YOUR HEALTH RESEARCH.</h2>
+      <p class="final-cta__sub">
+        <span class="nowrap">あなたの健康習慣を、</span><span class="nowrap">研究員と一緒に設計する。</span>
+      </p>
+      <a class="cta-btn cta-btn--lg" href="/contact/?type=trial">
+        無料体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__logo">ALPS LAB</div>
+        <p class="footer__copy-line">北アルプスの麓から、本物の健康を研究する。</p>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <ul>
+            <li><a href="/services/gym/">GYM</a></li>
+            <li><a href="/services/nutrition/">NUTRITION</a></li>
+            <li><a href="/services/foods/">FOODS</a></li>
+            <li><a href="/services/supplements/">SUPPLEMENTS</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Stores</h4>
+          <ul>
+            <li><a href="/stores/#matsumoto">松本本店</a></li>
+            <li><a href="/stores/#nagano">長野店</a></li>
+            <li><a href="/stores/#karuizawa">軽井沢店</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Company</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/company/">Company</a></li>
+            <li><a href="/recruit/">Recruit</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Social</h4>
+          <ul>
+            <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="#" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 ALPS LAB Inc.</span>
+        <span>LAT. 36.2°N / LON. 137.9°E</span>
+        <span>Privacy / Terms</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/animations.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,1183 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="長野発の健康研究ブランド ALPS LAB。24時間ジム×パーソナルのハイブリッド型ジムを中心に、栄養指導・冷凍宅配ミール・サプリで会員の健康をワンストップでサポート。">
+<meta name="theme-color" content="#0A0A0A">
+<title>ALPS LAB | 北アルプスの麓から、本物の健康を研究する</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Designer Agent: トークン読み込み(Coderが /assets/css/tokens.css に配置する想定) -->
+<link rel="stylesheet" href="../02_design_tokens.css">
+
+<style>
+/* =========================================================================
+   Reset / Base
+   ========================================================================= */
+*,*::before,*::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, video { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; background: none; border: 0; cursor: pointer; color: inherit; }
+ul { list-style: none; padding: 0; margin: 0; }
+
+/* skip link */
+.skip-link {
+  position: absolute; top: -100px; left: 0;
+  background: var(--color-accent-gold); color: #000;
+  padding: 0.5rem 1rem; z-index: 9999;
+}
+.skip-link:focus { top: 0; }
+
+/* =========================================================================
+   Header
+   ========================================================================= */
+.header {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--header-height);
+  display: flex; align-items: center;
+  padding: 0 var(--container-padding-desktop);
+  z-index: var(--z-header);
+  background: transparent;
+  transition: background var(--duration-base) var(--ease-out),
+              backdrop-filter var(--duration-base) var(--ease-out),
+              border-bottom var(--duration-base) var(--ease-out);
+}
+.header.is-scrolled {
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+.header__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.header__logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: var(--ls-wider);
+  color: var(--color-text-primary);
+  transition: color var(--duration-base) var(--ease-out);
+}
+.header__logo:hover { color: var(--color-accent-gold); }
+
+.nav { display: flex; gap: var(--space-md); align-items: center; }
+.nav__list { display: flex; gap: var(--space-md); }
+.nav__link {
+  font-family: var(--font-en);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  position: relative;
+  padding: 0.5rem 0;
+}
+.nav__link::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 1px; background: var(--color-accent-gold);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 300ms var(--ease-out);
+}
+.nav__link:hover { color: var(--color-text-primary); }
+.nav__link:hover::after { transform: scaleX(1); }
+
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--color-accent-red);
+  color: var(--color-text-primary);
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-jp);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  border-radius: var(--radius-md);
+  transition: background var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+}
+.cta-btn:hover {
+  background: var(--color-accent-red-hover);
+  box-shadow: var(--shadow-glow-red);
+}
+.cta-btn--lg { padding: 1.5rem 4rem; font-size: var(--fs-md); }
+.cta-btn__arrow { transition: transform var(--duration-base) var(--ease-out); }
+.cta-btn:hover .cta-btn__arrow { transform: translateX(4px); }
+
+/* hamburger (mobile) */
+.hamburger { display: none; }
+
+/* =========================================================================
+   Hero — Split Composition (NATURE × BODY)
+   ========================================================================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 720px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.hero__pane {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.hero__pane--nature::after,
+.hero__pane--body::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.1) 40%, rgba(10,10,10,0.7) 100%);
+  pointer-events: none;
+}
+.hero__media {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.hero__pane--nature .hero__media { filter: brightness(0.6) contrast(1.1); }
+.hero__pane--body   .hero__media { filter: brightness(0.5) saturate(0.7) contrast(1.05); }
+
+.hero__chapter {
+  position: absolute;
+  top: calc(var(--header-height) + var(--space-md));
+  z-index: var(--z-content);
+  font-family: var(--font-display);
+  letter-spacing: var(--ls-wider);
+  color: var(--color-accent-gold);
+}
+.hero__chapter--left { left: var(--space-md); }
+.hero__chapter--right { right: var(--space-md); text-align: right; }
+.hero__chapter-num {
+  display: block;
+  font-size: var(--fs-lg);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.hero__chapter-jp {
+  display: block;
+  font-family: var(--font-jp);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-wider);
+  color: var(--color-text-muted);
+}
+
+.hero__coord {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: var(--space-md);
+  z-index: var(--z-content);
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold-dim);
+  line-height: 1.6;
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: var(--space-lg);
+  right: var(--space-md);
+  z-index: var(--z-content);
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-text-muted);
+  display: flex; align-items: center; gap: 0.5rem;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+.hero__scroll::after {
+  content: ""; display: inline-block; width: 1px; height: 24px;
+  background: linear-gradient(180deg, var(--color-accent-gold), transparent);
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* center overlay */
+.hero__center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: calc(var(--z-content) + 1);
+  text-align: center;
+  width: min(70%, 880px);
+  padding: 0 var(--space-md);
+}
+.hero__separator {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-md);              /* 10 → 18px */
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+.hero__separator::before,
+.hero__separator::after {
+  content: ""; width: 80px; height: 1px;  /* 中央配置の両側罫線、80px 維持 */
+  background: var(--color-accent-gold);
+  opacity: 0.6;
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-sm);
+}
+.hero__subtitle {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  line-height: var(--lh-snug);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-lg);
+}
+.hero__cta {
+  /* uses .cta-btn .cta-btn--lg */
+}
+
+/* hero index footer */
+.hero__index {
+  position: absolute;
+  bottom: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: var(--z-content);
+  display: flex;
+  gap: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold-dim);
+  white-space: nowrap;
+}
+.hero__index-item { transition: color var(--duration-base) var(--ease-out); }
+.hero__index-item:hover { color: var(--color-accent-gold); }
+
+/* =========================================================================
+   Common Section Styles
+   ========================================================================= */
+.section {
+  padding: var(--space-xl) var(--container-padding-desktop);
+  position: relative;
+}
+.section__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.section__chapter {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-md);              /* 10 → 18px */
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+.section__chapter::before {
+  content: ""; width: 64px; height: 1px;  /* 40 → 64px */
+  background: var(--color-accent-gold); opacity: 0.6;
+}
+.section__chapter-jp {
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);             /* 10 → 16px */
+  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* =========================================================================
+   Mission
+   ========================================================================= */
+.mission {
+  min-height: 80vh;
+  display: flex; flex-direction: column; justify-content: center;
+  text-align: center;
+  background: var(--color-bg-primary);
+}
+.mission__chapter {
+  margin: 0 auto var(--space-lg);
+}
+.mission__title {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-snug);
+  margin: 0 0 var(--space-md);
+  max-width: 960px;
+  margin-left: auto; margin-right: auto;
+}
+.mission__title em {
+  font-style: normal;
+  background-image: linear-gradient(180deg, transparent 60%, rgba(200,169,97,0.4) 60%);
+  background-repeat: no-repeat;
+}
+.mission__sub {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-accent-gold-dim);
+}
+
+/* =========================================================================
+   Services Overview
+   ========================================================================= */
+.services {
+  background: var(--color-bg-secondary);
+}
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.service-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.service-card__img {
+  width: 100%; aspect-ratio: 16/9; object-fit: cover;
+  filter: brightness(0.85);
+  transition: transform 600ms var(--ease-out), filter var(--duration-base) var(--ease-out);
+}
+.service-card:hover .service-card__img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+.service-card__body { padding: var(--space-md); }
+.service-card__num {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);          /* 48px - 据え置き */
+  color: var(--color-accent-gold);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.service-card__title-en {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);          /* 32 → 48px:画像と並ぶ準主役 */
+  letter-spacing: var(--ls-wide);
+  line-height: var(--lh-tight);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+.service-card__title-jp {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);           /* 14 → 18px */
+  font-weight: var(--fw-medium);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-sm);
+}
+.service-card__divider {
+  height: 1px; background: var(--color-accent-gold); opacity: 0.3;
+  margin: var(--space-sm) 0;
+}
+.service-card__copy {
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);         /* 14 → 16px */
+  color: var(--color-text-secondary);
+  line-height: var(--lh-normal);
+  margin: 0 0 var(--space-sm);
+}
+.service-card__arrow {
+  font-family: var(--font-en);
+  font-size: var(--fs-md);           /* 明示 18px */
+  color: var(--color-accent-gold);
+  display: inline-block;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.service-card:hover .service-card__arrow { transform: translateX(4px); }
+
+/* =========================================================================
+   Why ALPS LAB
+   ========================================================================= */
+.why {
+  background: var(--color-bg-primary);
+  border-top: 1px solid rgba(200,169,97,0.15);
+  border-bottom: 1px solid rgba(200,169,97,0.15);
+}
+.why__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.why-card {
+  position: relative;
+  padding: var(--space-md) var(--space-lg);
+  border-left: 4px solid var(--color-accent-gold);
+}
+.why-card__num {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  color: var(--color-accent-gold);
+  line-height: 1;
+}
+.why-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-primary);
+  margin: 0.5rem 0;
+}
+.why-card__progress {
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold-dim);
+  margin-bottom: var(--space-sm);
+}
+.why-card__divider {
+  height: 1px; width: 60px; background: var(--color-accent-gold); opacity: 0.5;
+  margin: var(--space-sm) 0;
+}
+.why-card__desc {
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-loose);
+  margin: 0;
+}
+
+/* =========================================================================
+   Stories Pickup (親しみゾーン)
+   ========================================================================= */
+.stories {
+  background: var(--color-bg-soft);
+  color: var(--color-text-soft);
+  position: relative;
+}
+.stories::before {
+  content: ""; position: absolute; top: -80px; left: 0; right: 0; height: 80px;
+  background: linear-gradient(180deg, var(--color-bg-primary), var(--color-bg-soft));
+}
+.stories .section__chapter { color: var(--color-accent-gold-dim); }
+.stories .section__chapter-jp { color: rgba(26,26,26,0.6); }
+.stories__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.story-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.story-card:hover { transform: translateY(-4px); }
+.story-card__img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover;
+  transition: transform 600ms var(--ease-out);
+}
+.story-card:hover .story-card__img { transform: scale(1.03); }
+.story-card__body { padding: var(--space-md); }
+.story-card__cat {
+  font-family: var(--font-en);
+  font-size: var(--fs-xs);            /* 10 → 12px:メタは下限 12px に */
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold-dim);
+  margin: 0 0 0.75rem;
+}
+.story-card__title {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);            /* 18 → 24px:画像と並ぶ準主役 */
+  color: var(--color-text-soft);
+  line-height: var(--lh-snug);
+  margin: 0 0 0.75rem;
+}
+.story-card__excerpt {
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);          /* 14 → 16px */
+  color: rgba(26,26,26,0.7);
+  line-height: var(--lh-normal);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0 0 var(--space-sm);
+}
+.story-card__date {
+  font-family: var(--font-en);
+  font-size: var(--fs-xs);            /* 12px:据え置き */
+  letter-spacing: var(--ls-wider);    /* 文字間で存在感を補強 */
+  color: rgba(26,26,26,0.5);
+}
+.stories__more {
+  display: block;
+  margin: var(--space-lg) auto 0;
+  text-align: center;
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  color: var(--color-text-soft);
+  position: relative;
+  width: max-content;
+  padding-bottom: 4px;
+}
+.stories__more::after {
+  content: ""; position: absolute; left: 0; bottom: 0;
+  width: 100%; height: 1px; background: var(--color-text-soft);
+  transform: scaleX(0.3); transform-origin: left;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.stories__more:hover::after { transform: scaleX(1); }
+
+/* =========================================================================
+   Stores
+   ========================================================================= */
+.stores {
+  background: var(--color-bg-primary);
+  position: relative;
+}
+.stores::before {
+  content: ""; position: absolute; top: -80px; left: 0; right: 0; height: 80px;
+  background: linear-gradient(180deg, var(--color-bg-soft), var(--color-bg-primary));
+}
+.stores__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.store-card {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border-left: 2px solid var(--color-accent-gold);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+.store-card:hover { transform: translateY(-4px); }
+.store-card__img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover;
+  filter: brightness(0.85);
+}
+.store-card__body { padding: var(--space-md); }
+.store-card__num {
+  font-family: var(--font-en);
+  font-size: var(--fs-xs);            /* 10 → 12px */
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold);
+  margin: 0;
+}
+.store-card__title-en {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);           /* 32 → 48px:画像と並ぶ準主役 */
+  letter-spacing: var(--ls-wide);
+  line-height: var(--lh-tight);
+  margin: 0.25rem 0;
+  color: var(--color-text-primary);
+}
+.store-card__title-jp {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);            /* 18 → 24px */
+  color: var(--color-text-secondary);
+}
+.store-card__divider {
+  height: 1px; background: var(--color-accent-gold); opacity: 0.3;
+  margin: var(--space-sm) 0;
+}
+.store-card__info {
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);          /* 14 → 16px */
+  color: var(--color-text-secondary);
+  line-height: var(--lh-loose);
+}
+.store-card__link {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  font-family: var(--font-en);
+  color: var(--color-accent-gold);
+  font-size: var(--fs-base);          /* 14 → 16px */
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+}
+
+/* =========================================================================
+   Final CTA
+   ========================================================================= */
+.final-cta {
+  position: relative;
+  min-height: 70vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 80% 100%, rgba(200,48,46,0.25), transparent 60%),
+    var(--color-bg-primary);
+  padding: var(--space-xl) var(--container-padding-desktop);
+}
+.final-cta__chapter {
+  display: inline-flex; align-items: center; gap: 1rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-md);             /* 10 → 18px */
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+.final-cta__chapter::before,
+.final-cta__chapter::after {
+  content: ""; width: 80px; height: 1px;
+  background: var(--color-accent-gold); opacity: 0.6;
+}
+.final-cta__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  letter-spacing: var(--ls-wide);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--space-sm);
+}
+.final-cta__sub {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  margin: 0 0 var(--space-lg);
+  color: var(--color-text-secondary);
+}
+
+/* =========================================================================
+   Footer
+   ========================================================================= */
+.footer {
+  background: var(--color-bg-secondary);
+  padding: var(--space-xl) var(--container-padding-desktop) var(--space-md);
+  color: var(--color-text-secondary);
+  font-size: var(--fs-sm);
+}
+.footer__inner { max-width: var(--max-width); margin: 0 auto; }
+.footer__top {
+  display: flex; flex-direction: column; gap: var(--space-md);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  color: var(--color-accent-gold);
+  letter-spacing: var(--ls-wider);
+}
+.footer__copy-line {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+}
+.footer__columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  padding: var(--space-lg) 0;
+}
+.footer__col-title {
+  font-family: var(--font-en);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold);
+  margin: 0 0 var(--space-sm);
+  text-transform: uppercase;
+}
+.footer__col ul li {
+  margin-bottom: 0.5rem;
+}
+.footer__col a {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-sm);
+  transition: color var(--duration-base) var(--ease-out);
+}
+.footer__col a:hover { color: var(--color-text-primary); }
+.footer__bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-soft);
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-wider);
+  color: var(--color-text-muted);
+}
+
+/* =========================================================================
+   Responsive
+   ========================================================================= */
+@media (max-width: 1023px) {
+  .section, .final-cta, .footer { padding-left: var(--container-padding-tablet); padding-right: var(--container-padding-tablet); }
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+  .why__grid { grid-template-columns: 1fr; gap: var(--space-md); }
+  .stories__grid { grid-template-columns: repeat(2, 1fr); }
+  .stores__grid { grid-template-columns: 1fr; }
+  .footer__columns { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 767px) {
+  .section, .final-cta, .footer { padding-left: var(--container-padding-mobile); padding-right: var(--container-padding-mobile); }
+  .header { padding: 0 var(--container-padding-mobile); height: var(--header-height-mobile); }
+  .nav__list, .header .cta-btn { display: none; }
+  .hamburger { display: flex; flex-direction: column; gap: 5px; padding: 8px; }
+  .hamburger span { width: 24px; height: 2px; background: var(--color-text-primary); }
+
+  .hero { grid-template-columns: 1fr; grid-template-rows: 40vh 60vh; min-height: 100vh; }
+  .hero__chapter--right { right: var(--container-padding-mobile); top: calc(40vh + var(--space-md)); }
+  .hero__chapter--left { left: var(--container-padding-mobile); }
+  .hero__center { width: 90%; }
+  .hero__coord, .hero__scroll { bottom: var(--space-md); }
+  .hero__index { font-size: 9px; gap: var(--space-sm); }
+  .hero__pane--body video { display: none; }
+  .hero__pane--body .hero__media-mobile { display: block; }
+  .hero__separator::before, .hero__separator::after { width: 32px; }
+
+  .services__grid, .stories__grid { grid-template-columns: 1fr; }
+  .footer__columns { grid-template-columns: 1fr; }
+  .footer__bottom { flex-direction: column; gap: var(--space-xs); text-align: center; }
+}
+
+/* =========================================================================
+   Pre-animation states (GSAP が制御する初期値、JS無効環境でも見えるよう opacity:1 fallback)
+   ========================================================================= */
+.fade-up { opacity: 1; transform: translateY(0); }
+.no-js .fade-up { opacity: 1 !important; transform: none !important; }
+
+</style>
+</head>
+<body class="no-js">
+<!-- ========================================================================
+     Skip Link
+     ======================================================================== -->
+<a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+
+<!-- ========================================================================
+     Header (固定)
+     ======================================================================== -->
+<header class="header" role="banner">
+  <div class="header__inner">
+    <a class="header__logo" href="/">ALPS LAB</a>
+    <nav class="nav" role="navigation" aria-label="メイン">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="/about/">About</a></li>
+        <li><a class="nav__link" href="/services/">Services</a></li>
+        <li><a class="nav__link" href="/stores/">Stores</a></li>
+        <li><a class="nav__link" href="/stories/">Stories</a></li>
+        <li><a class="nav__link" href="/recruit/">Recruit</a></li>
+      </ul>
+      <a class="cta-btn" href="/contact/">体験予約 <span class="cta-btn__arrow">→</span></a>
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ======================================================================
+       Section 1: Hero — Split Composition (NATURE × BODY)
+       ====================================================================== -->
+  <section class="hero" aria-labelledby="hero-title">
+
+    <!-- LEFT: I. NATURE -->
+    <div class="hero__pane hero__pane--nature">
+      <img class="hero__media"
+           src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80&auto=format&fit=crop"
+           alt="北アルプスの山岳風景。霧に包まれた稜線。"
+           loading="eager">
+      <div class="hero__chapter hero__chapter--left">
+        <span class="hero__chapter-num">I. NATURE</span>
+        <span class="hero__chapter-jp">北アルプス山脈</span>
+      </div>
+      <div class="hero__coord">
+        LAT. 36.2°N<br>
+        LON. 137.9°E<br>
+        NAGANO, JP
+      </div>
+    </div>
+
+    <!-- RIGHT: II. BODY -->
+    <div class="hero__pane hero__pane--body">
+      <!-- 動画(Desktop) — 仮: Pexels等のフリー動画URLに差し替え予定 -->
+      <video class="hero__media" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80&auto=format&fit=crop"
+             aria-hidden="true">
+        <!-- Coderへ: 動画ファイルは assets/videos/hero-body.webm として用意 -->
+        <!-- <source src="/assets/videos/hero-body.webm" type="video/webm"> -->
+      </video>
+      <div class="hero__chapter hero__chapter--right">
+        <span class="hero__chapter-num">II. BODY</span>
+        <span class="hero__chapter-jp">本物の最終形</span>
+      </div>
+      <div class="hero__scroll">SCROLL</div>
+    </div>
+
+    <!-- CENTER OVERLAY -->
+    <div class="hero__center">
+      <span class="hero__separator">NATURE × BODY</span>
+      <h1 class="hero__title" id="hero-title">RESEARCH THE TRUTH OF HEALTH.</h1>
+      <p class="hero__subtitle"><span class="nowrap">北アルプスの麓から、</span><span class="nowrap">本物の健康を研究する。</span></p>
+      <a class="cta-btn cta-btn--lg" href="/contact/?type=trial">
+        体験予約はこちら <span class="cta-btn__arrow">→</span>
+      </a>
+    </div>
+
+    <!-- BOTTOM INDEX -->
+    <ul class="hero__index" aria-hidden="true">
+      <li class="hero__index-item">01 GYM</li>
+      <li class="hero__index-item">02 NUTRITION</li>
+      <li class="hero__index-item">03 FOODS</li>
+      <li class="hero__index-item">04 SUPPLEMENTS</li>
+    </ul>
+  </section>
+
+  <!-- ======================================================================
+       Section 2: Mission
+       ====================================================================== -->
+  <section class="section mission" aria-labelledby="mission-title">
+    <div class="section__inner">
+      <span class="mission__chapter section__chapter">MISSION 01 <span class="section__chapter-jp">— 私たちの使命</span></span>
+      <h2 class="mission__title fade-up" id="mission-title">
+        <span class="nowrap">私たちは、</span><span class="nowrap"><em>3年で痩せるダイエット</em>を</span><span class="nowrap">売っているのではない。</span><br>
+        <span class="nowrap"><em>30年続く健康習慣</em>を、</span><span class="nowrap">研究している。</span>
+      </h2>
+      <p class="mission__sub fade-up">WE DON'T SELL DIETS. WE STUDY HABITS.</p>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       Section 3: Services Overview
+       ====================================================================== -->
+  <section class="section services" aria-labelledby="services-title">
+    <div class="section__inner">
+      <h2 id="services-title" class="section__chapter">FOUR FIELDS <span class="section__chapter-jp">— 4つの研究領域</span></h2>
+      <div class="services__grid">
+
+        <a class="service-card fade-up" href="/services/gym/">
+          <img class="service-card__img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=70&auto=format&fit=crop" alt="トレーニングジムの内観" loading="lazy">
+          <div class="service-card__body">
+            <div class="service-card__num">01</div>
+            <h3 class="service-card__title-en">GYM</h3>
+            <p class="service-card__title-jp">ジム</p>
+            <div class="service-card__divider"></div>
+            <p class="service-card__copy"><span class="nowrap">24時間×パーソナルの、</span><span class="nowrap">新しい形。</span></p>
+            <span class="service-card__arrow">→</span>
+          </div>
+        </a>
+
+        <a class="service-card fade-up" href="/services/nutrition/">
+          <img class="service-card__img" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=70&auto=format&fit=crop" alt="健康的な食材" loading="lazy">
+          <div class="service-card__body">
+            <div class="service-card__num">02</div>
+            <h3 class="service-card__title-en">NUTRITION</h3>
+            <p class="service-card__title-jp">栄養</p>
+            <div class="service-card__divider"></div>
+            <p class="service-card__copy"><span class="nowrap">食べることは、</span><span class="nowrap">未来を選ぶこと。</span></p>
+            <span class="service-card__arrow">→</span>
+          </div>
+        </a>
+
+        <a class="service-card fade-up" href="/services/foods/">
+          <img class="service-card__img" src="https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=70&auto=format&fit=crop" alt="冷凍宅配ミール" loading="lazy">
+          <div class="service-card__body">
+            <div class="service-card__num">03</div>
+            <h3 class="service-card__title-en">FOODS</h3>
+            <p class="service-card__title-jp">食事</p>
+            <div class="service-card__divider"></div>
+            <p class="service-card__copy"><span class="nowrap">忙しい日でも、</span><span class="nowrap">研究された食卓を。</span></p>
+            <span class="service-card__arrow">→</span>
+          </div>
+        </a>
+
+        <a class="service-card fade-up" href="/services/supplements/">
+          <img class="service-card__img" src="https://images.unsplash.com/photo-1610483178571-7e2c25e2f63c?w=800&q=70&auto=format&fit=crop" alt="プロテイン・サプリメント" loading="lazy">
+          <div class="service-card__body">
+            <div class="service-card__num">04</div>
+            <h3 class="service-card__title-en">SUPPLEMENTS</h3>
+            <p class="service-card__title-jp">補助</p>
+            <div class="service-card__divider"></div>
+            <p class="service-card__copy"><span class="nowrap">補うのではなく、</span><span class="nowrap">整える。</span></p>
+            <span class="service-card__arrow">→</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       Section 4: Why ALPS LAB
+       ====================================================================== -->
+  <section class="section why" aria-labelledby="why-title">
+    <div class="section__inner">
+      <h2 id="why-title" class="section__chapter">WHY ALPS LAB <span class="section__chapter-jp">— 私たちが選ばれる理由</span></h2>
+      <div class="why__grid">
+
+        <article class="why-card fade-up">
+          <div class="why-card__num">I.</div>
+          <h3 class="why-card__title">RESEARCH FIRST</h3>
+          <div class="why-card__progress">01 / 03</div>
+          <div class="why-card__divider"></div>
+          <p class="why-card__desc">流行ではなく、研究結果と実証に基づいた健康設計を提供する。</p>
+        </article>
+
+        <article class="why-card fade-up">
+          <div class="why-card__num">II.</div>
+          <h3 class="why-card__title">LONG-TERM</h3>
+          <div class="why-card__progress">02 / 03</div>
+          <div class="why-card__divider"></div>
+          <p class="why-card__desc">3年で痩せるより、30年続けられる仕組みを。短期の結果より、続けられること。</p>
+        </article>
+
+        <article class="why-card fade-up">
+          <div class="why-card__num">III.</div>
+          <h3 class="why-card__title">LOCAL & AUTHENTIC</h3>
+          <div class="why-card__progress">03 / 03</div>
+          <div class="why-card__divider"></div>
+          <p class="why-card__desc">長野の自然・文化・知見を背景にした独自性。本物だけを、地方から。</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       Section 5: Stories Pickup (親しみゾーン)
+       ====================================================================== -->
+  <section class="section stories" aria-labelledby="stories-title">
+    <div class="section__inner">
+      <h2 id="stories-title" class="section__chapter">STORIES <span class="section__chapter-jp">— ストーリーを読む</span></h2>
+      <div class="stories__grid">
+
+        <a class="story-card fade-up" href="/stories/">
+          <img class="story-card__img" src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800&q=70&auto=format&fit=crop" alt="会員 田中さん" loading="lazy">
+          <div class="story-card__body">
+            <p class="story-card__cat">VOICE</p>
+            <h3 class="story-card__title">田中健一さん(38歳)/ STANDARD会員の声</h3>
+            <p class="story-card__excerpt">過去2回ジムを挫折しました。今回はパーソナルが月2回あるので、フォームの不安が解消されて自主トレが楽しくなりました。半年で体脂肪率8%減です。</p>
+            <span class="story-card__date">2026.04.15</span>
+          </div>
+        </a>
+
+        <a class="story-card fade-up" href="/stories/">
+          <img class="story-card__img" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=70&auto=format&fit=crop" alt="食事と体の関係" loading="lazy">
+          <div class="story-card__body">
+            <p class="story-card__cat">COLUMN</p>
+            <h3 class="story-card__title">食事と体の関係。長野の長寿県データから読み解く</h3>
+            <p class="story-card__excerpt">健康寿命日本トップクラスの長野県。その食卓に共通する3つの特徴を、研究員が分析しました。</p>
+            <span class="story-card__date">2026.03.28</span>
+          </div>
+        </a>
+
+        <a class="story-card fade-up" href="/stories/">
+          <img class="story-card__img" src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=70&auto=format&fit=crop" alt="軽井沢店" loading="lazy">
+          <div class="story-card__body">
+            <p class="story-card__cat">NEWS</p>
+            <h3 class="story-card__title">軽井沢店オープン1周年記念キャンペーン実施</h3>
+            <p class="story-card__excerpt">軽井沢店のオープンから1年。記念キャンペーンとして、入会金無料&初月50%OFFを実施いたします。</p>
+            <span class="story-card__date">2026.04.20</span>
+          </div>
+        </a>
+
+      </div>
+      <a class="stories__more" href="/stories/">すべての記事を見る →</a>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       Section 6: Stores
+       ====================================================================== -->
+  <section class="section stores" aria-labelledby="stores-title">
+    <div class="section__inner">
+      <h2 id="stores-title" class="section__chapter">STORES <span class="section__chapter-jp">— 長野県内3店舗</span></h2>
+      <div class="stores__grid">
+
+        <article class="store-card fade-up">
+          <img class="store-card__img" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=70&auto=format&fit=crop" alt="松本本店" loading="lazy">
+          <div class="store-card__body">
+            <p class="store-card__num">N° 01</p>
+            <h3 class="store-card__title-en">MATSUMOTO</h3>
+            <p class="store-card__title-jp">松本本店</p>
+            <div class="store-card__divider"></div>
+            <p class="store-card__info">
+              長野県松本市××<br>
+              24時間営業 / JR松本駅徒歩◯分
+            </p>
+            <a class="store-card__link" href="/stores/#matsumoto">詳細を見る →</a>
+          </div>
+        </article>
+
+        <article class="store-card fade-up">
+          <img class="store-card__img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=70&auto=format&fit=crop" alt="長野店" loading="lazy">
+          <div class="store-card__body">
+            <p class="store-card__num">N° 02</p>
+            <h3 class="store-card__title-en">NAGANO</h3>
+            <p class="store-card__title-jp">長野店</p>
+            <div class="store-card__divider"></div>
+            <p class="store-card__info">
+              長野県長野市××<br>
+              24時間営業 / JR長野駅徒歩◯分
+            </p>
+            <a class="store-card__link" href="/stores/#nagano">詳細を見る →</a>
+          </div>
+        </article>
+
+        <article class="store-card fade-up">
+          <img class="store-card__img" src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=70&auto=format&fit=crop" alt="軽井沢店" loading="lazy">
+          <div class="store-card__body">
+            <p class="store-card__num">N° 03</p>
+            <h3 class="store-card__title-en">KARUIZAWA</h3>
+            <p class="store-card__title-jp">軽井沢店</p>
+            <div class="store-card__divider"></div>
+            <p class="store-card__info">
+              長野県軽井沢町××<br>
+              24時間営業 / JR軽井沢駅徒歩◯分
+            </p>
+            <a class="store-card__link" href="/stores/#karuizawa">詳細を見る →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       Section 7: Final CTA
+       ====================================================================== -->
+  <section class="final-cta" aria-labelledby="final-cta-title">
+    <span class="final-cta__chapter">RESEARCH N° 05 — JOIN US</span>
+    <h2 id="final-cta-title" class="final-cta__title">BEGIN YOUR HEALTH RESEARCH.</h2>
+    <p class="final-cta__sub"><span class="nowrap">あなたの健康習慣を、</span><span class="nowrap">研究員と一緒に設計する。</span></p>
+    <a class="cta-btn cta-btn--lg" href="/contact/?type=trial">
+      無料体験予約 <span class="cta-btn__arrow">→</span>
+    </a>
+  </section>
+
+</main>
+
+<!-- ========================================================================
+     Footer
+     ======================================================================== -->
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__logo">ALPS LAB</div>
+      <p class="footer__copy-line">北アルプスの麓から、本物の健康を研究する。</p>
+    </div>
+
+    <div class="footer__columns">
+      <div class="footer__col">
+        <h4 class="footer__col-title">Services</h4>
+        <ul>
+          <li><a href="/services/gym/">GYM</a></li>
+          <li><a href="/services/nutrition/">NUTRITION</a></li>
+          <li><a href="/services/foods/">FOODS</a></li>
+          <li><a href="/services/supplements/">SUPPLEMENTS</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Stores</h4>
+        <ul>
+          <li><a href="/stores/#matsumoto">松本本店</a></li>
+          <li><a href="/stores/#nagano">長野店</a></li>
+          <li><a href="/stores/#karuizawa">軽井沢店</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Company</h4>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/company/">Company</a></li>
+          <li><a href="/recruit/">Recruit</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Social</h4>
+        <ul>
+          <li><a href="#" rel="noopener">Instagram</a></li>
+          <li><a href="#" rel="noopener">X (Twitter)</a></li>
+          <li><a href="#" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 ALPS LAB Inc.</span>
+      <span>LAT. 36.2°N / LON. 137.9°E</span>
+      <span>Privacy / Terms</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ========================================================================
+     Scripts (GSAP は Coder が import を本実装、ここではフェーズ仮実装)
+     ======================================================================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+  document.documentElement.classList.remove('no-js');
+  document.body.classList.remove('no-js');
+
+  window.addEventListener('load', () => {
+    if (!window.gsap) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    // Header background fade
+    ScrollTrigger.create({
+      start: 'top -80',
+      end: 99999,
+      toggleClass: { className: 'is-scrolled', targets: '.header' }
+    });
+
+    // Hero load timeline
+    const heroTL = gsap.timeline();
+    heroTL
+      .from('.hero__separator', { opacity: 0, scaleX: 0, transformOrigin: 'center', duration: 0.8, ease: 'power2.out' })
+      .from('.hero__chapter', { opacity: 0, y: 8, duration: 0.6, stagger: 0.1, ease: 'power2.out' }, '-=0.4')
+      .from('.hero__title', { opacity: 0, scale: 0.98, duration: 0.8, ease: 'power2.out' }, '-=0.3')
+      .from('.hero__subtitle', { opacity: 0, y: 16, duration: 0.6, ease: 'power2.out' }, '-=0.3')
+      .from('.hero__cta, .hero__center .cta-btn', { opacity: 0, y: 16, duration: 0.5, ease: 'back.out(1.4)' }, '-=0.2')
+      .from('.hero__index, .hero__scroll, .hero__coord', { opacity: 0, y: 8, duration: 0.6, stagger: 0.05 }, '-=0.2');
+
+    // Generic .fade-up
+    gsap.utils.toArray('.fade-up').forEach((el) => {
+      gsap.from(el, {
+        opacity: 0,
+        y: 24,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' }
+      });
+    });
+  });
+</script>
+</body>
+</html>

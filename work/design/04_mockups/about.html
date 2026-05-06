@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="長野発の健康研究ブランド ALPS LAB の理念と物語。北アルプスの麓から、本物の健康を研究する私たちの想い。">
+<meta name="theme-color" content="#0A0A0A">
+<title>ABOUT | ALPS LAB</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../02_design_tokens.css">
+
+<style>
+*,*::before,*::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img, video { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; background: none; border: 0; cursor: pointer; color: inherit; }
+ul { list-style: none; padding: 0; margin: 0; }
+
+.skip-link { position: absolute; top: -100px; left: 0; background: var(--color-accent-gold); color: #000; padding: 0.5rem 1rem; z-index: 9999; }
+.skip-link:focus { top: 0; }
+
+/* ===== Header (共通) ===== */
+.header {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--header-height);
+  display: flex; align-items: center;
+  padding: 0 var(--container-padding-desktop);
+  z-index: var(--z-header);
+  background: transparent;
+  transition: background var(--duration-base) var(--ease-out), backdrop-filter var(--duration-base) var(--ease-out);
+}
+.header.is-scrolled { background: rgba(10,10,10,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-border-soft); }
+.header__inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: var(--max-width); margin: 0 auto; }
+.header__logo { font-family: var(--font-display); font-size: 1.25rem; letter-spacing: var(--ls-wider); transition: color var(--duration-base) var(--ease-out); }
+.header__logo:hover { color: var(--color-accent-gold); }
+.nav { display: flex; gap: var(--space-md); align-items: center; }
+.nav__list { display: flex; gap: var(--space-md); }
+.nav__link {
+  font-family: var(--font-en); font-size: var(--fs-sm); font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--color-text-secondary);
+  position: relative; padding: 0.5rem 0;
+}
+.nav__link::after { content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background: var(--color-accent-gold); transform: scaleX(0); transform-origin: left; transition: transform 300ms var(--ease-out); }
+.nav__link:hover { color: var(--color-text-primary); }
+.nav__link:hover::after, .nav__link.is-current::after { transform: scaleX(1); }
+.nav__link.is-current { color: var(--color-text-primary); }
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--color-accent-red); color: var(--color-text-primary);
+  padding: 0.75rem 1.5rem; font-family: var(--font-jp); font-size: var(--fs-sm);
+  font-weight: var(--fw-medium); letter-spacing: var(--ls-wide); border-radius: var(--radius-md);
+  transition: background var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out);
+}
+.cta-btn:hover { background: var(--color-accent-red-hover); box-shadow: var(--shadow-glow-red); }
+.cta-btn--lg { padding: 1.5rem 4rem; font-size: var(--fs-md); }
+.cta-btn__arrow { transition: transform var(--duration-base) var(--ease-out); }
+.cta-btn:hover .cta-btn__arrow { transform: translateX(4px); }
+.hamburger { display: none; }
+
+/* ===== Hero (北アルプス背景) ===== */
+.hero {
+  position: relative; height: 80vh; min-height: 600px;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+  text-align: center;
+}
+.hero__media {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(0.55) contrast(1.1);
+  z-index: 0;
+  transition: transform 2s var(--ease-out);
+}
+.hero::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.1) 40%, rgba(10,10,10,0.85) 100%);
+  z-index: 1;
+}
+.hero__inner { position: relative; z-index: 2; padding: 0 var(--container-padding-desktop); max-width: var(--max-width); }
+.hero__chapter {
+  display: inline-flex; align-items: center; gap: 1rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-md);             /* 10 → 18px */
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+.hero__chapter::before, .hero__chapter::after {
+  content: ""; width: 80px; height: 1px;
+  background: var(--color-accent-gold); opacity: 0.6;
+}
+.hero__title {
+  font-family: var(--font-display); font-size: var(--fs-4xl);
+  letter-spacing: var(--ls-wide); line-height: var(--lh-tight);
+  margin: 0 0 var(--space-md);
+}
+.hero__sub {
+  font-family: var(--font-jp); font-weight: var(--fw-bold);
+  font-size: var(--fs-xl); margin: 0;
+  color: var(--color-text-secondary);
+}
+.hero__bottom {
+  position: absolute; bottom: var(--space-md); left: var(--container-padding-desktop); right: var(--container-padding-desktop);
+  display: flex; justify-content: space-between;
+  z-index: 2;
+  font-family: var(--font-en); font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest); color: var(--color-accent-gold-dim);
+}
+
+/* ===== Common Section ===== */
+.section { padding: var(--space-xl) var(--container-padding-desktop); position: relative; }
+.section__inner { max-width: var(--max-width); margin: 0 auto; }
+.section__chapter {
+  display: inline-flex; align-items: center; gap: 1rem; margin-bottom: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-md);             /* 10 → 18px */
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+.section__chapter::before {
+  content: ""; width: 64px; height: 1px;  /* 40 → 64px */
+  background: var(--color-accent-gold); opacity: 0.6;
+}
+.section__chapter-jp {
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);             /* 10 → 16px */
+  font-weight: var(--fw-regular);
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* ===== MVV (Mission / Vision / Values) ===== */
+.mvv { background: var(--color-bg-primary); }
+.mvv__block {
+  min-height: 60vh; display: flex; flex-direction: column; justify-content: center;
+  text-align: center; padding: var(--space-2xl) 0;
+  border-bottom: 1px solid rgba(200,169,97,0.2);
+}
+.mvv__block:last-of-type { border-bottom: 0; }
+.mvv__chapter { margin: 0 auto var(--space-lg); }
+.mvv__title {
+  font-family: var(--font-jp); font-weight: var(--fw-bold);
+  font-size: var(--fs-3xl); line-height: var(--lh-snug);
+  margin: 0 0 var(--space-md); max-width: 1080px;
+  margin-left: auto; margin-right: auto;
+}
+.mvv__sub-en {
+  font-family: var(--font-display); font-size: var(--fs-lg);
+  letter-spacing: var(--ls-wide); color: var(--color-accent-gold-dim);
+  margin: 0 0 var(--space-md);
+}
+.mvv__desc {
+  font-family: var(--font-jp); font-size: var(--fs-md);
+  color: var(--color-text-secondary); line-height: var(--lh-loose);
+  max-width: 720px; margin: 0 auto;
+}
+
+/* Values cards */
+.values__grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md);
+  margin-top: var(--space-lg); max-width: var(--max-width);
+  margin-left: auto; margin-right: auto;
+  text-align: left;
+}
+.value-card {
+  background: var(--color-bg-tertiary);
+  padding: var(--space-md);
+  border-left: 4px solid var(--color-accent-gold);
+}
+.value-card__num {
+  font-family: var(--font-display); font-size: var(--fs-2xl);  /* 48px:据え置き */
+  color: var(--color-accent-gold); line-height: 1;
+}
+.value-card__title {
+  font-family: var(--font-display); font-size: var(--fs-lg);   /* 18 → 24px */
+  letter-spacing: var(--ls-wide);
+  line-height: var(--lh-tight);
+  margin: 0.75rem 0;
+}
+.value-card__desc {
+  font-family: var(--font-jp); font-size: var(--fs-base);      /* 14 → 16px */
+  color: var(--color-text-secondary); line-height: var(--lh-loose);
+  margin: 0;
+}
+
+/* ===== Story Timeline ===== */
+.story { background: var(--color-bg-primary); }
+.story__timeline {
+  position: relative; max-width: var(--max-width-narrow); margin: var(--space-lg) auto 0;
+  padding-left: 2.5rem;
+}
+.story__timeline::before {
+  content: ""; position: absolute; left: 0.625rem; top: 0; bottom: 0;
+  width: 1px; background: linear-gradient(180deg, var(--color-accent-gold), rgba(200,169,97,0.2));
+}
+.story-event {
+  position: relative; padding-bottom: var(--space-xl); display: grid;
+  grid-template-columns: 1fr auto; gap: var(--space-md);
+}
+.story-event:last-child { padding-bottom: 0; }
+.story-event::before {
+  content: ""; position: absolute; left: -2.5rem; top: 0.5rem;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--color-bg-primary);
+  border: 2px solid var(--color-accent-gold);
+}
+.story-event.is-current::before {
+  background: var(--color-accent-gold);
+  box-shadow: var(--shadow-glow-gold);
+}
+.story-event__year {
+  font-family: var(--font-display); font-size: var(--fs-2xl);  /* 48px:据え置き */
+  color: var(--color-accent-gold); line-height: 1;
+}
+.story-event__title {
+  font-family: var(--font-jp); font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);                                     /* 24 → 32px */
+  line-height: var(--lh-snug);
+  margin: 0.5rem 0 var(--space-sm);
+}
+.story-event__desc {
+  font-family: var(--font-jp); font-size: var(--fs-md);        /* 16 → 18px */
+  color: var(--color-text-secondary); line-height: var(--lh-loose);
+}
+.story-event__img {
+  width: 320px; height: 240px; object-fit: cover;
+  border-radius: var(--radius-md);
+  filter: brightness(0.85);
+}
+
+/* ===== Message ===== */
+.message { background: var(--color-bg-secondary); }
+.message__grid {
+  display: grid; grid-template-columns: 2fr 3fr; gap: var(--space-lg);
+  margin-top: var(--space-lg);
+  align-items: center;
+}
+.message__img {
+  width: 100%; aspect-ratio: 4/5; object-fit: cover;
+  filter: brightness(0.9);
+  border-radius: var(--radius-md);
+}
+.message__quote {
+  position: relative;
+}
+.message__quote::before {
+  content: "\201C"; position: absolute; left: -1rem; top: -3rem;
+  font-family: var(--font-display); font-size: 8rem; line-height: 1;
+  color: var(--color-accent-gold-dim); opacity: 0.4;
+}
+.message__text {
+  font-family: var(--font-jp); font-size: var(--fs-md);
+  line-height: var(--lh-loose); margin: 0;
+  color: var(--color-text-primary);
+}
+.message__divider { height: 1px; width: 60px; background: var(--color-accent-gold); margin: var(--space-md) 0 var(--space-sm); }
+.message__signature {
+  font-family: var(--font-en); font-size: var(--fs-base);       /* 14 → 16px */
+  letter-spacing: var(--ls-wide); color: var(--color-text-muted);
+}
+.message__signature strong {
+  font-family: var(--font-jp); font-weight: var(--fw-bold);
+  color: var(--color-text-primary); display: block;
+  font-size: var(--fs-lg);                                       /* 18 → 24px */
+  margin-top: 0.5rem;
+}
+
+/* ===== Team ===== */
+.team { background: var(--color-bg-primary); }
+.team__grid {
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.team-member__img {
+  width: 100%; aspect-ratio: 1/1; object-fit: cover;
+  filter: saturate(0.6) brightness(0.9);
+  transition: filter 600ms var(--ease-out), transform var(--duration-base) var(--ease-out);
+  border-radius: var(--radius-md);
+}
+.team-member:hover .team-member__img { filter: saturate(1) brightness(1); transform: scale(1.03); }
+.team-member__name {
+  font-family: var(--font-jp); font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);                                /* 18 → 24px */
+  line-height: var(--lh-snug);
+  margin: var(--space-sm) 0 0.25rem;
+}
+.team-member__role {
+  font-family: var(--font-en); font-size: var(--fs-xs);   /* 10 → 12px */
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest); color: var(--color-accent-gold-dim);
+}
+
+/* ===== Final CTA & Footer (共通) ===== */
+.final-cta {
+  position: relative; min-height: 70vh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center;
+  background: radial-gradient(ellipse at 80% 100%, rgba(200,48,46,0.25), transparent 60%), var(--color-bg-primary);
+  padding: var(--space-xl) var(--container-padding-desktop);
+}
+.final-cta__chapter {
+  display: inline-flex; align-items: center; gap: 1rem; margin-bottom: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-md);             /* 10 → 18px */
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+.final-cta__chapter::before, .final-cta__chapter::after {
+  content: ""; width: 80px; height: 1px;
+  background: var(--color-accent-gold); opacity: 0.6;
+}
+.final-cta__title {
+  font-family: var(--font-display); font-size: var(--fs-4xl);
+  letter-spacing: var(--ls-wide); line-height: var(--lh-tight); margin: 0 0 var(--space-sm);
+}
+.final-cta__sub {
+  font-family: var(--font-jp); font-weight: var(--fw-bold);
+  font-size: var(--fs-xl); margin: 0 0 var(--space-lg); color: var(--color-text-secondary);
+}
+
+.footer { background: var(--color-bg-secondary); padding: var(--space-xl) var(--container-padding-desktop) var(--space-md); color: var(--color-text-secondary); font-size: var(--fs-sm); }
+.footer__inner { max-width: var(--max-width); margin: 0 auto; }
+.footer__top { display: flex; flex-direction: column; gap: var(--space-md); padding-bottom: var(--space-lg); border-bottom: 1px solid var(--color-border-soft); }
+.footer__logo { font-family: var(--font-display); font-size: var(--fs-2xl); color: var(--color-accent-gold); letter-spacing: var(--ls-wider); }
+.footer__copy-line { font-family: var(--font-jp); font-size: var(--fs-md); color: var(--color-text-secondary); }
+.footer__columns { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-lg); padding: var(--space-lg) 0; }
+.footer__col-title { font-family: var(--font-en); font-size: var(--fs-xs); letter-spacing: var(--ls-widest); color: var(--color-accent-gold); margin: 0 0 var(--space-sm); text-transform: uppercase; }
+.footer__col ul li { margin-bottom: 0.5rem; }
+.footer__col a { color: var(--color-text-secondary); font-size: var(--fs-sm); transition: color var(--duration-base) var(--ease-out); }
+.footer__col a:hover { color: var(--color-text-primary); }
+.footer__bottom { display: flex; justify-content: space-between; align-items: center; padding-top: var(--space-md); border-top: 1px solid var(--color-border-soft); font-family: var(--font-en); font-size: var(--fs-2xs); letter-spacing: var(--ls-wider); color: var(--color-text-muted); }
+
+/* ===== Responsive ===== */
+@media (max-width: 1023px) {
+  .section, .final-cta, .footer { padding-left: var(--container-padding-tablet); padding-right: var(--container-padding-tablet); }
+  .values__grid { grid-template-columns: repeat(2, 1fr); }
+  .story-event { grid-template-columns: 1fr; }
+  .story-event__img { width: 100%; max-width: 320px; }
+  .message__grid { grid-template-columns: 1fr; }
+  .team__grid { grid-template-columns: repeat(4, 1fr); }
+  .footer__columns { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+  .section, .final-cta, .footer { padding-left: var(--container-padding-mobile); padding-right: var(--container-padding-mobile); }
+  .header { padding: 0 var(--container-padding-mobile); height: var(--header-height-mobile); }
+  .nav__list, .header .cta-btn { display: none; }
+  .hamburger { display: flex; flex-direction: column; gap: 5px; padding: 8px; }
+  .hamburger span { width: 24px; height: 2px; background: var(--color-text-primary); }
+
+  .hero__bottom { left: var(--container-padding-mobile); right: var(--container-padding-mobile); flex-direction: column; gap: var(--space-xs); align-items: flex-start; }
+  .hero__chapter::before, .hero__chapter::after { width: 32px; }
+  .values__grid { grid-template-columns: 1fr; }
+  .team__grid { grid-template-columns: repeat(2, 1fr); }
+  .footer__columns { grid-template-columns: 1fr; }
+  .footer__bottom { flex-direction: column; gap: var(--space-xs); text-align: center; }
+}
+
+.fade-up { opacity: 1; transform: translateY(0); }
+.no-js .fade-up { opacity: 1 !important; transform: none !important; }
+</style>
+</head>
+<body class="no-js">
+<a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+
+<header class="header" role="banner">
+  <div class="header__inner">
+    <a class="header__logo" href="/">ALPS LAB</a>
+    <nav class="nav" role="navigation" aria-label="メイン">
+      <ul class="nav__list">
+        <li><a class="nav__link is-current" href="/about/">About</a></li>
+        <li><a class="nav__link" href="/services/">Services</a></li>
+        <li><a class="nav__link" href="/stores/">Stores</a></li>
+        <li><a class="nav__link" href="/stories/">Stories</a></li>
+        <li><a class="nav__link" href="/recruit/">Recruit</a></li>
+      </ul>
+      <a class="cta-btn" href="/contact/">体験予約 <span class="cta-btn__arrow">→</span></a>
+      <button class="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <img class="hero__media" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=80&auto=format&fit=crop" alt="北アルプスの稜線と霧" loading="eager">
+    <div class="hero__inner">
+      <span class="hero__chapter">ABOUT ALPS LAB</span>
+      <h1 class="hero__title" id="hero-title">RESEARCH THE TRUTH<br>OF HEALTH.</h1>
+      <p class="hero__sub"><span class="nowrap">私たちは、</span><span class="nowrap">健康を「研究」する集団です。</span></p>
+    </div>
+    <div class="hero__bottom">
+      <span>FROM NAGANO, JAPAN</span>
+      <span>LAT. 36.2°N / LON. 137.9°E</span>
+    </div>
+  </section>
+
+  <!-- Mission / Vision / Values -->
+  <section class="section mvv">
+    <div class="section__inner">
+
+      <div class="mvv__block" aria-labelledby="mission-title">
+        <span class="mvv__chapter section__chapter">MISSION 01 <span class="section__chapter-jp">— 私たちの使命</span></span>
+        <h2 class="mvv__title fade-up" id="mission-title"><span class="nowrap">日本の健康寿命を、</span><span class="nowrap">地方から伸ばす。</span></h2>
+        <p class="mvv__sub-en fade-up">EXTEND HEALTHY LIFE FROM THE LOCAL FRONTIER.</p>
+        <p class="mvv__desc fade-up"><span class="nowrap">健康寿命日本一クラスの長野県を起点に、</span><span class="nowrap">運動・食・知識を統合した</span><span class="nowrap">本物の健康習慣を全国に広げる。</span></p>
+      </div>
+
+      <div class="mvv__block" aria-labelledby="vision-title">
+        <span class="mvv__chapter section__chapter">VISION 02 <span class="section__chapter-jp">— 目指す姿</span></span>
+        <h2 class="mvv__title fade-up" id="vision-title"><span class="nowrap">ジムを、</span><span class="nowrap">人生のインフラに。</span></h2>
+        <p class="mvv__sub-en fade-up">MAKE THE GYM A LIFE INFRASTRUCTURE.</p>
+        <p class="mvv__desc fade-up"><span class="nowrap">一過性のダイエットや筋トレではなく、</span><span class="nowrap">研究と実践に基づいた健康習慣を、</span><span class="nowrap">生涯にわたって支えるブランドになる。</span></p>
+      </div>
+
+      <div class="mvv__block" aria-labelledby="values-title">
+        <span class="mvv__chapter section__chapter">VALUES 03 <span class="section__chapter-jp">— 行動指針</span></span>
+        <div class="values__grid">
+          <article class="value-card fade-up">
+            <div class="value-card__num">I.</div>
+            <h3 class="value-card__title">RESEARCH FIRST</h3>
+            <p class="value-card__desc"><span class="nowrap">根拠に基づく。</span>流行ではなく、<span class="nowrap">研究結果と実証に基づいた</span><span class="nowrap">健康設計。</span></p>
+          </article>
+          <article class="value-card fade-up">
+            <div class="value-card__num">II.</div>
+            <h3 class="value-card__title">LONG-TERM</h3>
+            <p class="value-card__desc"><span class="nowrap">短期の結果より、</span><span class="nowrap">続けられること。</span><span class="nowrap">30年続けられる仕組みを作る。</span></p>
+          </article>
+          <article class="value-card fade-up">
+            <div class="value-card__num">III.</div>
+            <h3 class="value-card__title">LOCAL & AUTHENTIC</h3>
+            <p class="value-card__desc"><span class="nowrap">地域に根ざし、</span><span class="nowrap">本物であること。</span><span class="nowrap">長野の自然・文化・知見を背景に。</span></p>
+          </article>
+          <article class="value-card fade-up">
+            <div class="value-card__num">IV.</div>
+            <h3 class="value-card__title">INCLUSIVE</h3>
+            <p class="value-card__desc"><span class="nowrap">初心者から本格派まで</span><span class="nowrap">歓迎する。</span><span class="nowrap">安心して入れる価格帯から</span><span class="nowrap">本気のアスリートまで。</span></p>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="section story" aria-labelledby="story-title">
+    <div class="section__inner">
+      <h2 id="story-title" class="section__chapter">STORY 04 <span class="section__chapter-jp">— 創業の物語</span></h2>
+
+      <div class="story__timeline">
+
+        <article class="story-event fade-up">
+          <div>
+            <span class="story-event__year">2023</span>
+            <h3 class="story-event__title">創業の動機</h3>
+            <p class="story-event__desc"><span class="nowrap">長野で見つけた</span><span class="nowrap">「健康の本質」を</span><span class="nowrap">全国へ届けるために、</span><span class="nowrap">起業を決意。</span></p>
+          </div>
+          <img class="story-event__img" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=640&q=70&auto=format&fit=crop" alt="長野の風景" loading="lazy">
+        </article>
+
+        <article class="story-event fade-up">
+          <div>
+            <span class="story-event__year">2024</span>
+            <h3 class="story-event__title">1号店オープン</h3>
+            <p class="story-event__desc"><span class="nowrap">松本本店をオープン。</span><span class="nowrap">ハイブリッド型ジムという</span><span class="nowrap">コンセプトで運営開始。</span></p>
+          </div>
+          <img class="story-event__img" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=640&q=70&auto=format&fit=crop" alt="松本本店" loading="lazy">
+        </article>
+
+        <article class="story-event fade-up">
+          <div>
+            <span class="story-event__year">2025</span>
+            <h3 class="story-event__title">事業拡大</h3>
+            <p class="story-event__desc"><span class="nowrap">NUTRITION・FOODS事業を開始。</span><span class="nowrap">長野店もオープン。</span></p>
+          </div>
+          <img class="story-event__img" src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=640&q=70&auto=format&fit=crop" alt="長野店" loading="lazy">
+        </article>
+
+        <article class="story-event is-current fade-up">
+          <div>
+            <span class="story-event__year">2026</span>
+            <h3 class="story-event__title">現在(3店舗体制)</h3>
+            <p class="story-event__desc"><span class="nowrap">軽井沢店を加えた3店舗体制。</span><span class="nowrap">SUPPLEMENTS事業も開始。</span></p>
+          </div>
+          <img class="story-event__img" src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=640&q=70&auto=format&fit=crop" alt="軽井沢店" loading="lazy">
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Message -->
+  <section class="section message" aria-labelledby="message-title">
+    <div class="section__inner">
+      <h2 id="message-title" class="section__chapter">MESSAGE 05 <span class="section__chapter-jp">— 代表メッセージ</span></h2>
+      <div class="message__grid">
+        <img class="message__img fade-up" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=70&auto=format&fit=crop" alt="代表取締役" loading="lazy">
+        <div class="message__quote fade-up">
+          <p class="message__text">
+            「<span class="nowrap">健康は、</span><span class="nowrap">努力ではなく仕組みで作るもの</span>」。<br>
+            <span class="nowrap">私たち研究員一同、</span><span class="nowrap">長野の地から、</span><span class="nowrap">その仕組みを世の中に提供していきます。</span><br>
+            <span class="nowrap">一緒に、</span><span class="nowrap">人生のインフラを作っていきませんか。</span>
+          </p>
+          <div class="message__divider"></div>
+          <p class="message__signature">
+            REPRESENTATIVE DIRECTOR
+            <strong>代表取締役 ◯◯◯◯</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section team" aria-labelledby="team-title">
+    <div class="section__inner">
+      <h2 id="team-title" class="section__chapter">TEAM 06 <span class="section__chapter-jp">— チーム</span></h2>
+      <div class="team__grid">
+
+        <article class="team-member fade-up">
+          <img class="team-member__img" src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=600&q=70&auto=format&fit=crop" alt="山田 拓海" loading="lazy">
+          <h3 class="team-member__name">山田 拓海</h3>
+          <p class="team-member__role">HEAD TRAINER</p>
+        </article>
+        <article class="team-member fade-up">
+          <img class="team-member__img" src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=600&q=70&auto=format&fit=crop" alt="佐々木 優香" loading="lazy">
+          <h3 class="team-member__name">佐々木 優香</h3>
+          <p class="team-member__role">PERSONAL TRAINER</p>
+        </article>
+        <article class="team-member fade-up">
+          <img class="team-member__img" src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=70&auto=format&fit=crop" alt="中村 健介" loading="lazy">
+          <h3 class="team-member__name">中村 健介</h3>
+          <p class="team-member__role">CHIEF TRAINER</p>
+        </article>
+        <article class="team-member fade-up">
+          <img class="team-member__img" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=70&auto=format&fit=crop" alt="管理栄養士 1" loading="lazy">
+          <h3 class="team-member__name">小林 由香</h3>
+          <p class="team-member__role">REGISTERED DIETITIAN</p>
+        </article>
+        <article class="team-member fade-up">
+          <img class="team-member__img" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=70&auto=format&fit=crop" alt="管理栄養士 2" loading="lazy">
+          <h3 class="team-member__name">高橋 沙織</h3>
+          <p class="team-member__role">REGISTERED DIETITIAN</p>
+        </article>
+        <article class="team-member fade-up">
+          <img class="team-member__img" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&q=70&auto=format&fit=crop" alt="店舗マネージャー" loading="lazy">
+          <h3 class="team-member__name">井上 智也</h3>
+          <p class="team-member__role">STORE MANAGER</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta" aria-labelledby="final-cta-title">
+    <span class="final-cta__chapter">RESEARCH N° 06 — JOIN US</span>
+    <h2 id="final-cta-title" class="final-cta__title">BEGIN YOUR HEALTH RESEARCH.</h2>
+    <p class="final-cta__sub"><span class="nowrap">あなたの健康習慣を、</span><span class="nowrap">研究員と一緒に設計する。</span></p>
+    <a class="cta-btn cta-btn--lg" href="/contact/?type=trial">
+      無料体験予約 <span class="cta-btn__arrow">→</span>
+    </a>
+  </section>
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <div class="footer__logo">ALPS LAB</div>
+      <p class="footer__copy-line">北アルプスの麓から、本物の健康を研究する。</p>
+    </div>
+    <div class="footer__columns">
+      <div class="footer__col">
+        <h4 class="footer__col-title">Services</h4>
+        <ul>
+          <li><a href="/services/gym/">GYM</a></li>
+          <li><a href="/services/nutrition/">NUTRITION</a></li>
+          <li><a href="/services/foods/">FOODS</a></li>
+          <li><a href="/services/supplements/">SUPPLEMENTS</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Stores</h4>
+        <ul>
+          <li><a href="/stores/#matsumoto">松本本店</a></li>
+          <li><a href="/stores/#nagano">長野店</a></li>
+          <li><a href="/stores/#karuizawa">軽井沢店</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Company</h4>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/company/">Company</a></li>
+          <li><a href="/recruit/">Recruit</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">Social</h4>
+        <ul>
+          <li><a href="#" rel="noopener">Instagram</a></li>
+          <li><a href="#" rel="noopener">X (Twitter)</a></li>
+          <li><a href="#" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 ALPS LAB Inc.</span>
+      <span>LAT. 36.2°N / LON. 137.9°E</span>
+      <span>Privacy / Terms</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+  document.documentElement.classList.remove('no-js');
+  document.body.classList.remove('no-js');
+
+  window.addEventListener('load', () => {
+    if (!window.gsap) return;
+    gsap.registerPlugin(ScrollTrigger);
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) return;
+
+    ScrollTrigger.create({ start: 'top -80', end: 99999, toggleClass: { className: 'is-scrolled', targets: '.header' } });
+
+    // Hero
+    gsap.from('.hero__media', { scale: 1.05, duration: 2, ease: 'power2.out' });
+    const tl = gsap.timeline();
+    tl
+      .from('.hero__chapter', { opacity: 0, scaleX: 0, transformOrigin: 'center', duration: 0.8 })
+      .from('.hero__title',   { opacity: 0, y: 16, duration: 0.7 }, '-=0.4')
+      .from('.hero__sub',     { opacity: 0, y: 16, duration: 0.6 }, '-=0.4')
+      .from('.hero__bottom',  { opacity: 0, y: 8, duration: 0.5 }, '-=0.2');
+
+    gsap.utils.toArray('.fade-up').forEach((el) => {
+      gsap.from(el, { opacity: 0, y: 24, duration: 0.8, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 85%' } });
+    });
+  });
+</script>
+</body>
+</html>

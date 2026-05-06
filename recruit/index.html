@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一緒に、健康を研究する仲間を募集中。トレーナー、管理栄養士、商品開発、店舗運営の4職種で採用中。ALPS LAB RECRUIT。">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <meta property="og:title" content="RECRUIT | ALPS LAB">
+  <meta property="og:description" content="一緒に、健康を研究する仲間を募集中。トレーナー、管理栄養士、商品開発、店舗運営の4職種で採用中。">
+  <meta property="og:image" content="/assets/images/hero/hero-body.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+
+  <title>RECRUIT | ALPS LAB</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components/button.css">
+  <link rel="stylesheet" href="/assets/css/layout/header.css">
+  <link rel="stylesheet" href="/assets/css/layout/footer.css">
+  <link rel="stylesheet" href="/assets/css/pages/recruit.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body class="no-js" data-page="recruit">
+
+  <a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a class="header__logo" href="/" aria-label="ALPS LAB トップページ">ALPS LAB</a>
+      <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="/about/">About</a></li>
+          <li><a class="nav__link" href="/services/">Services</a></li>
+          <li><a class="nav__link" href="/stores/">Stores</a></li>
+          <li><a class="nav__link" href="/stories/">Stories</a></li>
+          <li><a class="nav__link is-current" href="/recruit/" aria-current="page">Recruit</a></li>
+        </ul>
+        <a class="cta-btn" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+        <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="モバイルナビゲーション" aria-hidden="true">
+    <ul class="mobile-menu__list">
+      <li><a class="mobile-menu__link" href="/about/">About</a></li>
+      <li><a class="mobile-menu__link" href="/services/">Services</a></li>
+      <li><a class="mobile-menu__link" href="/stores/">Stores</a></li>
+      <li><a class="mobile-menu__link" href="/stories/">Stories</a></li>
+      <li><a class="mobile-menu__link" href="/recruit/">Recruit</a></li>
+    </ul>
+    <a class="cta-btn cta-btn--lg" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+  <main id="main">
+
+    <!-- Hero (80vh) -->
+    <section class="recruit-hero" aria-labelledby="hero-title">
+      <!-- TODO: スタッフが働く動画素材調達後、<img> を <video autoplay muted loop playsinline> に置き換え -->
+      <img class="recruit-hero__media"
+           src="/assets/images/hero/hero-body.jpg"
+           alt="ALPS LAB のスタッフが働く風景"
+           width="1920" height="1080"
+           loading="eager"
+           fetchpriority="high">
+      <div class="recruit-hero__inner">
+        <span class="recruit-hero__chapter" aria-hidden="true">— RECRUIT / N°05 —</span>
+        <h1 class="recruit-hero__title-jp" id="hero-title">一緒に、健康を研究する仲間へ。</h1>
+        <p class="recruit-hero__title-en">JOIN OUR RESEARCH.</p>
+        <p class="recruit-hero__lead">
+          <span class="nowrap">4職種・</span><span class="nowrap">3店舗+本社で採用中。</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Message -->
+    <section class="section recruit-message" aria-labelledby="message-title">
+      <div class="section__inner recruit-message__inner">
+        <h2 id="message-title" class="section__chapter">
+          MESSAGE <span class="section__chapter-jp">— 代表メッセージ</span>
+        </h2>
+        <blockquote class="recruit-message__quote fade-up">
+          <span class="recruit-message__open" aria-hidden="true">「</span>
+          ALPS LAB が探しているのは、<br>
+          <span class="recruit-message__hl">「健康を研究したい」</span>と思える人です。
+          <span class="recruit-message__close" aria-hidden="true">」</span>
+        </blockquote>
+        <p class="recruit-message__text fade-up">
+          トレーナーとしての技術は、入社後にいくらでも磨けます。でも、お客様一人ひとりの人生に向き合う姿勢は、その人自身のものです。<br>
+          <br>
+          長野から、日本の健康インフラを作る仲間を募集しています。
+        </p>
+      </div>
+    </section>
+
+    <!-- Positions -->
+    <section class="section positions" aria-labelledby="positions-title">
+      <div class="section__inner">
+        <h2 id="positions-title" class="section__chapter">
+          POSITIONS <span class="section__chapter-jp">— 募集職種</span>
+        </h2>
+        <div class="positions__grid">
+
+          <article class="position-card fade-up">
+            <span class="position-card__num">N° 01</span>
+            <h3 class="position-card__title">パーソナルトレーナー</h3>
+            <div class="position-card__divider" aria-hidden="true"></div>
+            <dl class="position-card__details">
+              <dt>雇用形態</dt><dd>正社員 / 業務委託</dd>
+              <dt>勤務地</dt><dd>松本本店 / 長野店 / 軽井沢店</dd>
+              <dt>求める人物像</dt><dd>NSCA-CPT 等の資格保有者歓迎、未経験でも研修制度あり</dd>
+            </dl>
+            <a class="position-card__cta" href="/contact/?type=recruit&pos=trainer">
+              応募する <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="position-card fade-up">
+            <span class="position-card__num">N° 02</span>
+            <h3 class="position-card__title">管理栄養士</h3>
+            <div class="position-card__divider" aria-hidden="true"></div>
+            <dl class="position-card__details">
+              <dt>雇用形態</dt><dd>正社員 / パート</dd>
+              <dt>勤務地</dt><dd>松本本店(本社)/ オンライン</dd>
+              <dt>求める人物像</dt><dd>管理栄養士資格保有者、コーチング経験者歓迎</dd>
+            </dl>
+            <a class="position-card__cta" href="/contact/?type=recruit&pos=nutritionist">
+              応募する <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="position-card fade-up">
+            <span class="position-card__num">N° 03</span>
+            <h3 class="position-card__title">商品開発</h3>
+            <div class="position-card__divider" aria-hidden="true"></div>
+            <dl class="position-card__details">
+              <dt>雇用形態</dt><dd>正社員</dd>
+              <dt>勤務地</dt><dd>松本本店(本社)</dd>
+              <dt>求める人物像</dt><dd>食品開発経験者、または栄養学のバックグラウンド</dd>
+            </dl>
+            <a class="position-card__cta" href="/contact/?type=recruit&pos=product">
+              応募する <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="position-card fade-up">
+            <span class="position-card__num">N° 04</span>
+            <h3 class="position-card__title">店舗運営マネージャー</h3>
+            <div class="position-card__divider" aria-hidden="true"></div>
+            <dl class="position-card__details">
+              <dt>雇用形態</dt><dd>正社員</dd>
+              <dt>勤務地</dt><dd>各店舗</dd>
+              <dt>求める人物像</dt><dd>接客業・サービス業のマネジメント経験者</dd>
+            </dl>
+            <a class="position-card__cta" href="/contact/?type=recruit&pos=manager">
+              応募する <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section benefits" aria-labelledby="benefits-title">
+      <div class="section__inner benefits__inner">
+        <h2 id="benefits-title" class="section__chapter">
+          BENEFITS <span class="section__chapter-jp">— 待遇・福利厚生</span>
+        </h2>
+        <ul class="benefits__list">
+          <li class="fade-up">月給:経験・スキルに応じて応相談</li>
+          <li class="fade-up">賞与:年2回</li>
+          <li class="fade-up">各種社会保険完備</li>
+          <li class="fade-up">自社施設のジム使い放題(全プラン対象)</li>
+          <li class="fade-up">ALPS LAB FOODS / SUPPLEMENTS の社員割引</li>
+          <li class="fade-up">資格取得支援制度</li>
+          <li class="fade-up">退職金制度</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Interview -->
+    <section class="section interview" aria-labelledby="interview-title">
+      <div class="section__inner">
+        <h2 id="interview-title" class="section__chapter">
+          INTERVIEW <span class="section__chapter-jp">— スタッフの声</span>
+        </h2>
+
+        <article class="interview-card fade-up">
+          <div class="interview-card__media">
+            <img src="/assets/images/trainers/yamada-takumi.jpg"
+                 alt="ヘッドトレーナー 山田 拓海"
+                 width="600" height="600" loading="lazy">
+          </div>
+          <div class="interview-card__body">
+            <span class="interview-card__name">山田 拓海 / ヘッドトレーナー</span>
+            <div class="interview-card__divider" aria-hidden="true"></div>
+            <blockquote class="interview-card__quote">
+              <span class="interview-card__mark" aria-hidden="true">「</span>
+              正しいフォームを伝えることが、自分のライフワークだと感じています。会員さんが半年後、1年後にどれだけ変化するかを一緒に見届けられるのが、この仕事の醍醐味です。
+            </blockquote>
+          </div>
+        </article>
+
+        <article class="interview-card interview-card--reverse fade-up">
+          <div class="interview-card__media">
+            <img src="/assets/images/trainers/sasaki-yuka.jpg"
+                 alt="トレーナー 佐々木 優香"
+                 width="600" height="600" loading="lazy">
+          </div>
+          <div class="interview-card__body">
+            <span class="interview-card__name">佐々木 優香 / トレーナー</span>
+            <div class="interview-card__divider" aria-hidden="true"></div>
+            <blockquote class="interview-card__quote">
+              <span class="interview-card__mark" aria-hidden="true">「</span>
+              女性アスリートとして培った経験を、女性会員さんの不安解消に役立てたい。ALPS LAB は「研究したい」気持ちを応援してくれる職場です。
+            </blockquote>
+          </div>
+        </article>
+
+        <article class="interview-card fade-up">
+          <div class="interview-card__media">
+            <img src="/assets/images/trainers/nakamura-kensuke.jpg"
+                 alt="トレーナー 中村 健介"
+                 width="600" height="600" loading="lazy">
+          </div>
+          <div class="interview-card__body">
+            <span class="interview-card__name">中村 健介 / トレーナー</span>
+            <div class="interview-card__divider" aria-hidden="true"></div>
+            <blockquote class="interview-card__quote">
+              <span class="interview-card__mark" aria-hidden="true">「</span>
+              長野から、健康のスタンダードを変えたい。「短期で結果」より「30年続く習慣」を本気で考えるチームに出会えたのは、自分のキャリアの財産です。
+            </blockquote>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Apply CTA -->
+    <section class="final-cta" aria-labelledby="final-cta-title">
+      <span class="final-cta__chapter">RESEARCH N° 05 — APPLY</span>
+      <h2 id="final-cta-title" class="final-cta__title">READY TO JOIN US?</h2>
+      <p class="final-cta__sub">
+        <span class="nowrap">一緒に、長野から</span><span class="nowrap">日本の健康インフラを作りませんか。</span>
+      </p>
+      <a class="cta-btn cta-btn--lg" href="/contact/?type=recruit">
+        応募フォームへ <span class="cta-btn__arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__logo">ALPS LAB</div>
+        <p class="footer__copy-line">北アルプスの麓から、本物の健康を研究する。</p>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <ul>
+            <li><a href="/services/gym/">GYM</a></li>
+            <li><a href="/services/nutrition/">NUTRITION</a></li>
+            <li><a href="/services/foods/">FOODS</a></li>
+            <li><a href="/services/supplements/">SUPPLEMENTS</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Stores</h4>
+          <ul>
+            <li><a href="/stores/#matsumoto">松本本店</a></li>
+            <li><a href="/stores/#nagano">長野店</a></li>
+            <li><a href="/stores/#karuizawa">軽井沢店</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Company</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/company/">Company</a></li>
+            <li><a href="/recruit/">Recruit</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Social</h4>
+          <ul>
+            <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="#" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 ALPS LAB Inc.</span>
+        <span>LAT. 36.2°N / LON. 137.9°E</span>
+        <span>Privacy / Terms</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/animations.js" defer></script>
+</body>
+</html>

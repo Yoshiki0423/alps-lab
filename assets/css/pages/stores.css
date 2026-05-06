@@ -1,0 +1,354 @@
+/* =========================================================================
+   STORES ページ専用スタイル
+   構成: Hero (60vh) → Store 01-03 (各 80vh, 50:50 横分割, 偶数番店舗は左右反転) → Coming Soon → Final CTA
+   ========================================================================= */
+
+/* ===== Stores Hero (60vh) ============================================== */
+.stores-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-3xl) var(--container-padding-desktop) var(--space-xl);
+  overflow: hidden;
+  background: var(--color-bg-primary);
+}
+.stores-hero__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4) contrast(1.05);
+  z-index: 0;
+}
+.stores-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.7) 100%);
+  z-index: 1;
+}
+.stores-hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--max-width-narrow);
+}
+.stores-hero__chapter {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-md);
+}
+.stores-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+.stores-hero__sub {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  color: var(--color-text-secondary);
+}
+.stores-hero__bottom {
+  position: absolute;
+  bottom: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  gap: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* ===== Store Section (各店舗 80vh) ===================================== */
+.store-section {
+  min-height: 80vh;
+  background: var(--color-bg-primary);
+  padding: var(--space-2xl) var(--container-padding-desktop);
+  display: flex;
+  align-items: center;
+}
+.store-section--alt {
+  background: var(--color-bg-secondary);
+}
+.store-section__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+.store-section--reverse .store-section__media { order: 2; }
+.store-section--reverse .store-section__body  { order: 1; }
+
+/* 店舗画像エリア */
+.store-section__media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+}
+.store-section__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: filter var(--duration-slow) var(--ease-default), transform var(--duration-slow) var(--ease-default);
+}
+.store-section__media:hover img,
+.store-section__media:focus-visible img {
+  filter: brightness(1);
+  transform: scale(1.02);
+}
+.store-section__map-tag {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  background: rgba(10, 10, 10, 0.7);
+  color: var(--color-accent-gold);
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-wider);
+  border: 1px solid var(--color-border-gold);
+}
+
+/* 店舗情報エリア */
+.store-section__body {
+  padding: 0 var(--space-md);
+}
+.store-section__num {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-sm);
+}
+.store-section__title-en {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+.store-section__title-jp {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+}
+.store-section__divider {
+  width: 64px;
+  height: 1px;
+  background: var(--color-accent-gold);
+  opacity: 0.4;
+  margin-bottom: var(--space-md);
+}
+
+/* 店舗情報リスト dl */
+.store-section__info {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 0.75rem var(--space-md);
+  margin: 0 0 var(--space-md);
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);
+  line-height: var(--lh-loose);
+}
+.store-section__info dt {
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wider);
+  color: var(--color-accent-gold-dim);
+  padding-top: 0.4em;
+}
+.store-section__info dd {
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+
+/* アクションボタン */
+.store-section__actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+.store-section__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  font-family: var(--font-jp);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  transition: background var(--duration-base) var(--ease-default),
+              color var(--duration-base) var(--ease-default),
+              transform var(--duration-base) var(--ease-default);
+}
+.store-section__btn--gold {
+  background: transparent;
+  border: 1px solid var(--color-accent-gold);
+  color: var(--color-accent-gold);
+}
+.store-section__btn--gold:hover,
+.store-section__btn--gold:focus-visible {
+  background: var(--color-accent-gold);
+  color: var(--color-bg-primary);
+}
+.store-section__btn--red {
+  background: var(--color-accent-red);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-accent-red);
+}
+.store-section__btn--red:hover,
+.store-section__btn--red:focus-visible {
+  background: var(--color-accent-red-hover);
+  border-color: var(--color-accent-red-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-red);
+}
+
+/* ===== Coming Soon =================================================== */
+.coming-soon {
+  background: var(--color-bg-tertiary);
+  text-align: center;
+}
+.coming-soon__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xl) auto var(--space-md);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+.coming-soon__list li {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-accent-gold-dim);
+}
+.coming-soon__msg {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+}
+
+/* ===== Final CTA ====================================================== */
+.final-cta {
+  position: relative;
+  padding: var(--space-2xl) var(--container-padding-desktop);
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, rgba(200, 48, 46, 0.18), transparent 60%),
+    var(--color-bg-primary);
+  overflow: hidden;
+}
+.final-cta__chapter {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-md);
+}
+.final-cta__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+.final-cta__sub {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+/* ===== Responsive ===================================================== */
+@media (max-width: 1023px) {
+  .stores-hero {
+    padding-left: var(--container-padding-tablet);
+    padding-right: var(--container-padding-tablet);
+  }
+  .store-section {
+    padding-left: var(--container-padding-tablet);
+    padding-right: var(--container-padding-tablet);
+  }
+  .store-section__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  .store-section--reverse .store-section__media { order: 1; }
+  .store-section--reverse .store-section__body  { order: 2; }
+  .store-section__body { padding: 0; }
+}
+@media (max-width: 767px) {
+  .stores-hero {
+    min-height: 50vh;
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+  }
+  .stores-hero__bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    bottom: var(--space-sm);
+  }
+  .store-section {
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+    min-height: auto;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+  .store-section__title-en { font-size: var(--fs-2xl); }
+  .store-section__info {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+  .store-section__info dt {
+    padding-top: var(--space-sm);
+  }
+  .coming-soon__list {
+    gap: var(--space-md);
+  }
+  .coming-soon__list li {
+    font-size: var(--fs-xl);
+  }
+  .store-section__actions { flex-direction: column; }
+  .store-section__btn { width: 100%; justify-content: center; }
+  .final-cta {
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+}

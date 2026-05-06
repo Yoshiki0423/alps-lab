@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="24時間×パーソナルのハイブリッド型ジム。長野県内3店舗。月額8,800円〜、月2回のパーソナルで効率的に結果を出す。">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <!-- OGP -->
+  <meta property="og:title" content="GYM | ALPS LAB">
+  <meta property="og:description" content="24時間×パーソナルのハイブリッド型ジム。長野県内3店舗。月額8,800円〜。">
+  <meta property="og:image" content="/assets/images/services/gym-facility-01.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+
+  <title>GYM | ALPS LAB</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components/button.css">
+  <link rel="stylesheet" href="/assets/css/layout/header.css">
+  <link rel="stylesheet" href="/assets/css/layout/footer.css">
+  <link rel="stylesheet" href="/assets/css/pages/services_gym.css">
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body class="no-js" data-page="gym">
+
+  <a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a class="header__logo" href="/" aria-label="ALPS LAB トップページ">ALPS LAB</a>
+      <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="/about/">About</a></li>
+          <li><a class="nav__link is-current" href="/services/gym/" aria-current="page">Services</a></li>
+          <li><a class="nav__link" href="/stores/">Stores</a></li>
+          <li><a class="nav__link" href="/stories/">Stories</a></li>
+          <li><a class="nav__link" href="/recruit/">Recruit</a></li>
+        </ul>
+        <a class="cta-btn" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+        <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="モバイルナビゲーション" aria-hidden="true">
+    <ul class="mobile-menu__list">
+      <li><a class="mobile-menu__link" href="/about/">About</a></li>
+      <li><a class="mobile-menu__link" href="/services/gym/">Services</a></li>
+      <li><a class="mobile-menu__link" href="/stores/">Stores</a></li>
+      <li><a class="mobile-menu__link" href="/stories/">Stories</a></li>
+      <li><a class="mobile-menu__link" href="/recruit/">Recruit</a></li>
+    </ul>
+    <a class="cta-btn cta-btn--lg" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ===========================================================
+         Hero
+         =========================================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <!-- TODO: 動画素材調達後、下記 <img> を <video autoplay muted loop playsinline> に置き換え -->
+      <img class="hero__media"
+           src="/assets/images/services/gym-facility-01.jpg"
+           alt="ALPS LAB GYM のトレーニングフロア。落ち着いた照明のジム内観。"
+           width="1920" height="1080"
+           loading="eager"
+           fetchpriority="high">
+
+      <div class="hero__inner">
+        <span class="hero__chapter" aria-hidden="true">ALPS LAB GYM / N°01</span>
+        <h1 class="hero__title-jp" id="hero-title">
+          <span class="nowrap">ジムを、</span><span class="nowrap">人生のインフラに。</span>
+        </h1>
+        <p class="hero__title-en">MAKE THE GYM A LIFE INFRASTRUCTURE.</p>
+        <p class="hero__lead">
+          <span class="nowrap">24時間ジム×月2〜4回パーソナルの</span><span class="nowrap">ハイブリッド。</span><span class="nowrap">長野県内3店舗。</span>
+        </p>
+        <a class="cta-btn cta-btn--lg" href="/contact/?type=trial">
+          体験予約はこちら <span class="cta-btn__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="hero__bottom">
+        <span>松本本店 / 長野店 / 軽井沢店</span>
+        <span aria-hidden="true">SCROLL ↓</span>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Concept
+         =========================================================== -->
+    <section class="section concept" aria-labelledby="concept-title">
+      <span class="concept__chapter section__chapter">
+        CONCEPT 02 <span class="section__chapter-jp">— 私たちの設計思想</span>
+      </span>
+      <h2 class="concept__text fade-up" id="concept-title">
+        <span class="nowrap">24時間ジムは「<em>自由</em>」だが</span><span class="nowrap">「迷子」になる。</span><br>
+        <span class="nowrap">パーソナルジムは「<em>結果</em>」が出るが</span><span class="nowrap">「終わり」が来る。</span>
+      </h2>
+      <p class="concept__text concept__supplement fade-up">
+        <span class="nowrap">ALPS LAB GYM は、</span><span class="nowrap">その両方の弱点を、</span><span class="nowrap"><em>ハイブリッド</em>で解決します。</span>
+      </p>
+    </section>
+
+    <!-- ===========================================================
+         Facilities
+         =========================================================== -->
+    <section class="section facilities" aria-labelledby="facilities-title">
+      <div class="section__inner">
+        <h2 id="facilities-title" class="section__chapter">
+          FACILITIES 03 <span class="section__chapter-jp">— 設備</span>
+        </h2>
+        <div class="facilities__grid">
+
+          <figure class="facility-card fade-up">
+            <img class="facility-card__img"
+                 src="/assets/images/services/gym-facility-01.jpg"
+                 alt="フリーウェイトエリア"
+                 width="800" height="600"
+                 loading="lazy">
+            <figcaption>
+              <span class="facility-card__caption">FACILITY 01</span>
+              <span class="facility-card__title">FREE WEIGHT</span>
+            </figcaption>
+          </figure>
+
+          <figure class="facility-card fade-up">
+            <img class="facility-card__img"
+                 src="/assets/images/services/gym-facility-02.jpg"
+                 alt="マシンエリア"
+                 width="800" height="600"
+                 loading="lazy">
+            <figcaption>
+              <span class="facility-card__caption">FACILITY 02</span>
+              <span class="facility-card__title">MACHINES</span>
+            </figcaption>
+          </figure>
+
+          <figure class="facility-card fade-up">
+            <img class="facility-card__img"
+                 src="/assets/images/services/gym-facility-03.jpg"
+                 alt="スタジオ"
+                 width="800" height="600"
+                 loading="lazy">
+            <figcaption>
+              <span class="facility-card__caption">FACILITY 03</span>
+              <span class="facility-card__title">STUDIO</span>
+            </figcaption>
+          </figure>
+
+          <figure class="facility-card fade-up">
+            <img class="facility-card__img"
+                 src="/assets/images/services/gym-facility-04.jpg"
+                 alt="パーソナルブース"
+                 width="800" height="600"
+                 loading="lazy">
+            <figcaption>
+              <span class="facility-card__caption">FACILITY 04</span>
+              <span class="facility-card__title">PERSONAL BOOTH</span>
+            </figcaption>
+          </figure>
+
+          <figure class="facility-card fade-up">
+            <img class="facility-card__img"
+                 src="/assets/images/services/gym-facility-05.jpg"
+                 alt="ロッカールーム"
+                 width="800" height="600"
+                 loading="lazy">
+            <figcaption>
+              <span class="facility-card__caption">FACILITY 05</span>
+              <span class="facility-card__title">LOCKER</span>
+            </figcaption>
+          </figure>
+
+          <figure class="facility-card fade-up">
+            <img class="facility-card__img"
+                 src="/assets/images/services/gym-facility-06.jpg"
+                 alt="ラウンジ"
+                 width="800" height="600"
+                 loading="lazy">
+            <figcaption>
+              <span class="facility-card__caption">FACILITY 06</span>
+              <span class="facility-card__title">LOUNGE</span>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Pricing
+         =========================================================== -->
+    <section class="section pricing" aria-labelledby="pricing-title">
+      <div class="section__inner">
+        <h2 id="pricing-title" class="section__chapter">
+          PRICING 04 <span class="section__chapter-jp">— 料金プラン</span>
+        </h2>
+
+        <div class="pricing__grid">
+
+          <article class="plan-card fade-up" aria-labelledby="plan-light">
+            <div class="plan-card__num">N° 01</div>
+            <h3 class="plan-card__name" id="plan-light">LIGHT</h3>
+            <p class="plan-card__price">¥8,800<span class="plan-card__price-suffix">/月</span></p>
+            <p class="plan-card__desc">自分のペースで鍛えたい方へ。</p>
+            <div class="plan-card__divider" aria-hidden="true"></div>
+            <ul class="plan-card__features">
+              <li>24時間ジム使い放題</li>
+              <li>無料オリエンテーション(60分)</li>
+              <li>専用アプリ利用可</li>
+            </ul>
+            <a class="plan-card__cta" href="/contact/?plan=light">このプランを選ぶ →</a>
+          </article>
+
+          <article class="plan-card plan-card--standard fade-up" aria-labelledby="plan-standard">
+            <span class="plan-card__ribbon" aria-hidden="true">★ OUR PICK ★</span>
+            <div class="plan-card__num">N° 02</div>
+            <h3 class="plan-card__name" id="plan-standard">STANDARD</h3>
+            <p class="plan-card__price">¥14,800<span class="plan-card__price-suffix">/月</span></p>
+            <p class="plan-card__desc">最も多くの方が選ぶ、標準プラン。</p>
+            <div class="plan-card__divider" aria-hidden="true"></div>
+            <ul class="plan-card__features">
+              <li>24時間ジム使い放題</li>
+              <li>月2回×30分パーソナル</li>
+              <li>無料オリエンテーション</li>
+              <li>専用アプリ利用可</li>
+              <li>月次フィードバック</li>
+            </ul>
+            <a class="plan-card__cta" href="/contact/?plan=standard">このプランを選ぶ →</a>
+          </article>
+
+          <article class="plan-card fade-up" aria-labelledby="plan-premium">
+            <div class="plan-card__num">N° 03</div>
+            <h3 class="plan-card__name" id="plan-premium">PREMIUM</h3>
+            <p class="plan-card__price">¥22,800<span class="plan-card__price-suffix">/月</span></p>
+            <p class="plan-card__desc">結果を本気で出したい方へ。</p>
+            <div class="plan-card__divider" aria-hidden="true"></div>
+            <ul class="plan-card__features">
+              <li>24時間ジム使い放題</li>
+              <li>月4回×30分パーソナル</li>
+              <li>NUTRITION 月1回無料</li>
+              <li>SUPPLEMENTS 10%OFF</li>
+            </ul>
+            <a class="plan-card__cta" href="/contact/?plan=premium">このプランを選ぶ →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Trainers (親しみゾーン)
+         =========================================================== -->
+    <section class="section trainers" aria-labelledby="trainers-title">
+      <div class="section__inner">
+        <h2 id="trainers-title" class="section__chapter">
+          TRAINERS 05 <span class="section__chapter-jp">— トレーナー紹介</span>
+        </h2>
+        <div class="trainers__grid">
+
+          <article class="trainer-card fade-up">
+            <img class="trainer-card__img"
+                 src="/assets/images/trainers/yamada-takumi.jpg"
+                 alt="山田 拓海 ヘッドトレーナー"
+                 width="800" height="1080"
+                 loading="lazy">
+            <h3 class="trainer-card__name">山田 拓海</h3>
+            <p class="trainer-card__role">HEAD TRAINER / MATSUMOTO</p>
+            <div class="trainer-card__divider" aria-hidden="true"></div>
+            <p class="trainer-card__quote">
+              「<span class="nowrap">『正しいフォーム』は、</span><span class="nowrap">一生の財産になります</span>」
+            </p>
+          </article>
+
+          <article class="trainer-card fade-up">
+            <img class="trainer-card__img"
+                 src="/assets/images/trainers/sasaki-yuka.jpg"
+                 alt="佐々木 優香 パーソナルトレーナー"
+                 width="800" height="1080"
+                 loading="lazy">
+            <h3 class="trainer-card__name">佐々木 優香</h3>
+            <p class="trainer-card__role">PERSONAL TRAINER / NAGANO</p>
+            <div class="trainer-card__divider" aria-hidden="true"></div>
+            <p class="trainer-card__quote">
+              「<span class="nowrap">女性の身体に寄り添った</span><span class="nowrap">トレーニング設計が得意です</span>」
+            </p>
+          </article>
+
+          <article class="trainer-card fade-up">
+            <img class="trainer-card__img"
+                 src="/assets/images/trainers/nakamura-kensuke.jpg"
+                 alt="中村 健介 チーフトレーナー"
+                 width="800" height="1080"
+                 loading="lazy">
+            <h3 class="trainer-card__name">中村 健介</h3>
+            <p class="trainer-card__role">CHIEF TRAINER / KARUIZAWA</p>
+            <div class="trainer-card__divider" aria-hidden="true"></div>
+            <p class="trainer-card__quote">
+              「<span class="nowrap">リハビリ的な</span><span class="nowrap">アプローチも可能です</span>」
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Flow
+         =========================================================== -->
+    <section class="section flow" aria-labelledby="flow-title">
+      <div class="section__inner">
+        <h2 id="flow-title" class="section__chapter">
+          FLOW 06 <span class="section__chapter-jp">— 利用の流れ</span>
+        </h2>
+        <ol class="flow__grid">
+
+          <li class="flow-step fade-up">
+            <span class="flow-step__num">STEP 01</span>
+            <h3 class="flow-step__title">入会前カウンセリング</h3>
+            <div class="flow-step__divider" aria-hidden="true"></div>
+            <p class="flow-step__desc">
+              <span class="nowrap">現状と目標をヒアリング、</span><span class="nowrap">最適なプランをご提案。</span>
+            </p>
+          </li>
+          <li class="flow-step fade-up">
+            <span class="flow-step__num">STEP 02</span>
+            <h3 class="flow-step__title">オリエンテーション</h3>
+            <div class="flow-step__divider" aria-hidden="true"></div>
+            <p class="flow-step__desc">
+              <span class="nowrap">マシンの使い方や</span><span class="nowrap">安全な動作を</span><span class="nowrap">60分でレクチャー。</span>
+            </p>
+          </li>
+          <li class="flow-step fade-up">
+            <span class="flow-step__num">STEP 03</span>
+            <h3 class="flow-step__title">通常利用</h3>
+            <div class="flow-step__divider" aria-hidden="true"></div>
+            <p class="flow-step__desc">
+              <span class="nowrap">24時間いつでも、</span><span class="nowrap">自分のペースで利用。</span>
+            </p>
+          </li>
+          <li class="flow-step fade-up">
+            <span class="flow-step__num">STEP 04</span>
+            <h3 class="flow-step__title">月次フィードバック</h3>
+            <div class="flow-step__divider" aria-hidden="true"></div>
+            <p class="flow-step__desc">
+              <span class="nowrap">パーソナルでフォーム確認・</span><span class="nowrap">次月の目標設定。</span>
+            </p>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         FAQ
+         =========================================================== -->
+    <section class="section faq" aria-labelledby="faq-title">
+      <div class="section__inner">
+        <h2 id="faq-title" class="section__chapter">
+          FAQ 07 <span class="section__chapter-jp">— よくある質問</span>
+        </h2>
+        <div class="faq__list">
+
+          <article class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span><span class="faq-item__q-prefix" aria-hidden="true">Q1.</span>24時間営業ですか?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                はい。スタッフ常駐時間外も、専用キーで入館できます。深夜・早朝も安全に利用いただけるよう、防犯カメラとSOSボタンを完備しています。
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span><span class="faq-item__q-prefix" aria-hidden="true">Q2.</span>パーソナルトレーニングは予約が必要ですか?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                はい、専用アプリから24時間予約可能です。STANDARD会員は月2回、PREMIUM会員は月4回までご利用いただけます。
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span><span class="faq-item__q-prefix" aria-hidden="true">Q3.</span>初心者でも大丈夫でしょうか?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                もちろんです。入会後は必ず無料のオリエンテーション(60分)を実施し、マシンの使い方や安全な動作をレクチャーします。
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span><span class="faq-item__q-prefix" aria-hidden="true">Q4.</span>プラン変更は可能ですか?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                月単位で変更可能です。アプリまたは店舗で手続きできます。
+              </div>
+            </div>
+          </article>
+
+          <article class="faq-item">
+            <button class="faq-item__q" type="button" aria-expanded="false">
+              <span><span class="faq-item__q-prefix" aria-hidden="true">Q5.</span>解約はいつでもできますか?</span>
+              <span class="faq-item__icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-item__a">
+              <div class="faq-item__a-inner">
+                解約は前月の25日までにお申し出いただければ、翌月末で解約となります。最低契約期間はありません。
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================================================
+         Final CTA
+         =========================================================== -->
+    <section class="final-cta" aria-labelledby="final-cta-title">
+      <span class="final-cta__chapter">RESEARCH N° 08 — JOIN US</span>
+      <h2 id="final-cta-title" class="final-cta__title">BEGIN YOUR HEALTH RESEARCH.</h2>
+      <p class="final-cta__sub">
+        <span class="nowrap">まずは無料体験から。</span><span class="nowrap">研究員と一緒に、</span><span class="nowrap">あなたの健康習慣を設計する。</span>
+      </p>
+      <a class="cta-btn cta-btn--lg" href="/contact/?type=trial">
+        無料体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__logo">ALPS LAB</div>
+        <p class="footer__copy-line">北アルプスの麓から、本物の健康を研究する。</p>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <ul>
+            <li><a href="/services/gym/">GYM</a></li>
+            <li><a href="/services/nutrition/">NUTRITION</a></li>
+            <li><a href="/services/foods/">FOODS</a></li>
+            <li><a href="/services/supplements/">SUPPLEMENTS</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Stores</h4>
+          <ul>
+            <li><a href="/stores/#matsumoto">松本本店</a></li>
+            <li><a href="/stores/#nagano">長野店</a></li>
+            <li><a href="/stores/#karuizawa">軽井沢店</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Company</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/company/">Company</a></li>
+            <li><a href="/recruit/">Recruit</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Social</h4>
+          <ul>
+            <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="#" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 ALPS LAB Inc.</span>
+        <span>LAT. 36.2°N / LON. 137.9°E</span>
+        <span>Privacy / Terms</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/animations.js" defer></script>
+  <script src="/assets/js/components/faq-accordion.js" defer></script>
+
+</body>
+</html>

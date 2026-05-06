@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ALPS LABへのお問い合わせ。入会相談・体験予約・法人取材・その他のご質問はこちらから。">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <meta property="og:title" content="CONTACT | ALPS LAB">
+  <meta property="og:description" content="ALPS LABへのお問い合わせ。入会相談・体験予約・法人取材・その他のご質問はこちらから。">
+  <meta property="og:image" content="/assets/images/hero/hero-nature.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+
+  <title>CONTACT | ALPS LAB</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components/button.css">
+  <link rel="stylesheet" href="/assets/css/layout/header.css">
+  <link rel="stylesheet" href="/assets/css/layout/footer.css">
+  <link rel="stylesheet" href="/assets/css/pages/contact.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body class="no-js" data-page="contact">
+
+  <a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a class="header__logo" href="/" aria-label="ALPS LAB トップページ">ALPS LAB</a>
+      <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="/about/">About</a></li>
+          <li><a class="nav__link" href="/services/">Services</a></li>
+          <li><a class="nav__link" href="/stores/">Stores</a></li>
+          <li><a class="nav__link" href="/stories/">Stories</a></li>
+          <li><a class="nav__link" href="/recruit/">Recruit</a></li>
+        </ul>
+        <a class="cta-btn" href="/contact/" aria-current="page">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+        <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="モバイルナビゲーション" aria-hidden="true">
+    <ul class="mobile-menu__list">
+      <li><a class="mobile-menu__link" href="/about/">About</a></li>
+      <li><a class="mobile-menu__link" href="/services/">Services</a></li>
+      <li><a class="mobile-menu__link" href="/stores/">Stores</a></li>
+      <li><a class="mobile-menu__link" href="/stories/">Stories</a></li>
+      <li><a class="mobile-menu__link" href="/recruit/">Recruit</a></li>
+    </ul>
+    <a class="cta-btn cta-btn--lg" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+  <main id="main">
+
+    <!-- Hero (40vh) -->
+    <section class="contact-hero" aria-labelledby="hero-title">
+      <div class="contact-hero__inner">
+        <span class="contact-hero__chapter" aria-hidden="true">— CONTACT / N°07 —</span>
+        <h1 class="contact-hero__title" id="hero-title">CONTACT US</h1>
+        <p class="contact-hero__sub">お問い合わせ</p>
+        <p class="contact-hero__lead">
+          <span class="nowrap">ご質問・体験予約・取材依頼など、</span><span class="nowrap">お気軽にご連絡ください。</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Form -->
+    <section class="section contact-form-section" aria-labelledby="form-title">
+      <div class="section__inner contact-form-section__inner">
+        <h2 id="form-title" class="visually-hidden">お問い合わせフォーム</h2>
+
+        <form class="contact-form" id="contactForm" novalidate>
+
+          <!-- 種別 -->
+          <fieldset class="contact-form__group">
+            <legend class="contact-form__legend">
+              お問い合わせ種別 <span class="contact-form__required" aria-hidden="true">*</span>
+              <span class="visually-hidden">必須</span>
+            </legend>
+            <div class="contact-form__radio-group">
+              <label class="contact-form__radio">
+                <input type="radio" name="type" value="join" required checked>
+                <span class="contact-form__radio-mark" aria-hidden="true"></span>
+                <span>入会相談</span>
+              </label>
+              <label class="contact-form__radio">
+                <input type="radio" name="type" value="trial" required>
+                <span class="contact-form__radio-mark" aria-hidden="true"></span>
+                <span>体験予約</span>
+              </label>
+              <label class="contact-form__radio">
+                <input type="radio" name="type" value="business" required>
+                <span class="contact-form__radio-mark" aria-hidden="true"></span>
+                <span>法人・取材</span>
+              </label>
+              <label class="contact-form__radio">
+                <input type="radio" name="type" value="other" required>
+                <span class="contact-form__radio-mark" aria-hidden="true"></span>
+                <span>その他</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- 名前 -->
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-name">
+              お名前 <span class="contact-form__required" aria-hidden="true">*</span>
+              <span class="visually-hidden">必須</span>
+            </label>
+            <input
+              class="contact-form__input"
+              id="contact-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              required
+              aria-required="true"
+              aria-describedby="contact-name-error">
+            <p class="contact-form__error" id="contact-name-error" aria-live="polite"></p>
+          </div>
+
+          <!-- メール -->
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-email">
+              メールアドレス <span class="contact-form__required" aria-hidden="true">*</span>
+              <span class="visually-hidden">必須</span>
+            </label>
+            <input
+              class="contact-form__input"
+              id="contact-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              aria-required="true"
+              aria-describedby="contact-email-error">
+            <p class="contact-form__error" id="contact-email-error" aria-live="polite"></p>
+          </div>
+
+          <!-- 電話 -->
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-tel">
+              電話番号(任意)
+            </label>
+            <input
+              class="contact-form__input"
+              id="contact-tel"
+              name="tel"
+              type="tel"
+              autocomplete="tel"
+              pattern="[0-9\-]+"
+              inputmode="tel"
+              aria-describedby="contact-tel-error">
+            <p class="contact-form__error" id="contact-tel-error" aria-live="polite"></p>
+          </div>
+
+          <!-- 希望店舗 -->
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-store">
+              希望店舗
+            </label>
+            <select class="contact-form__select" id="contact-store" name="store">
+              <option value="">選択してください</option>
+              <option value="matsumoto">松本本店</option>
+              <option value="nagano">長野店</option>
+              <option value="karuizawa">軽井沢店</option>
+              <option value="undecided">未定</option>
+            </select>
+          </div>
+
+          <!-- 内容 -->
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-message">
+              お問い合わせ内容 <span class="contact-form__required" aria-hidden="true">*</span>
+              <span class="visually-hidden">必須</span>
+            </label>
+            <textarea
+              class="contact-form__textarea"
+              id="contact-message"
+              name="message"
+              rows="6"
+              required
+              aria-required="true"
+              aria-describedby="contact-message-error"></textarea>
+            <p class="contact-form__error" id="contact-message-error" aria-live="polite"></p>
+          </div>
+
+          <!-- プライバシー同意 -->
+          <div class="contact-form__group">
+            <label class="contact-form__check">
+              <input
+                type="checkbox"
+                id="contact-agree"
+                name="agree"
+                required
+                aria-required="true"
+                aria-describedby="contact-agree-error">
+              <span class="contact-form__check-mark" aria-hidden="true"></span>
+              <span>
+                <a href="#" class="contact-form__check-link">プライバシーポリシー</a>に同意する
+                <span class="contact-form__required" aria-hidden="true">*</span>
+                <span class="visually-hidden">必須</span>
+              </span>
+            </label>
+            <p class="contact-form__error" id="contact-agree-error" aria-live="polite"></p>
+          </div>
+
+          <!-- 送信 -->
+          <div class="contact-form__submit-wrap">
+            <button type="submit" class="contact-form__submit" id="contactSubmit">
+              送信する <span class="cta-btn__arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__logo">ALPS LAB</div>
+        <p class="footer__copy-line">北アルプスの麓から、本物の健康を研究する。</p>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <ul>
+            <li><a href="/services/gym/">GYM</a></li>
+            <li><a href="/services/nutrition/">NUTRITION</a></li>
+            <li><a href="/services/foods/">FOODS</a></li>
+            <li><a href="/services/supplements/">SUPPLEMENTS</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Stores</h4>
+          <ul>
+            <li><a href="/stores/#matsumoto">松本本店</a></li>
+            <li><a href="/stores/#nagano">長野店</a></li>
+            <li><a href="/stores/#karuizawa">軽井沢店</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Company</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/company/">Company</a></li>
+            <li><a href="/recruit/">Recruit</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Social</h4>
+          <ul>
+            <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="#" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 ALPS LAB Inc.</span>
+        <span>LAT. 36.2°N / LON. 137.9°E</span>
+        <span>Privacy / Terms</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/animations.js" defer></script>
+  <script src="/assets/js/components/contact-form.js" defer></script>
+</body>
+</html>

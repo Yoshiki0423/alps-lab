@@ -1,0 +1,349 @@
+/* =========================================================================
+   ALPS LAB Design Tokens (確定版)
+   --------------------------------------------------------------------------
+   Source: 03_design/design_tokens.md を起点に Designer Agent が確定。
+   不変制約: 03_design/mockups/DECISION_NOTES.md の「維持すべき不変の制約」を最優先。
+   Coder Agent はこのファイルを assets/css/tokens.css としてそのまま読み込むこと。
+   ========================================================================= */
+
+:root {
+  /* ===== Colors ============================================================
+     カラー比率(画面占有率の目安)
+       Black 系          : 80〜90%
+       White / Gray text : 5〜10%
+       Gold              : 3〜5%   (画面の知的アクセント)
+       Red               : 1〜3%   (CTA 専用)
+       Soft White        : 親しみゾーン限定使用
+  ============================================================================ */
+
+  /* Background — DECISION_NOTES の「ベース黒 #0A0A0A 〜 #1A1A1A」を死守 */
+  --color-bg-primary:   #0A0A0A;  /* ベース黒(画面の80〜90%) */
+  --color-bg-secondary: #141414;  /* セクション背景の差分(より穏やか) */
+  --color-bg-tertiary:  #1F1F1F;  /* カード背景・コンポーネント */
+  --color-bg-quaternary:#2A2A2A;  /* ホバー時・浮き上がり要素 */
+  --color-bg-soft:      #F5F5F0;  /* 親しみゾーン専用(Trainer/Voice/Stories) */
+
+  /* Text */
+  --color-text-primary:   #FFFFFF;
+  --color-text-secondary: #C8C8C8;
+  --color-text-muted:     #7A7A7A;
+  --color-text-soft:      #1A1A1A;  /* soft 背景上のテキスト */
+
+  /* Accent — DECISION_NOTES の「ゴールド #C8A961 / 赤 #C8302E」を死守 */
+  --color-accent-gold:       #C8A961;  /* 章番号・装飾線・主要見出し(3〜5%) */
+  --color-accent-gold-dim:   #8E7745;
+  --color-accent-gold-light: #E0C988;
+  --color-accent-red:        #C8302E;  /* CTA 専用(1〜3%) */
+  --color-accent-red-hover:  #A82624;
+
+  /* Borders */
+  --color-border:        #2A2A2A;
+  --color-border-soft:   #404040;
+  --color-border-gold:   rgba(200, 169, 97, 0.4);  /* ゴールド薄罫線 */
+
+  /* Overlay — Hero の動画/画像上に被せる暗幕 */
+  --overlay-dark-50:  rgba(10, 10, 10, 0.5);
+  --overlay-dark-70:  rgba(10, 10, 10, 0.7);
+  --overlay-dark-90:  rgba(10, 10, 10, 0.9);
+
+
+  /* ===== Typography =======================================================
+     不変制約(DECISION_NOTES):
+       大型英語見出し  : Bebas Neue
+       日本語          : Noto Sans JP Bold
+       英語本文・補助  : Inter
+  ============================================================================ */
+
+  /* Font Families */
+  --font-display: 'Bebas Neue', 'Inter', sans-serif;            /* 大型英語見出し */
+  --font-en:      'Inter', 'Helvetica Neue', sans-serif;        /* 英語本文・補助 */
+  --font-jp:      'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+  --font-mono:    'Inter', monospace;                            /* 等幅風(座標表示等) */
+
+  /* Font Sizes (rem ベース、ルート 16px 前提) */
+  --fs-2xs: 0.625rem;  /* 10px — 章番号・小ラベル */
+  --fs-xs:  0.75rem;   /* 12px — caption */
+  --fs-sm:  0.875rem;  /* 14px — 補助テキスト */
+  --fs-base:1rem;      /* 16px — 標準本文 */
+  --fs-md:  1.125rem;  /* 18px — リード文 */
+  --fs-lg:  1.5rem;    /* 24px — sub heading */
+  --fs-xl:  2rem;      /* 32px — Hero日本語サブ */
+  --fs-2xl: 3rem;      /* 48px — section heading 中 */
+  --fs-3xl: 4rem;      /* 64px — section heading 大 */
+  --fs-4xl: 6rem;      /* 96px — Hero 英語(Desktop) */
+  --fs-5xl: 8rem;      /* 128px — 例外的な巨大見出し */
+
+  /* Line Heights */
+  --lh-tight:  1.05;   /* Bebas Neue 用 */
+  --lh-snug:   1.3;
+  --lh-normal: 1.5;    /* 日本語本文用 */
+  --lh-loose:  1.8;    /* 長文段落用 */
+
+  /* Letter Spacing */
+  --ls-tight:  -0.02em;
+  --ls-normal: 0;
+  --ls-wide:   0.04em;   /* Bebas Neue 標準 */
+  --ls-wider:  0.12em;   /* 章ラベル「I. NATURE」等 */
+  --ls-widest: 0.24em;   /* 底部インデックス「01 GYM」等 */
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-bold:    700;
+
+
+  /* ===== Spacing (8px グリッド準拠) ====================================== */
+  --space-2xs: 0.25rem;  /*   4px */
+  --space-xs:  0.5rem;   /*   8px */
+  --space-sm:  1rem;     /*  16px */
+  --space-md:  2rem;     /*  32px */
+  --space-lg:  4rem;     /*  64px */
+  --space-xl:  8rem;     /* 128px — section 間余白(PC) */
+  --space-2xl:12rem;     /* 192px — 大区切り */
+  --space-3xl:16rem;     /* 256px — Hero 等の超大余白 */
+
+
+  /* ===== Layout =========================================================== */
+  --max-width:        1440px;  /* DECISION_NOTES の Hero 幅基準 */
+  --max-width-wide:   1280px;
+  --max-width-narrow: 960px;
+  --max-width-text:   720px;
+  --header-height:    80px;
+  --header-height-mobile: 60px;
+
+
+  /* ===== Border Radius ==================================================== */
+  --radius-none: 0;
+  --radius-sm:   2px;
+  --radius-md:   4px;     /* カード・ボタンの基本(角丸ほぼなし=ストイック) */
+  --radius-lg:   8px;
+  --radius-pill: 9999px;
+
+
+  /* ===== Animation ======================================================== */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in-out:  cubic-bezier(0.4, 0, 0.6, 1);
+  --ease-out:     cubic-bezier(0, 0, 0.2, 1);
+  --ease-in:      cubic-bezier(0.4, 0, 1, 1);
+  --ease-bounce:  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --duration-fast:   200ms;
+  --duration-base:   400ms;
+  --duration-slow:   800ms;
+  --duration-slower:1200ms;
+
+
+  /* ===== Shadows ========================================================== */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.6);
+
+  --shadow-glow-gold: 0 0 32px rgba(200, 169, 97, 0.35);
+  --shadow-glow-red:  0 0 24px rgba(200, 48, 46, 0.4);
+
+
+  /* ===== Z-index =========================================================== */
+  --z-base:    1;
+  --z-content: 10;
+  --z-header:  100;
+  --z-overlay: 500;
+  --z-modal:   1000;
+
+
+  /* ===== Container Padding (各ブレークポイント横余白) ==================== */
+  --container-padding-mobile: 1.25rem;  /* 20px */
+  --container-padding-tablet: 2.5rem;   /* 40px */
+  --container-padding-desktop:5rem;     /* 80px */
+}
+
+
+/* =========================================================================
+   Typography Helper Classes (Coder が即使えるユーティリティ)
+   ========================================================================= */
+
+/* 大型英語見出し(Hero, Section Heading) */
+.t-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+/* 章ラベル「I. NATURE」「FACILITY 01」等 */
+.t-label {
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+
+/* 日本語見出し */
+.t-jp-heading {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-normal);
+}
+
+/* 日本語本文 */
+.t-jp-body {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-base);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+}
+
+
+/* =========================================================================
+   Japanese Line-Break Helpers (文節単位の改行制御)
+   --------------------------------------------------------------------------
+   - word-break: auto-phrase  → 日本語の文節境界で自動改行(Chrome 119+ / Safari 17.4+)
+   - line-break: strict       → 日本語の禁則処理を厳密化
+   - text-wrap: balance       → 短い見出しの行バランスを最適化(2〜3行)
+   - text-wrap: pretty        → 長文・段落の改行位置を最適化(末尾の孤立単語を回避)
+   - overflow-wrap: break-word→ 長い英単語のフォールバック
+   非対応ブラウザでも基本の改行は機能するため、Progressive Enhancement として安全。
+   ========================================================================= */
+
+/* 短いキャッチ・Heroサブ系(2〜3行想定) */
+.hero__subtitle,
+.hero__title-jp,
+.hero__sub,
+.t-jp-hero {
+  word-break: auto-phrase;
+  line-break: strict;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+/* セクション見出し・長文段落・カードコピー(行数が増える可能性あり) */
+.mission__title,
+.concept__text,
+.mvv__title,
+.mvv__desc,
+.value-card__desc,
+.story-event__desc,
+.story-event__title,
+.message__text,
+.final-cta__sub,
+.service-card__copy,
+.flow-step__desc,
+.trainer-card__quote,
+.t-jp-pretty {
+  word-break: auto-phrase;
+  line-break: strict;
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+/* nowrap ユーティリティ:意味の塊が分断されないように囲む。
+   480px 以下の極小画面では強制解除して横スクロールを防ぐ。 */
+.nowrap {
+  white-space: nowrap;
+  display: inline-block;
+}
+@media (max-width: 480px) {
+  .nowrap {
+    white-space: normal;
+    display: inline;
+  }
+}
+
+
+/* =========================================================================
+   Chapter Label (セクション章番号ラベル)
+   --------------------------------------------------------------------------
+   形式: 「— MISSION 01 — 私たちの使命」のように、主見出しの上に置く章ラベル。
+   視覚階層: 主見出し(48〜96px) > 章ラベル(英 18 / 日 16) > メタ(12px)
+   --------------------------------------------------------------------------
+   モックアップでは `.section__chapter` / `.final-cta__chapter` /
+   `.hero__separator` といったコンポーネント別クラスにも同等の値を適用済み。
+   今後の新セクションでは原則この `.chapter-label` を用いる。
+   ========================================================================= */
+.chapter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-md);           /* 18px */
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+.chapter-label::before {
+  content: "";
+  width: 64px;                       /* 既存 40〜48px から拡張 */
+  height: 1px;
+  background: var(--color-accent-gold);
+  opacity: 0.6;
+}
+/* 両側罫線バリエーション(Final CTA / Hero セパレーターなど中央配置用) */
+.chapter-label--centered::after {
+  content: "";
+  width: 64px;
+  height: 1px;
+  background: var(--color-accent-gold);
+  opacity: 0.6;
+}
+/* 章ラベル内の日本語サブ */
+.chapter-label__jp,
+.section__chapter-jp {
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);          /* 16px */
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+
+/* =========================================================================
+   レスポンシブ・タイポスケール
+   モバイルでは Hero 英語を 96px → 56px へ縮小(可読性確保)
+   ========================================================================= */
+@media (max-width: 1023px) {
+  :root {
+    --fs-4xl: 4.5rem;  /* 72px */
+    --fs-3xl: 3rem;    /* 48px */
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --fs-4xl: 3.5rem;  /* 56px */
+    --fs-3xl: 2.25rem; /* 36px */
+    --fs-2xl: 2rem;    /* 32px */
+    --fs-xl:  1.5rem;  /* 24px */
+
+    --space-xl:  4rem;   /* PC の 128px → モバイル 64px */
+    --space-2xl: 6rem;   /* 192px → 96px */
+    --space-3xl: 8rem;   /* 256px → 128px */
+  }
+}
+
+
+/* =========================================================================
+   不変制約サマリー(コメントとして残す)
+   --------------------------------------------------------------------------
+   1) Color
+      - 黒ベース  : var(--color-bg-primary) #0A0A0A
+      - ゴールド  : var(--color-accent-gold) #C8A961  ←装飾・章番号
+      - 赤        : var(--color-accent-red)  #C8302E  ←CTA専用
+   2) Font
+      - 大型英語  : var(--font-display)  Bebas Neue
+      - 日本語    : var(--font-jp)       Noto Sans JP Bold
+      - 英語本文  : var(--font-en)       Inter
+   3) Hero Copy(変更不可)
+      - 英語      : RESEARCH THE TRUTH OF HEALTH.
+      - 日本語    : 北アルプスの麓から、本物の健康を研究する。
+      - CTA       : 体験予約はこちら →
+   4) Hero Layout
+      - Split Composition(縦2分割: 左=NATURE / 右=BODY、中央にコピー+CTA)
+      - 章番号「I. NATURE / II. BODY」は維持
+   ========================================================================= */

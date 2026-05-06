@@ -1,0 +1,499 @@
+/* =========================================================================
+   ABOUT ページ固有スタイル
+   起点: work/design/04_mockups/about.html
+   ========================================================================= */
+
+/* =========================================================================
+   Hero (北アルプス背景)
+   ========================================================================= */
+.hero {
+  position: relative;
+  height: 80vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+  text-align: center;
+}
+.hero__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55) contrast(1.1);
+  z-index: 0;
+  transition: transform 2s var(--ease-out);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 10, 0.4) 0%,
+    rgba(10, 10, 10, 0.1) 40%,
+    rgba(10, 10, 10, 0.85) 100%
+  );
+  z-index: 1;
+}
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  padding: 0 var(--container-padding-desktop);
+  max-width: var(--max-width);
+}
+.hero__chapter {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+.hero__chapter::before,
+.hero__chapter::after {
+  content: "";
+  width: 80px;
+  height: 1px;
+  background: var(--color-accent-gold);
+  opacity: 0.6;
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  letter-spacing: var(--ls-wide);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--space-md);
+}
+.hero__sub {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  margin: 0;
+  color: var(--color-text-secondary);
+}
+.hero__bottom {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--container-padding-desktop);
+  right: var(--container-padding-desktop);
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold-dim);
+}
+
+/* =========================================================================
+   MVV (Mission / Vision / Values)
+   ========================================================================= */
+.mvv {
+  background: var(--color-bg-primary);
+}
+.mvv__block {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid rgba(200, 169, 97, 0.2);
+}
+.mvv__block:last-of-type {
+  border-bottom: 0;
+}
+.mvv__chapter {
+  margin: 0 auto var(--space-lg);
+}
+.mvv__title {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-snug);
+  margin: 0 auto var(--space-md);
+  max-width: 1080px;
+}
+.mvv__sub-en {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-accent-gold-dim);
+  margin: 0 0 var(--space-md);
+}
+.mvv__desc {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-loose);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Values cards */
+.values__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.value-card {
+  background: var(--color-bg-tertiary);
+  padding: var(--space-md);
+  border-left: 4px solid var(--color-accent-gold);
+}
+.value-card__num {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  color: var(--color-accent-gold);
+  line-height: 1;
+}
+.value-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  letter-spacing: var(--ls-wide);
+  line-height: var(--lh-tight);
+  margin: 0.75rem 0;
+}
+.value-card__desc {
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-loose);
+  margin: 0;
+}
+
+/* =========================================================================
+   Story Timeline
+   ========================================================================= */
+.story {
+  background: var(--color-bg-primary);
+}
+.story__timeline {
+  position: relative;
+  max-width: var(--max-width-narrow);
+  margin: var(--space-lg) auto 0;
+  padding-left: 2.5rem;
+}
+.story__timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.625rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    var(--color-accent-gold),
+    rgba(200, 169, 97, 0.2)
+  );
+}
+.story-event {
+  position: relative;
+  padding-bottom: var(--space-xl);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-md);
+  align-items: start;
+}
+.story-event:last-child {
+  padding-bottom: 0;
+}
+.story-event::before {
+  content: "";
+  position: absolute;
+  left: -2.5rem;
+  top: 0.5rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-bg-primary);
+  border: 2px solid var(--color-accent-gold);
+}
+.story-event.is-current::before {
+  background: var(--color-accent-gold);
+  box-shadow: var(--shadow-glow-gold);
+}
+.story-event__year {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  color: var(--color-accent-gold);
+  line-height: 1;
+}
+.story-event__title {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  line-height: var(--lh-snug);
+  margin: 0.5rem 0 var(--space-sm);
+}
+.story-event__desc {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-loose);
+  margin: 0;
+}
+.story-event__img {
+  width: 320px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  filter: brightness(0.85);
+}
+
+/* =========================================================================
+   Founding Story (本文) — story timeline の前後に配置
+   ========================================================================= */
+.story__intro {
+  max-width: var(--max-width-text);
+  margin: 0 auto var(--space-xl);
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-loose);
+}
+.story__intro p {
+  margin: 0 0 var(--space-md);
+}
+.story__intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================================================
+   Message
+   ========================================================================= */
+.message {
+  background: var(--color-bg-secondary);
+}
+.message__grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+  align-items: center;
+}
+.message__img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  filter: brightness(0.9);
+  border-radius: var(--radius-md);
+}
+.message__quote {
+  position: relative;
+}
+.message__quote::before {
+  content: "\201C";
+  position: absolute;
+  left: -1rem;
+  top: -3rem;
+  font-family: var(--font-display);
+  font-size: 8rem;
+  line-height: 1;
+  color: var(--color-accent-gold-dim);
+  opacity: 0.4;
+}
+.message__text {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  margin: 0;
+  color: var(--color-text-primary);
+}
+.message__divider {
+  height: 1px;
+  width: 60px;
+  background: var(--color-accent-gold);
+  margin: var(--space-md) 0 var(--space-sm);
+}
+.message__signature {
+  font-family: var(--font-en);
+  font-size: var(--fs-base);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+.message__signature strong {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  display: block;
+  font-size: var(--fs-lg);
+  margin-top: 0.5rem;
+}
+
+/* =========================================================================
+   Team
+   ========================================================================= */
+.team {
+  background: var(--color-bg-primary);
+}
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+.team-member {
+  background: transparent;
+}
+.team-member__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: saturate(0.6) brightness(0.9);
+  transition:
+    filter 600ms var(--ease-out),
+    transform var(--duration-base) var(--ease-out);
+  border-radius: var(--radius-md);
+}
+.team-member:hover .team-member__img {
+  filter: saturate(1) brightness(1);
+  transform: scale(1.03);
+}
+.team-member__name {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+  margin: var(--space-sm) 0 0.25rem;
+}
+.team-member__role {
+  font-family: var(--font-en);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold-dim);
+  margin: 0;
+}
+
+/* =========================================================================
+   Final CTA(再掲。各ページ単独完結用)
+   ========================================================================= */
+.final-cta {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background:
+    radial-gradient(
+      ellipse at 80% 100%,
+      rgba(200, 48, 46, 0.25),
+      transparent 60%
+    ),
+    var(--color-bg-primary);
+  padding: var(--space-xl) var(--container-padding-desktop);
+}
+.final-cta__chapter {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-en);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+}
+.final-cta__chapter::before,
+.final-cta__chapter::after {
+  content: "";
+  width: 80px;
+  height: 1px;
+  background: var(--color-accent-gold);
+  opacity: 0.6;
+}
+.final-cta__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  letter-spacing: var(--ls-wide);
+  line-height: var(--lh-tight);
+  margin: 0 0 var(--space-sm);
+}
+.final-cta__sub {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  margin: 0 0 var(--space-lg);
+  color: var(--color-text-secondary);
+}
+
+/* =========================================================================
+   Responsive
+   ========================================================================= */
+@media (max-width: 1023px) {
+  .final-cta {
+    padding-left: var(--container-padding-tablet);
+    padding-right: var(--container-padding-tablet);
+  }
+  .hero__inner {
+    padding-left: var(--container-padding-tablet);
+    padding-right: var(--container-padding-tablet);
+  }
+  .hero__bottom {
+    left: var(--container-padding-tablet);
+    right: var(--container-padding-tablet);
+  }
+  .values__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .story-event {
+    grid-template-columns: 1fr;
+  }
+  .story-event__img {
+    width: 100%;
+    max-width: 320px;
+  }
+  .message__grid {
+    grid-template-columns: 1fr;
+  }
+  .team__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .final-cta {
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+  }
+  .hero__inner {
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+  }
+  .hero__bottom {
+    left: var(--container-padding-mobile);
+    right: var(--container-padding-mobile);
+    flex-direction: column;
+    gap: var(--space-xs);
+    align-items: flex-start;
+  }
+  .hero__chapter::before,
+  .hero__chapter::after {
+    width: 32px;
+  }
+  .values__grid {
+    grid-template-columns: 1fr;
+  }
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

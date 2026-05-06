@@ -1,0 +1,321 @@
+/* =========================================================================
+   SERVICES (一覧) ページ専用スタイル
+   構成: Hero (60vh) → 4枚 Service Cards (左右交互) → Connection Diagram → Final CTA
+   ========================================================================= */
+
+/* ----- visually-hidden(SR用) ----- */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* ===== Hero (60vh) ====================================================== */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3xl) var(--container-padding-desktop) var(--space-xl);
+  background:
+    radial-gradient(ellipse at 90% 100%, rgba(200, 169, 97, 0.08), transparent 50%),
+    var(--color-bg-primary);
+  text-align: center;
+  overflow: hidden;
+}
+.hero__inner {
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+}
+.hero__chapter {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-md);
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+.hero__sub {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-xl);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+.hero__lead {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  max-width: var(--max-width-text);
+  margin: 0 auto;
+}
+.hero__scroll-cue {
+  position: absolute;
+  bottom: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+.hero__scroll-arrow {
+  font-size: var(--fs-md);
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50%      { transform: translateY(6px); opacity: 1; }
+}
+
+/* ===== Service Cards (4枚 横長 左右交互) ================================ */
+.service-cards {
+  background: var(--color-bg-primary);
+}
+.service-card-row {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: var(--space-md);
+  align-items: center;
+  margin-bottom: var(--space-2xl);
+}
+.service-card-row:last-child { margin-bottom: 0; }
+.service-card-row--reverse { grid-template-columns: 40% 60%; }
+.service-card-row--reverse .service-card-row__media { order: 2; }
+.service-card-row--reverse .service-card-row__body { order: 1; }
+
+.service-card-row__media {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  aspect-ratio: 16 / 9;
+}
+.service-card-row__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: filter var(--duration-slow) var(--ease-default), transform var(--duration-slow) var(--ease-default);
+}
+.service-card-row__media:hover img,
+.service-card-row__media:focus-visible img {
+  filter: brightness(1);
+  transform: scale(1.02);
+}
+
+.service-card-row__body {
+  padding: 0 var(--space-md);
+}
+.service-card-row__num {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-sm);
+}
+.service-card-row__title-en {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  letter-spacing: var(--ls-wide);
+  line-height: var(--lh-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-xs);
+}
+.service-card-row__title-jp {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-lg);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-sm);
+}
+.service-card-row__divider {
+  width: 64px;
+  height: 1px;
+  background: var(--color-accent-gold);
+  opacity: 0.4;
+  margin-bottom: var(--space-sm);
+}
+.service-card-row__desc {
+  font-family: var(--font-jp);
+  font-size: var(--fs-base);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+.service-card-row__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-jp);
+  font-size: var(--fs-sm);
+  color: var(--color-accent-gold);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+.service-card-row__link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-accent-gold);
+  transform: scaleX(0.4);
+  transform-origin: left center;
+  transition: transform var(--duration-base) var(--ease-default);
+}
+.service-card-row__link:hover::after,
+.service-card-row__link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ===== Connection Diagram (縦フロー図) ================================== */
+.connection {
+  background: var(--color-bg-secondary);
+}
+.connection__flow {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-xl) auto 0;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.connection__node {
+  width: 100%;
+  background: var(--color-bg-tertiary);
+  border-left: 3px solid var(--color-accent-gold);
+  padding: var(--space-md) var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+.connection__num {
+  font-family: var(--font-en);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  color: var(--color-accent-gold);
+  flex-shrink: 0;
+  min-width: 2.5em;
+}
+.connection__text {
+  font-family: var(--font-jp);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-md);
+  color: var(--color-text-primary);
+}
+.connection__arrow {
+  font-family: var(--font-en);
+  color: var(--color-accent-gold);
+  font-size: var(--fs-xl);
+  line-height: 1;
+  opacity: 0.7;
+}
+.connection__node--final {
+  background: var(--color-accent-gold);
+  border-left-color: var(--color-accent-gold-light);
+  animation: glowPulse 4s ease-in-out infinite;
+}
+.connection__node--final .connection__num,
+.connection__node--final .connection__text {
+  color: var(--color-bg-primary);
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 169, 97, 0); }
+  50%      { box-shadow: 0 0 32px 0 rgba(200, 169, 97, 0.45); }
+}
+
+/* ===== Final CTA (共通形のページ内バリアント) =========================== */
+.final-cta {
+  position: relative;
+  padding: var(--space-2xl) var(--container-padding-desktop);
+  text-align: center;
+  background:
+    radial-gradient(ellipse at center, rgba(200, 48, 46, 0.18), transparent 60%),
+    var(--color-bg-primary);
+  overflow: hidden;
+}
+.final-cta__chapter {
+  display: inline-block;
+  font-family: var(--font-en);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-widest);
+  color: var(--color-accent-gold);
+  margin-bottom: var(--space-md);
+}
+.final-cta__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+}
+.final-cta__sub {
+  font-family: var(--font-jp);
+  font-size: var(--fs-md);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+/* ===== Responsive ======================================================= */
+@media (max-width: 1023px) {
+  .hero { padding-left: var(--container-padding-tablet); padding-right: var(--container-padding-tablet); }
+  .service-card-row,
+  .service-card-row--reverse {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  .service-card-row--reverse .service-card-row__media { order: 1; }
+  .service-card-row--reverse .service-card-row__body { order: 2; }
+  .service-card-row__body { padding: 0; }
+}
+@media (max-width: 767px) {
+  .hero {
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+    padding-top: var(--space-2xl);
+  }
+  .service-card-row { margin-bottom: var(--space-xl); }
+  .connection__flow { max-width: 100%; }
+  .connection__node {
+    padding: var(--space-sm) var(--space-md);
+    gap: var(--space-sm);
+  }
+  .final-cta {
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+  }
+}
+@media (max-width: 480px) {
+  .hero__title { font-size: 3rem; }
+  .connection__node { padding: var(--space-sm); }
+  .connection__num { min-width: auto; font-size: var(--fs-sm); }
+  .connection__text { font-size: var(--fs-base); }
+}

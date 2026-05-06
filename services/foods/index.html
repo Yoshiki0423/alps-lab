@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="高タンパク低糖質の冷凍宅配ミール。忙しい日でも、研究された食卓を。長野県内で丁寧に調理。ALPS LAB FOODS。">
+  <meta name="theme-color" content="#0A0A0A">
+
+  <meta property="og:title" content="FOODS | ALPS LAB">
+  <meta property="og:description" content="高タンパク低糖質の冷凍宅配ミール。忙しい日でも、研究された食卓を。長野県内で丁寧に調理。">
+  <meta property="og:image" content="/assets/images/services/foods-hero.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+
+  <title>FOODS | ALPS LAB</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/reset.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components/button.css">
+  <link rel="stylesheet" href="/assets/css/layout/header.css">
+  <link rel="stylesheet" href="/assets/css/layout/footer.css">
+  <link rel="stylesheet" href="/assets/css/pages/services_sub.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body class="no-js" data-page="foods">
+
+  <a class="skip-link" href="#main">メインコンテンツへスキップ</a>
+
+  <header class="header" role="banner">
+    <div class="header__inner">
+      <a class="header__logo" href="/" aria-label="ALPS LAB トップページ">ALPS LAB</a>
+      <nav class="nav" role="navigation" aria-label="メインナビゲーション">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="/about/">About</a></li>
+          <li><a class="nav__link is-current" href="/services/" aria-current="page">Services</a></li>
+          <li><a class="nav__link" href="/stores/">Stores</a></li>
+          <li><a class="nav__link" href="/stories/">Stories</a></li>
+          <li><a class="nav__link" href="/recruit/">Recruit</a></li>
+        </ul>
+        <a class="cta-btn" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+        <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="モバイルナビゲーション" aria-hidden="true">
+    <ul class="mobile-menu__list">
+      <li><a class="mobile-menu__link" href="/about/">About</a></li>
+      <li><a class="mobile-menu__link" href="/services/">Services</a></li>
+      <li><a class="mobile-menu__link" href="/stores/">Stores</a></li>
+      <li><a class="mobile-menu__link" href="/stories/">Stories</a></li>
+      <li><a class="mobile-menu__link" href="/recruit/">Recruit</a></li>
+    </ul>
+    <a class="cta-btn cta-btn--lg" href="/contact/">体験予約 <span class="cta-btn__arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="sub-hero" aria-labelledby="hero-title">
+      <img class="sub-hero__media"
+           src="/assets/images/services/foods-hero.jpg"
+           alt="バランスの取れた食卓。ALPS LAB FOODS の冷凍ミール。"
+           width="1920" height="1080"
+           loading="eager"
+           fetchpriority="high">
+      <div class="sub-hero__inner">
+        <span class="sub-hero__chapter" aria-hidden="true">— ALPS LAB FOODS / N°03 —</span>
+        <h1 class="sub-hero__title-jp" id="hero-title">忙しい日でも、研究された食卓を。</h1>
+        <p class="sub-hero__title-en">RESEARCHED MEALS, EVEN ON BUSY DAYS.</p>
+        <p class="sub-hero__lead">
+          <span class="nowrap">長野県産食材+管理栄養士監修の</span><span class="nowrap">冷凍ミール。</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Concept -->
+    <section class="section concept" aria-labelledby="concept-title">
+      <div class="section__inner concept__inner">
+        <h2 id="concept-title" class="section__chapter">
+          CONCEPT <span class="section__chapter-jp">— 私たちの哲学</span>
+        </h2>
+        <p class="concept__quote fade-up">
+          自炊は理想。<br>
+          でも現実は、コンビニで済ませる夜が多い。
+        </p>
+        <p class="concept__text fade-up">
+          ALPS LAB FOODS は、長野の食材を使い、管理栄養士が監修した冷凍ミール。レンジで温めるだけで、研究された一食が完成します。
+        </p>
+      </div>
+    </section>
+
+    <!-- Lineup -->
+    <section class="section lineup" aria-labelledby="lineup-title">
+      <div class="section__inner">
+        <h2 id="lineup-title" class="section__chapter">
+          LINEUP <span class="section__chapter-jp">— 商品ラインナップ</span>
+        </h2>
+        <div class="lineup__grid">
+
+          <article class="lineup-card fade-up">
+            <div class="lineup-card__media">
+              <img src="/assets/images/services/foods-lineup-01.jpg"
+                   alt="ローストチキンと野菜の単品冷凍ミール"
+                   width="600" height="450" loading="lazy">
+            </div>
+            <span class="lineup-card__num">N° 01</span>
+            <h3 class="lineup-card__title">単品</h3>
+            <p class="lineup-card__price">¥980<span class="lineup-card__unit">〜/食</span></p>
+            <div class="lineup-card__divider" aria-hidden="true"></div>
+            <p class="lineup-card__desc">1食から試せる。お試し購入に最適。</p>
+            <a class="lineup-card__cta" href="#">購入する <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="lineup-card fade-up">
+            <div class="lineup-card__media">
+              <img src="/assets/images/services/foods-lineup-02.jpg"
+                   alt="高タンパクの魚料理セット"
+                   width="600" height="450" loading="lazy">
+            </div>
+            <span class="lineup-card__num">N° 02</span>
+            <h3 class="lineup-card__title">6食セット</h3>
+            <p class="lineup-card__price">¥5,880<span class="lineup-card__unit">/セット</span></p>
+            <div class="lineup-card__divider" aria-hidden="true"></div>
+            <p class="lineup-card__desc">送料無料。1週間分の夕食に。</p>
+            <a class="lineup-card__cta" href="#">購入する <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="lineup-card fade-up">
+            <div class="lineup-card__media">
+              <img src="/assets/images/services/foods-lineup-03.jpg"
+                   alt="野菜中心のヘルシーミールセット"
+                   width="600" height="450" loading="lazy">
+            </div>
+            <span class="lineup-card__num">N° 03</span>
+            <h3 class="lineup-card__title">12食セット</h3>
+            <p class="lineup-card__price">¥11,200<span class="lineup-card__unit">/セット</span></p>
+            <div class="lineup-card__divider" aria-hidden="true"></div>
+            <p class="lineup-card__desc">送料無料・お得。2週間分の夕食を確保。</p>
+            <a class="lineup-card__cta" href="#">購入する <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="lineup-card fade-up">
+            <div class="lineup-card__media">
+              <img src="/assets/images/services/foods-lineup-04.jpg"
+                   alt="月額サブスクのバランスミール"
+                   width="600" height="450" loading="lazy">
+            </div>
+            <span class="lineup-card__num">N° 04</span>
+            <h3 class="lineup-card__title">サブスク</h3>
+            <p class="lineup-card__price">5%OFF<span class="lineup-card__unit">/月額会員</span></p>
+            <div class="lineup-card__divider" aria-hidden="true"></div>
+            <p class="lineup-card__desc">月額会員限定特典。継続利用で最もお得。</p>
+            <a class="lineup-card__cta" href="#">申し込む <span aria-hidden="true">→</span></a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section process" aria-labelledby="process-title">
+      <div class="section__inner">
+        <h2 id="process-title" class="section__chapter">
+          PROCESS <span class="section__chapter-jp">— 製造プロセス</span>
+        </h2>
+        <ol class="process__timeline">
+          <li class="process__step fade-up">
+            <span class="process__step-num">STEP 01</span>
+            <h3 class="process__step-title">長野の食材を厳選</h3>
+            <p class="process__step-desc">
+              地元農家・契約生産者から直送された食材を中心に、その日に必要な分だけを使用します。
+            </p>
+            <img src="/assets/images/services/foods-process-01.jpg"
+                 alt="長野県産の新鮮な食材"
+                 class="process__step-img"
+                 width="800" height="450" loading="lazy">
+          </li>
+          <li class="process__step fade-up">
+            <span class="process__step-num">STEP 02</span>
+            <h3 class="process__step-title">管理栄養士監修メニュー</h3>
+            <p class="process__step-desc">
+              高タンパク・低糖質・適切なカロリー設計。研究員が栄養バランスを設計し、現場で再現します。
+            </p>
+            <img src="/assets/images/services/foods-process-02.jpg"
+                 alt="管理栄養士が設計した栄養バランス"
+                 class="process__step-img"
+                 width="800" height="450" loading="lazy">
+          </li>
+          <li class="process__step fade-up">
+            <span class="process__step-num">STEP 03</span>
+            <h3 class="process__step-title">急速冷凍で食感と栄養を保持</h3>
+            <p class="process__step-desc">
+              添加物は最小限。急速冷凍で食感と栄養を保持し、レンジで温めるだけで研究された一食が完成します。
+            </p>
+            <img src="/assets/images/services/foods-process-03.jpg"
+                 alt="急速冷凍された冷凍ミール"
+                 class="process__step-img"
+                 width="800" height="450" loading="lazy">
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Voice -->
+    <section class="section voice" aria-labelledby="voice-title">
+      <div class="section__inner">
+        <h2 id="voice-title" class="section__chapter">
+          VOICE <span class="section__chapter-jp">— お客様の声</span>
+        </h2>
+        <figure class="voice-card fade-up">
+          <span class="voice-card__quote-mark" aria-hidden="true">「</span>
+          <blockquote class="voice-card__text">
+            夜勤明けで自炊する気力がない日でも、レンジ3分で研究された食事が出てくる。<span class="voice-card__highlight">外食より安く、コンビニより栄養がある</span>。私の生活には欠かせません。
+          </blockquote>
+          <figcaption class="voice-card__author">
+            鈴木 麻衣さん / 29歳 / 看護師 / LIGHT 会員
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Related -->
+    <section class="section related" aria-labelledby="related-title">
+      <div class="section__inner">
+        <h2 id="related-title" class="section__chapter">
+          RELATED FIELDS <span class="section__chapter-jp">— 関連事業</span>
+        </h2>
+        <div class="related__grid">
+          <a class="related-card fade-up" href="/services/gym/">
+            <img src="/assets/images/services/gym-facility-01.jpg"
+                 alt="ALPS LAB GYM"
+                 width="800" height="450" loading="lazy">
+            <div class="related-card__body">
+              <span class="related-card__num">N° 01 / GYM</span>
+              <h3 class="related-card__title">24時間×パーソナルの、新しい形。</h3>
+              <span class="related-card__link">詳細を見る <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+          <a class="related-card fade-up" href="/services/nutrition/">
+            <img src="/assets/images/services/nutrition.jpg"
+                 alt="ALPS LAB NUTRITION"
+                 width="800" height="450" loading="lazy">
+            <div class="related-card__body">
+              <span class="related-card__num">N° 02 / NUTRITION</span>
+              <h3 class="related-card__title">食べることは、未来を選ぶこと。</h3>
+              <span class="related-card__link">詳細を見る <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+          <a class="related-card fade-up" href="/services/supplements/">
+            <img src="/assets/images/services/supplements.jpg"
+                 alt="ALPS LAB SUPPLEMENTS"
+                 width="800" height="450" loading="lazy">
+            <div class="related-card__body">
+              <span class="related-card__num">N° 04 / SUPPLEMENTS</span>
+              <h3 class="related-card__title">補うのではなく、整える。</h3>
+              <span class="related-card__link">詳細を見る <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA (購入CTA バリアント) -->
+    <section class="final-cta" aria-labelledby="final-cta-title">
+      <span class="final-cta__chapter">RESEARCH N° 05 — JOIN US</span>
+      <h2 id="final-cta-title" class="final-cta__title">RESEARCHED MEALS,<br>DELIVERED.</h2>
+      <p class="final-cta__sub">
+        <span class="nowrap">研究された食卓を、</span><span class="nowrap">あなたの食生活へ。</span>
+      </p>
+      <a class="cta-btn cta-btn--lg" href="#">
+        購入はこちら <span class="cta-btn__arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__logo">ALPS LAB</div>
+        <p class="footer__copy-line">北アルプスの麓から、本物の健康を研究する。</p>
+      </div>
+      <div class="footer__columns">
+        <div class="footer__col">
+          <h4 class="footer__col-title">Services</h4>
+          <ul>
+            <li><a href="/services/gym/">GYM</a></li>
+            <li><a href="/services/nutrition/">NUTRITION</a></li>
+            <li><a href="/services/foods/">FOODS</a></li>
+            <li><a href="/services/supplements/">SUPPLEMENTS</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Stores</h4>
+          <ul>
+            <li><a href="/stores/#matsumoto">松本本店</a></li>
+            <li><a href="/stores/#nagano">長野店</a></li>
+            <li><a href="/stores/#karuizawa">軽井沢店</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Company</h4>
+          <ul>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/company/">Company</a></li>
+            <li><a href="/recruit/">Recruit</a></li>
+            <li><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Social</h4>
+          <ul>
+            <li><a href="#" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#" rel="noopener noreferrer">X (Twitter)</a></li>
+            <li><a href="#" rel="noopener noreferrer">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 ALPS LAB Inc.</span>
+        <span>LAT. 36.2°N / LON. 137.9°E</span>
+        <span>Privacy / Terms</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/animations.js" defer></script>
+</body>
+</html>
