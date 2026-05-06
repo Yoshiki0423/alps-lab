@@ -14,6 +14,9 @@ desktop.ini
 *.swo
 *~
 
+# Claude Code(ユーザー固有のローカル設定)
+.claude/
+
 # Node (将来 Node.js を使う場合の備え)
 node_modules/
 npm-debug.log*
@@ -35,3 +38,5 @@ yarn-error.log*
 *.log
 *.tmp
 .cache/
+
+.vercel
